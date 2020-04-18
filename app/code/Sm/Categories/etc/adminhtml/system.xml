@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="magentech" translate="label" sortOrder="1">
+			<label>Magentech.com</label>
+		</tab>
+		<section id="categories" translate="label" type="text" sortOrder="170" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>SM Categories</label>
+			<tab>magentech</tab>
+			<resource>Sm_Categories::config_categories</resource>
+			<group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Settings</label>
+				<field id="isenabled" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enabled Extensions</label>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="title_module" translate="label" type="text" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Title</label>
+				</field>
+			</group>
+			<group id="source" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Source Options</label>
+				<field id="select_category" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Select Category</label>
+					<source_model>Sm\Categories\Model\Config\Source\ListCategory</source_model>
+				</field>
+				<field id="limitation" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Category Limitation</label>
+					<validate>required-entry integer validate-greater-than-zero</validate>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

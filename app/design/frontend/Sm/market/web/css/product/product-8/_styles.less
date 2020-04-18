@@ -1,0 +1,188 @@
+/**
+ * Product style 8
+ */
+
+.products-grid {
+    position: relative;
+    margin: 0;
+
+    div[class^="swatch-opt-"] {
+        margin-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .product-item-info {
+        background-color: #fff;
+        border: 1px solid transparent;
+        padding: 15px;
+        .transition(.2s);
+
+        .label-product {
+            top: 24px;
+
+            &.label-sale {
+                left: 24px;
+            }
+
+            &.label-new {
+                right: 24px;
+            }
+        }
+
+        .price-box .price {
+            font-weight: 700;
+        }
+
+        .price-box .old-price .price {
+            font-weight: normal !important;
+        }
+
+        .image-grid {
+            position: relative;
+
+            .sm_quickview_handler {
+                color: #222;
+                display: inline-block;
+                background-color: #fff;
+                padding: 4px 18px 5px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 100;
+                font-size: 107.69%;
+                transform: translate(-50%, -50%);
+                -webkit-transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                .transition(.2s);
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+
+        &:hover {
+            border-color: #ddd;
+
+            .image-grid .sm_quickview_handler {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+    }
+
+    .product-item-details {
+        padding: 8px 0 15px;
+        text-align: center;
+        position: relative;
+    }
+
+    .product-item-name {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: normal;
+        padding: 0;
+        font-size: 116.67%;
+        text-transform: capitalize;
+        display: block;
+        white-space: nowrap;
+    }
+
+    .product-reviews-summary {
+        .rating-summary {
+            margin: 0;
+            padding: 0;
+        }
+
+        .reviews-actions {
+            display: none;
+        }
+    }
+
+    .product-item-inner {
+        clear: both;
+        padding: 10px 0 0;
+    }
+
+    .product-item-actions {
+        display: inline-block;
+        padding: 0 35px;
+        position: relative;
+
+        .actions-primary {
+            .tocart {
+                height: 30px;
+                line-height: 28px;
+                border: 1px solid #ddd !important;
+                background: none;
+                color: #666 !important;
+                font-weight: normal;
+                padding: 0 15px !important;
+                .transition(.2s);
+
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    width: 17px;
+                    height: 15px;
+                    background: url(../images/icon-image.png) no-repeat -20px -272px;
+                    position: relative;
+                    top: 2px;
+                    margin-right: 3px;
+                    .transition(.2s);
+                }
+
+                &:hover {
+                    color: #fff !important;
+
+                    &:before {
+                        background-position: -67px -272px;
+                    }
+                }
+            }
+        }
+
+        .actions-secondary {
+            .action {
+                display: block;
+                height: 30px;
+                width: 30px;
+                text-align: center;
+                border: 1px solid #ddd;
+                line-height: 28px;
+                color: #999;
+                .transition(.2s);
+
+                &:hover {
+                    color: #fff;
+                }
+
+                &:before,
+                span {
+                    display: none !important;
+                }
+
+                &.towishlist {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+
+                    &:after {
+                        .font-awesome(f004, 14px);
+                    }
+                }
+
+                &.tocompare {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+
+                    &:after {
+                        .font-awesome(f021, 14px);
+                    }
+                }
+            }
+        }
+    }
+}

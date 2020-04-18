@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <remove src="css/styles-l.css"/>
+    </head>
+
+    <body>
+        <referenceContainer name="head.additional">
+            <block class="Sm\Market\Block\TemplateMobile" name="theme.config.mobile"/>
+        </referenceContainer>
+
+        <referenceBlock name="header.content">
+            <block class="Magento\Customer\Block\Form\Login" name="customer_form_login_sticky"
+                   template="form/login_mobile.phtml">
+                <container name="form.additional.info" as="form_additional_info"/>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

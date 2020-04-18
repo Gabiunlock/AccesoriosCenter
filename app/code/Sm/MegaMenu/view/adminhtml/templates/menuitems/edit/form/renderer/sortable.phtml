@@ -1,0 +1,73 @@
+<?php
+/*------------------------------------------------------------------------
+# SM Mega Menu - Version 3.2.0
+# Copyright (c) 2015 YouTech Company. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: YouTech Company
+# Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+?>
+<tr>
+	<!--	<td class="label"></td>-->
+	<td class="value value_sortable">
+		<?php if ($this->checkGroupId()) : ?>
+			<menu id="nestable-menu">
+				<button id="additems" type="button" title="Add Items" class="scalable scale add sortable_add" data-action="additems" onclick="setLocation('<?php echo $this->setLinkAddItems() ?>')"><i class='fa fa-plus-square-o'></i>Add Items</button>
+				<button id="update" type="button" title="Update" title="Add Items" data-action="submit" class="sortable_update"><i class='fa fa-check-circle'></i>Update Change</button>
+				<button id="changeenable" type="button" title="Enable All" class="scalable scale changestatus" data-action="changeenable" onclick="setLocation('<?php echo $this->enableAll() ?>')"><i class='fa fa-unlock-alt'></i>Enable All</button>
+				<button id="changediasble" type="button" title="Disable All" class="scalable scale changestatus" data-action="changedisable" onclick="setLocation('<?php echo $this->disableAll() ?>')"><i class='fa fa-lock'></i>Disable All</button>
+				<button type="button" title="Expand All" data-action="expand-all" class="sortable_expand_all"><i class='fa fa-minus-circle'></i>Expand All</button>
+				<button type="button" title="Collapse All" data-action="collapse-all" class="sortable_collapse_all"><i class='fa fa-plus-circle'></i>Collapse All</button>
+			</menu>
+			<div class="cf nestable-lists">
+				<div id="divsortable" data-controller="<?php echo $this->setController(); ?>" class="dd sortable" style="">
+					<ol class="dd-list sortable_categories vertical">
+						<?php echo $this->dataItems(); ?>
+					</ol>
+				</div>
+			</div>
+		<?php endif; ?>
+	</td>
+</tr>
+
+<script type="text/javascript">
+	require(["jquery","Sm_MegaMenu/js/jquery.nestable"], function($){
+			$('#nestable-menu').on('click', function(e)
+			{
+				var target = $(e.target),
+					action = target.data('action');
+				if (action === 'expand-all') {
+					$('.dd').nestable('expandAll');
+				}
+				if (action === 'collapse-all') {
+					$('.dd').nestable('collapseAll');
+				}
+			});
+
+			$('#divsortable').nestable({
+				group: 1
+			});
+
+			var url_controller = $("#divsortable").attr('data-controller');
+			$("#update").click(function() {
+				var data = $('#divsortable').nestable('serialize');
+				var datastring = JSON.stringify(data);
+				$('#serialize_output').text(JSON.stringify(data, null, ' '));
+				$.ajax({
+					type: 'GET',
+					url: url_controller,
+					data: {
+						element: datastring
+					},
+					contentType: 'application/json',
+					cache: false,
+					success: function(msg) {
+						location.reload(window.location.href);
+					},
+					error:  function (xhr, ajaxOptions, thrownError) {
+
+					}
+				});
+		});
+	});
+</script>

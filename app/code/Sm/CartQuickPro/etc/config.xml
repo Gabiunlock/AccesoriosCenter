@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * SM CartQuickPro - Version 1.2.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+		<cartquickpro>
+			<general>
+				<isenabled>1</isenabled>
+				<select_type>both</select_type>
+				<product_container>.product-item-info</product_container>
+				<button_container>.product-item-photo</button_container>
+				<label_button>Quick View</label_button>
+				<countdown_number>20</countdown_number>
+			</general>
+		</cartquickpro>
+	</default>
+</config>

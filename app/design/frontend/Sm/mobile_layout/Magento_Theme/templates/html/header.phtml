@@ -1,0 +1,125 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ */
+
+$_config    = $this->helper('Sm\Market\Helper\Data');
+$mediaSrc   = $_config->getMediaUrl();
+$logoMobile = $_config->getGeneral('logo_mobile');
+?>
+<header class="page-header mb-header-device">
+    <div class="mobile-top">
+        <div class="container">
+            <div class="top-content">
+                <div class="mobile-logo">
+                    <a href="<?php echo $this->getUrl('') ?>">
+                        <img src="<?php echo $mediaSrc . 'logomobile/' . $logoMobile; ?>"
+                             alt="<?php /* @escapeNotVerified */
+                             echo $block->getLogoAlt() ?>"
+                             width="<?php echo $_config->getGeneral('logomobile_width'); ?>"
+                             height="<?php echo $_config->getGeneral('logomobile_height'); ?>"/>
+                    </a>
+                </div>
+
+                <div class="mobile-right">
+                    <div class="button-mobile-top mb-search">
+                        <a href="javascript:void(0);"><span class="fa fa-search"></span></a>
+                    </div>
+
+                    <div class="button-mobile-top mb-phone">
+                        <a href="javascript:void(0);"><span class="fa fa-phone"></span></a>
+                    </div>
+
+                    <div class="button-mobile-top mb-cart">
+                        <?php echo $block->getChildHtml('cart-header'); ?>
+                    </div>
+                </div>
+
+                <?php echo $this->getChildHtml("search-header"); ?>
+                <a class="close-search" href="javascript:void(0);"><span class="fa fa-times"></span></a>
+            </div>
+
+        </div>
+    </div>
+
+	<div class="sticky-bottom">
+        <div class="container">
+            <div class="content-group-block">
+                <div class="group-block">
+                    <div class="block-bottom">
+                        <a class="button-sticky-bottom button-no-dropdown" href="<?php echo $this->getUrl('') ?>">
+                            <em class="fa fa-home" style="font-size: 18px;"></em>
+                            <span class="title-menu"><?php echo __('Home'); ?></span>
+                        </a>
+                    </div>
+
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('mobile-layout-menu-bottom')->toHtml(); ?>
+
+                    <div id="myaccount-drop" class="block-bottom">
+                        <a class="button-sticky-bottom" href="javascript:void(0)" data-drop="myaccount-drop">
+                            <em class="fa fa-user-circle" style="font-size: 15px;"></em>
+                            <span class="title-menu"><?php echo __('Account'); ?></span>
+                        </a>
+
+                        <div class="dropdown-header-sticky myaccount-dropdown">
+                            <?php $login = $block->getLayout()->createBlock('Magento\Customer\Block\Account\Customer'); ?>
+                            <div class="content-dropdown-sticky">
+                                <div class="title-sticky-bottom">
+                                    <?php echo __('My Account'); ?>
+
+                                    <?php if ($login->customerLoggedIn()) { ?>
+                                        <a class="btn-logout"
+                                           href="<?php echo $this->getUrl('customer/account/logout') ?>"><?php echo __('Logout') ?></a>
+                                    <?php } ?>
+
+                                    <a class="toggle-button-sticky close-sticky-bottom" data-drop="myaccount-drop"><i
+                                                class="fa fa-times"></i></a>
+                                </div>
+
+                                <div class="content-dropdown">
+                                    <?php if ($login->customerLoggedIn()) {
+                                        echo $this->getChildHtml('header.links');
+                                    } else {
+                                        echo $this->getChildHtml("customer_form_login_sticky");
+                                    } ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu-drop" class="block-bottom">
+                        <a class="button-sticky-bottom" href="javascript:void(0)" data-drop="menu-drop">
+                            <em class="fa fa-bars" style="font-size: 18px;"></em>
+                            <span class="title-menu"><?php echo __('Menu'); ?></span>
+                        </a>
+
+                        <div class="dropdown-header-sticky navigation-dropdown">
+                            <div class="content-dropdown-sticky">
+                                <div class="title-sticky-bottom">
+                                    <div class="language-currency-sticky">
+                                        <?php echo $block->getChildHtml('language-header'); ?>
+                                        <?php echo $block->getChildHtml('currency-header'); ?>
+                                    </div>
+                                    <a class="toggle-button-sticky close-sticky-bottom" data-drop="menu-drop"><i
+                                                class="fa fa-times"></i></a>
+                                </div>
+
+                                <div class="content-dropdown">
+                                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-mobile')->toHtml(); ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+

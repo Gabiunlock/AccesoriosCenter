@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magento\Cms\Controller\Index\Index" type="Sm\Market\Controller\Cms\Index" />
+	<preference for="Magento\Cms\Block\Page" type="Sm\Market\Block\Cms\Page" />
+	<preference for="Magento\Cms\Block\Block" type="Sm\Market\Block\Cms\Block" />
+</config>

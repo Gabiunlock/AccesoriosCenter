@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<megamenu>
+			<general>
+				<isenabled>1</isenabled>
+				<group_id></group_id>
+				<theme>1</theme>
+				<effect>1</effect>
+				<effect_duration>800</effect_duration>
+				<start_level>1</start_level>
+				<end_level>5</end_level>
+			</general>
+			<advanced>
+				<use_cache>1</use_cache>
+				<cache_time>3600</cache_time>
+			</advanced>
+		</megamenu>
+	</default>
+</config>

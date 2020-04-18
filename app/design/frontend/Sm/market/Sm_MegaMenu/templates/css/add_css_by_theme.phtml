@@ -1,0 +1,22 @@
+<?php
+/*------------------------------------------------------------------------
+# SM Mega Menu - Version 3.1.0
+# Copyright (c) 2015 YouTech Company. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: YouTech Company
+# Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+?>
+
+<?php if ($config['theme'] == \Sm\MegaMenu\Model\Config\Source\ListTheme::HORIZONTAL): ?>
+
+    <link media="all"
+          href="<?php echo $this->_directory->getDirectoryWrite(\Magento\Framework\App\Filesystem\DirectoryList::APP) . '/Sm/MegaMenu/view/frontend/web/css/horizontal/black/megamenu.css'; ?>"
+          type="text/css" rel="stylesheet">
+
+<?php elseif ($config['theme'] == \Sm\MegaMenu\Model\Config\Source\ListTheme::VERTICAL): ?>
+
+    <link media="all"
+          href="<?php echo $this->_directory->getDirectoryWrite(\Magento\Framework\App\Filesystem\DirectoryList::APP) . '/Sm/MegaMenu/view/frontend/web/css/vertical/black/megamenu.css'; ?>"
+          type="text/css" rel="stylesheet">
+<?php endif ?>

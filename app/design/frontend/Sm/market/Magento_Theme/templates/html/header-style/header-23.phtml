@@ -1,0 +1,74 @@
+<div class="header-container header-style-23">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top-content clearfix">
+                <div class="logo-header">
+                    <?php echo $block->getChildHtml('logo_theme'); ?>
+                </div>
+
+                <div class="header-top-right">
+                    <div class="minicart-header">
+                        <div class="minicart-content">
+                            <?php echo $block->getChildHtml('cart-header'); ?>
+                        </div>
+                    </div>
+
+                    <div class="customer-links">
+                        <?php
+                        $login_customer = $block->getLayout()->createBlock('Magento\Customer\Block\Account\Customer');
+                        ?>
+
+
+                        <?php if ($login_customer->customerLoggedIn()) { ?>
+                            <div class="title-loggedin"><?php echo __('Your Dashboard') ?></div>
+                            <?php echo $block->getChildHtml('toplinks-header'); ?>
+                        <?php } else { ?>
+                            <ul class="top-links">
+                                <li>
+                                    <a href="<?php echo $this->getUrl('customer/account/login') ?>"><?php echo __('Login') ?></a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo $this->getUrl('customer/account/create') ?>"><?php echo __('Register') ?></a>
+                                </li>
+                            </ul>
+                        <?php } ?>
+                    </div>
+
+                    <div class="setting-header">
+                        <div class="setting-title"><?php echo __('Setting') ?></div>
+
+                        <div class="dropdown-setting">
+                            <?php echo $block->getChildHtml('language-header'); ?>
+                            <?php echo $block->getChildHtml('currency-header'); ?>
+                        </div>
+                    </div>
+
+                    <?php echo $block->getChildHtml('search-header-pro'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="desktop-menu">
+                <div class="large-menu">
+                    <?php
+                    if ($_config->getGeneral('menu_style') == 'megamenu') {
+                        echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml();
+                    } else {
+                        echo $block->getChildHtml('navigation-header');
+                    }
+                    ?>
+                </div>
+
+                <div class="navigation-mobile-container">
+                    <?php echo $block->getChildHtml('navigation.mobile'); ?>
+                </div>
+
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('id23-phone-mail')->toHtml(); ?>
+            </div>
+        </div>
+    </div>
+</div>
+

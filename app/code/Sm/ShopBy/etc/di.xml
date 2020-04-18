@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\LayeredNavigation\Block\Navigation\FilterRenderer" type="Sm\ShopBy\Block\FilterRenderer" />
+	 <type name="Sm\ShopBy\Block\FilterRenderer">
+        <plugin name="swatches_layered_renderer" type="Magento\Swatches\Model\Plugin\FilterRenderer" sortOrder="1" />
+    </type>
+	<type name="Magento\Catalog\Controller\Category\View">
+        <plugin name="Sm_ShopBy_Category_View" type="Sm\ShopBy\Plugin\Category\View"></plugin>
+	</type>
+	<type name="Purpletree\Marketplace\Controller\Index\StoreView">
+        <plugin name="Sm_ShopBy_Marketplace_StoreView" type="Sm\ShopBy\Plugin\Marketplace\StoreView"></plugin>
+	</type>
+    <type name="Magento\CatalogSearch\Controller\Result\Index">
+        <plugin name="Sm_ShopBy_CategorySearch_Result" type="Sm\ShopBy\Plugin\CatalogSearch\Result"></plugin>
+    </type>
+</config>

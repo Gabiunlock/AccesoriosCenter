@@ -1,0 +1,142 @@
+// Footer style 15
+
+.footer-style-15 {
+    background-color: #111111;
+    color: #aaa;
+
+    .footer-wrapper {
+        padding: 0 30px;
+    }
+
+    .container {
+        width: auto;
+        max-width: unset;
+    }
+
+    .footer-top {
+        padding-bottom: 40px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #292929;
+        padding-top: 40px;
+    }
+
+    .footer-nav {
+        text-align: center;
+        margin: 15px -55px 0;
+
+        ul {
+            li {
+                margin: 0 25px;
+                display: inline-block;
+                font-size: 107.69%;
+                text-transform: uppercase;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+    .socials-wrap {
+        float: right;
+        position: relative;
+        top: 3px;
+
+        .title-follow {
+            display: none;
+        }
+
+        ul {
+            display: table;
+            width: 100%;
+
+            li {
+                float: left;
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+
+                a {
+                    display: block;
+                    width: 44px;
+                    height: 44px;
+                    text-align: center;
+                    line-height: 42px;
+                    border: 1px solid #444;
+                    background-color: #1a1a1a;
+                    color: #fff;
+                    font-size: 16px;
+                    .border_radius(50%);
+
+                    .name-social {
+                        display: none;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .store-info {
+        color: #aaa;
+    }
+
+    .newsletter-content {
+        position: relative;
+        max-width: 250px;
+        float: right;
+        margin-top: 7px;
+
+        #newsletter-footer {
+            height: 40px;
+            border: none;
+            background-color: #292929;
+            text-transform: uppercase;
+            font-weight: 400;
+            padding: 0 60px 0 20px;
+            font-size: 107.69%;
+            color: #aaa;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+        }
+
+        .action-button {
+            button {
+                width: 50px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0 !important;
+                background: none !important;
+                border: none !important;
+
+                &:before {
+                    .font-awesome(f0e0, 14px);
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    address {
+        float: left;
+        position: relative;
+        margin-top: -17px;
+        margin-bottom: 30px;
+
+        a {
+            color: #aaa;
+        }
+    }
+}

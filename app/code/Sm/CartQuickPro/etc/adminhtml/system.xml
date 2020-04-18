@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Config/etc/system_file.xsd">
+    <system>
+		<tab id="magentech" translate="label" sortOrder="100">
+			<label>Magentech.com</label>
+		</tab>
+		<section id="cartquickpro" translate="label" type="text" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>SM Cart Quick Pro</label>
+			<tab>magentech</tab>
+			<resource>Sm_CartQuickPro::config_cartquickpro</resource>
+			<group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Settings</label>
+				<field id="isenabled" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enabled Extensions</label>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="select_type" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Select Type</label>
+					<source_model>Sm\CartQuickPro\Model\Config\Source\ListSource</source_model>
+				</field>
+				<field id="product_container" translate="label" type="textarea" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Product Class Container</label>
+					<validate>required-entry</validate>
+					<comment>Class of the product</comment>
+					<depends>
+						<field id="select_type" separator=",">both,quickview</field>
+					</depends>
+				</field>
+				<field id="button_container" translate="label" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Button Class Container</label>
+					<validate>required-entry</validate>
+					<comment>Where to display the button.</comment>
+					<depends>
+						<field id="select_type" separator=",">both,quickview</field>
+					</depends>
+				</field>
+				<field id="label_button" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Label Button</label>
+					<validate>required-entry</validate>
+					<depends>
+						<field id="select_type" separator=",">both,quickview</field>
+					</depends>
+				</field>
+				<field id="countdown_number" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Countdown Number</label>
+					<validate>required-entry integer</validate>
+					<comment>For Comfirm Box. Time(seconds)</comment>
+				</field>
+			</group>
+			<group id="product_information" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Product Information</label>
+				<field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
+											<p>Vesion: 1.1.0</p>
+											<p>Userguide: <a target="_blank" title="Usergide" href="http://www.magentech.com/documentation/sm-cartquickpro/">Userguide</a></p>
+											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">Forum</a></p>
+								]]></label>
+					<frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

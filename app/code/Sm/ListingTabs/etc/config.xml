@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<listingtabs>
+			<general>
+				<isactive>1</isactive>
+				<title>SM Listing Tabs</title>
+				<type_show>loadmore</type_show>
+				<type_listing>all</type_listing>
+				<under_price>4.99</under_price>
+				<display_countdown>0</display_countdown>
+			</general>
+            <source>
+				<type_filter>categories</type_filter>
+				<field_tabs>name</field_tabs>
+                <category_tabs></category_tabs>
+                <category_select></category_select>
+                <order_by>name</order_by>
+                <order_dir>ASC</order_dir>
+                <limitation>8</limitation>
+            </source>
+		</listingtabs>
+	</default>
+</config>

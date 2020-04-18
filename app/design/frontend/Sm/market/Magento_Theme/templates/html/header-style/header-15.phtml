@@ -1,0 +1,55 @@
+<div class="header-container header-style-15">
+    <div class="header-top">
+        <div class="container">
+            <div class="row row-topheader">
+                <div class="col-xl-4 col-lg-3 col-md-4 language-currency-header">
+                    <?php echo $block->getChildHtml('language-header'); ?>
+                    <?php echo $block->getChildHtml('currency-header'); ?>
+                </div>
+
+                <div class="col-xl-8 col-lg-9 col-md-8 header-top-links">
+                    <div class="minicart-header">
+                        <div class="minicart-content">
+                            <?php echo $block->getChildHtml('cart-header'); ?>
+                        </div>
+                    </div>
+                    <?php echo $block->getChildHtml('toplinks-header'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle header-bottom">
+        <div class="container">
+            <div class="middle-content">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-12 logo-header">
+                        <?php echo $block->getChildHtml('logo_theme'); ?>
+                    </div>
+
+                    <div class="col-xl-8 col-lg-9 menu-header">
+                        <div class="menu-container">
+                            <div class="main-megamenu">
+                                <?php
+                                if ($_config->getGeneral('menu_style') == 'megamenu') {
+                                    echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml();
+                                } else {
+                                    echo $block->getChildHtml('navigation-header');
+                                }
+                                ?>
+                            </div>
+
+                            <div class="navigation-mobile-container">
+                                <?php echo $block->getChildHtml('navigation.mobile'); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 search-header">
+                        <?php echo $block->getChildHtml('search-header'); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

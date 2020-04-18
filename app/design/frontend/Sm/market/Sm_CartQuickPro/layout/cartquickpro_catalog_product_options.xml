@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * SM CartQuickPro - Version 1.4.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="cartquickpro_catalog_product_view"/>
+    <body>
+		<referenceContainer name="product.info.stock.sku"  remove="true"/> 	
+		<referenceContainer name="product.info.review"  remove="true"/> 		
+        <referenceContainer name="product.info.media"  remove="true"/> 
+        <referenceContainer name="product.info.overview"  remove="true"/>
+    </body>
+</page>

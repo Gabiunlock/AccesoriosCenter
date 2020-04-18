@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-right"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <move element="page.main.title" destination="product.info.main" before="-"/>
+
+        <referenceBlock name="catalog.product.related" remove="true"/>
+        <referenceBlock name="product.info.upsell" remove="true"/>
+
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Cms\Block\Block" name="service-sidebar" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">service-sidebar</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="sidebar.main">
+            <block class="Magento\Cms\Block\Block" name="product-detail" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">detail-product-sidebar</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Framework\View\Element\Template" name="social.button.detail"
+                   after="product.info.overview" template="Magento_Theme::html/social-button.phtml"
+                   ifconfig="market/product_detail/show_social_button"/>
+        </referenceContainer>
+
+        <referenceContainer name="page.bottom.container">
+            <container name="div.container.detail" htmlTag="div" htmlClass="container">
+                <block class="Magento\Catalog\Block\Product\ProductList\Related" name="catalog.product.related.theme"
+                       template="Magento_Catalog::product/list/related-upsell.phtml"
+                       ifconfig="market/product_detail/show_related">
+                    <arguments>
+                        <argument name="type" xsi:type="string">related</argument>
+                    </arguments>
+                    <block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="related.product.addto"
+                           as="addto">
+                        <block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+                               name="related.product.addto.compare" as="compare"
+                               template="Magento_Catalog::product/list/addto/compare.phtml"/>
+                    </block>
+                </block>
+                <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell.theme"
+                       template="Magento_Catalog::product/list/related-upsell.phtml"
+                       ifconfig="market/product_detail/show_upsell">
+                    <arguments>
+                        <argument name="type" xsi:type="string">upsell</argument>
+                    </arguments>
+                    <block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="upsell.product.addto"
+                           as="addto">
+                        <block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+                               name="upsell.product.addto.compare" as="compare"
+                               template="Magento_Catalog::product/list/addto/compare.phtml"/>
+                    </block>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

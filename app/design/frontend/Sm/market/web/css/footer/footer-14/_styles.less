@@ -1,0 +1,122 @@
+// Footer style 14
+
+.footer-style-14 {
+    .footer-top {
+        padding-bottom: 60px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .footer-nav {
+        text-align: center;
+        margin: 15px -55px 0;
+
+        ul {
+            li {
+                margin: 0 12px;
+                display: inline-block;
+                font-size: 107.69%;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .socials-wrap {
+        float: right;
+        position: relative;
+        top: 5px;
+
+        .title-follow {
+            display: none;
+        }
+
+        ul {
+            display: table;
+            width: 100%;
+
+            li {
+                float: left;
+
+                &:not(:first-child) {
+                    margin-left: 10px;
+                }
+
+                a {
+                    display: block;
+                    width: 44px;
+                    height: 44px;
+                    text-align: center;
+                    line-height: 42px;
+                    border: 1px solid #eee;
+                    background-color: #fff;
+                    color: #888;
+                    font-size: 16px;
+                    .border_radius(50%);
+
+                    .name-social {
+                        display: none;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .store-info {
+        color: #aaa;
+    }
+
+    .newsletter-content {
+        position: relative;
+        max-width: 200px;
+        float: right;
+
+        #newsletter-footer {
+            height: 50px;
+            border: 1px solid #e5e5e5;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0 60px 0 15px;
+            font-size: 107.69%;
+            color: #222;
+        }
+
+        .action-button {
+            button {
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 0 !important;
+                background: none !important;
+                border: none !important;
+
+                &:before {
+                    .font-awesome(f0e0, 14px);
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    address {
+        float: left;
+        margin-top: -15px;
+        color: #aaa;
+        margin-bottom: 40px;
+        position: relative;
+
+        a {
+            color: #aaa;
+        }
+    }
+}

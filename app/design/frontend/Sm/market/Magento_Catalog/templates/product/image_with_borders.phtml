@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+$_config           = $this->helper('Sm\Market\Helper\Data');
+$enableLadyLoading = $_config->getAdvanced('enable_ladyloading');
+$mediaSrc          = $_config->getMediaUrl();
+if ($enableLadyLoading) {
+    $imgClass = 'lazyload';
+} else {
+    $imgClass = '';
+}
+?>
+<?php /** @var $block \Magento\Catalog\Block\Product\Image */ ?>
+
+<span class="product-image-container" style="width:<?= /* @escapeNotVerified */
+$block->getWidth() ?>px;">
+    <span class="product-image-wrapper"
+          style="padding-bottom: <?= /* @escapeNotVerified */
+          ($block->getRatio() * 100) ?>%;">
+        <img class="product-image-photo <?php echo $imgClass; ?>"
+			<?php /* @escapeNotVerified */
+            echo $block->getCustomAttributes(); ?>
+
+            <?php if ($enableLadyLoading) { ?>
+                src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>"
+                data-src="<?php /* @escapeNotVerified */
+                echo $block->getImageUrl(); ?>"
+            <?php } else { ?>
+                src="<?php /* @escapeNotVerified */
+                echo $block->getImageUrl(); ?>"
+            <?php } ?>
+
+             width="<?php /* @escapeNotVerified */
+             echo $block->getResizedImageWidth(); ?>"
+             height="<?php /* @escapeNotVerified */
+             echo $block->getResizedImageHeight(); ?>"
+             alt="<?php /* @escapeNotVerified */
+             echo $block->stripTags($block->getLabel(), null, true); ?>"/>
+	</span>
+</span>

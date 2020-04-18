@@ -1,0 +1,30 @@
+<?php
+/**
+ *
+ * SM Listing Tabs - Version 2.5.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+
+$list = $this->getData('list');
+?>
+<div class="ltabs-tabs-wrap" tabindex="-1">
+    <span class="ltabs-current-select"></span>
+    <ul class="ltabs-tabs cf">
+        <?php
+        foreach ($list as $tab) {
+            ?>
+            <li class="ltabs-tab <?php echo isset($tab['sel']) ? '  tab-sel tab-loaded' : ''; ?>  "
+                data-tab-id="<?php echo $tab['id_tab']; ?>" data-catids="<?php echo $tab['cat_children'] ?>"
+                data-custom-content="data-custom-content">
+				<span
+                        class="ltabs-tab-label">
+						<?php echo $tab['name_tab']; ?>
+				</span>
+            </li>
+            <?php
+        } ?>
+    </ul>
+</div>

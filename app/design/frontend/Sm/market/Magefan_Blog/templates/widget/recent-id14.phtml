@@ -1,0 +1,127 @@
+<?php
+/**
+ * Copyright © 2016 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog recent posts widget
+ *
+ * @var $block \Magefan\Blog\Block\Widget\Recent
+ */
+?>
+
+<?php
+$_postCollection   = $block->getPostCollection();
+$_config           = $this->helper('Sm\Market\Helper\Data');
+$enableLadyLoading = $_config->getAdvanced('enable_ladyloading');
+$mediaSrc          = $_config->getMediaUrl();
+if ($enableLadyLoading) {
+    $imgClass = 'lazyload';
+} else {
+    $imgClass = '';
+}
+?>
+<?php if ($_postCollection->count()) { ?>
+    <div class="title-home">
+        <h2><?php echo $block->escapeHtml($block->getTitle()) ?></h2>
+    </div>
+
+    <div class="slider-post-container slider-wrapper">
+        <div class="product-slider owl-carousel slider-post">
+            <?php foreach ($_postCollection as $_post) { ?>
+                <?php
+                $_postUrl  = $_post->getPostUrl();
+                $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+                ?>
+                <div class="item item-post">
+                    <div class="image-blog static-image">
+                        <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
+                            <a href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
+                                <img class="<?php echo $imgClass; ?>"
+
+                                    <?php if ($enableLadyLoading) { ?>
+                                        src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>"
+                                        data-src="<?php echo $featuredImage ?>"
+                                    <?php } else { ?>
+                                        src="<?php echo $featuredImage ?>"
+                                    <?php } ?>
+
+                                     alt="<?php echo $_postName ?>"
+                                />
+                            </a>
+                        <?php } else { ?>
+                            <a title="<?php echo $_postName; ?>" href="<?php echo $_postUrl ?>">
+                                <img src="<?php /* @escapeNotVerified */
+                                echo $block->getViewFileUrl('images/post/no_image.jpg') ?>"
+                                     alt="<?php echo $_postName ?>"/>
+                            </a>
+                        <?php } ?>
+                    </div>
+
+                    <div class="info-blog">
+                        <div class="date-post-title">
+                            <div class="date-post">
+                                <?php
+                                $date_post = $_post->getPublishDate('Y-m-d');
+                                $day       = date('d', strtotime($date_post));
+                                $month     = date('M', strtotime($date_post));
+                                ?>
+                                <div class="day"><?php echo $day; ?></div>
+                                <div class="month"><?php echo $month; ?></div>
+                            </div>
+
+                            <h2 class="postTitle">
+                                <a class="post-item-link" href="<?php echo $_postUrl ?>">
+                                    <?php echo $_postName; ?>
+                                </a>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+            <?php } ?>
+        </div>
+
+        <script type="text/javascript">
+            require([
+                'jquery',
+                'owlcarousel',
+                'domReady!'
+            ], function ($) {
+                setTimeout(function () {
+                    $(".slider-post").owlCarousel({
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            480: {
+                                items: 2
+                            },
+                            768: {
+                                items: 3
+                            },
+                            991: {
+                                items: 4
+                            },
+                            1200: {
+                                items: 5
+                            }
+                        },
+
+                        autoplay: false,
+                        loop: false,
+                        nav: true,
+                        dots: false,
+                        autoplayHoverPause: true,
+                        margin: 20
+                    });
+                }, 500);
+            });
+
+        </script>
+    </div>
+<?php } ?>

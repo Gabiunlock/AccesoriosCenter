@@ -1,0 +1,101 @@
+<?php
+/**
+ * Copyright © 2015 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog post list item template
+ *
+ * @var $block \Magefan\Blog\Block\Post\AbstractPost
+ */
+?>
+<?php
+$_post         = $this->getPost();
+$_postUrl      = $_post->getPostUrl();
+$_postName     = $block->escapeHtml($_post->getTitle(), null, true);
+$featuredImage = $_post->getFeaturedImage();
+
+$_config           = $this->helper('Sm\Market\Helper\Data');
+$enableLadyLoading = $_config->getAdvanced('enable_ladyloading');
+$mediaSrc          = $_config->getMediaUrl();
+if ($enableLadyLoading) {
+    $imgClass = 'lazyload';
+} else {
+    $imgClass = '';
+}
+?>
+<li class="post-holder <?php if ($featuredImage) echo 'image-featured-post'; ?> post-holder-<?php echo $_post->getId() ?>">
+    <div class="post-content">
+        <div class="post-description clearfix">
+            <?php if ($featuredImage) { ?>
+                <div class="post-ftimg-hld static-image">
+                    <a href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
+                        <img class="<?php echo $imgClass; ?>"
+                            <?php if ($enableLadyLoading) { ?>
+                                src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>"
+                                data-src="<?php echo $featuredImage ?>"
+                            <?php } else { ?>
+                                src="<?php echo $featuredImage ?>"
+                            <?php } ?>
+
+                             alt="<?php echo $_postName ?>"
+                        />
+
+
+                    </a>
+
+                    <div class="date-post">
+                        <?php
+                        $date_post = $_post->getPublishDate('F d, Y');
+                        $day       = date('d', strtotime($date_post));
+                        $month     = date('M', strtotime($date_post));
+                        ?>
+
+                        <div class="day-post"><?php echo $day; ?></div>
+                        <div class="month-post"><?php echo $month; ?></div>
+                    </div>
+                </div>
+            <?php } ?>
+
+            <div class="post-text-hld">
+                <h2 class="post-title">
+                    <a class="post-item-link"
+                       href="<?php echo $_postUrl ?>">
+                        <?php echo $_postName; ?>
+                    </a>
+                </h2>
+
+                <?php echo $this->getInfoHtml() ?>
+
+                <?php echo $block->getShorContent() ?>
+
+                <div class="read-more-post">
+                    <a class="post-read-more" href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
+                        <?php echo __('Read more') ?>
+                    </a>
+                </div>
+
+                <div class="share-post">
+                    <div class="title-share">
+                        <?php echo __('Share This: ') ?>
+                    </div>
+
+                    <div class="addthis_toolbox addthis_default_style" addthis:url="<?php echo $_postUrl ?>">
+                        <a class="addthis_button_facebook"></a>
+                        <a class="addthis_button_twitter"></a>
+                        <a class="addthis_button_email"></a>
+                        <a class="addthis_button_compact"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="post-footer">
+
+    </div>
+</li>

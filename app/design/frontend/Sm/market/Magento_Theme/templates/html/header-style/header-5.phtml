@@ -1,0 +1,57 @@
+<div class="header-container header-style-5">
+    <div class="header-top">
+        <div class="container">
+            <div class="row row-topheader">
+                <div class="col-lg-4 col-md-4 language-currency">
+                    <?php echo $block->getChildHtml('language-header'); ?>
+                    <?php echo $block->getChildHtml('currency-header'); ?>
+                </div>
+
+                <div class="col-lg-8 col-md-8  toplinks-wrapper">
+                    <?php echo $block->getChildHtml('toplinks-header'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-4 search-box">
+                    <?php echo $block->getChildHtml('search-header-pro'); ?>
+                </div>
+
+                <div class="col-lg-2 col-md-4 logo-container">
+                    <?php echo $block->getChildHtml('logo_theme'); ?>
+                </div>
+
+                <div class="col-lg-5 col-md-4 phone-cart">
+                    <div class="minicart-header">
+                        <div class="minicart-content">
+                            <?php echo $block->getChildHtml('cart-header'); ?>
+                        </div>
+                    </div>
+
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('call-us-header')->toHtml(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slidershow-header">
+        <?php echo $block->getChildHtml('slideshow-header'); ?>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="menu-horizontal-hd5">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml(); ?>
+            </div>
+
+            <div class="navigation-mobile-container">
+                <?php echo $block->getChildHtml('navigation.mobile'); ?>
+            </div>
+        </div>
+
+    </div>
+</div>

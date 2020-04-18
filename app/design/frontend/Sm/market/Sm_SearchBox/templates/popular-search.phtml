@@ -1,0 +1,105 @@
+<?php
+/**------------------------------------------------------------------------
+ * SM Search Box - Version 2.0.0
+ * Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ * -------------------------------------------------------------------------*/
+
+if (!$this->_getConfig('isenabled', 1)) return;
+
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Sm\SearchBox\Helper\Data */
+/** @var $helperSearch \Magento\Search\Helper\Data */
+
+$helperSearch = $this->helper('Magento\Search\Helper\Data');
+$helper       = $this->helper('Sm\SearchBox\Helper\Data');
+$tag_id       = 'sm_searchbox' . rand() . time();
+$cat_list     = $this->getCategories();
+
+$show_popular  = $this->_getConfig('show_popular');
+$limit_popular = $this->_getConfig('limit_popular');
+
+$show_advanced = $this->_getConfig('show_advanced');
+
+$show_more = $this->_getConfig('show_more');
+$more_text = $this->_getConfig('more_text', 'More++');
+
+?>
+<div id="<?php echo $tag_id; ?>" class="sm-searchbox">
+    <?php
+    if ($show_popular) { ?>
+        <div class="sm-searchbox-popular">
+            <div class="sm-searchbox-popular-title"><?php echo __('Top Search:'); ?></div>
+            <div class="sm-searchbox-keyword">
+                <?php
+                if (sizeof($this->getTerms()) > 0) { ?>
+                    <ul class="sm-searchbox-keyword-list">
+                        <?php foreach ($this->getTerms() as $_term) { ?>
+                            <li>
+                                <a href="<?php echo $this->getSearchUrl($_term); ?>"><?php echo $this->escapeHtml($_term->getQueryText()); ?></a>
+                            </li>
+                        <?php } ?>
+
+                        <?php if ($show_more) { ?>
+                            <li>
+                                <a class="sm-searchbox-more" data-ajaxmore="<?php echo $this->getSearchBoxAjax(); ?>"
+                                   data-count="<?php echo $limit_popular; ?>"><?php echo $more_text; ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                <?php } else { ?>
+                    <p class="note-msg"><?php echo __(' There are no search terms available.'); ?></p>
+                <?php } ?>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if ($show_advanced) { ?>
+        <div class="sm-searchbox-advanced">
+            <a href="<?php echo $this->getSearchBoxAdvanced(); ?>"><?php echo __('Advanced ++'); ?></a>
+        </div>
+    <?php } ?>
+
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+
+        var searchbox = $('#<?php echo $tag_id;?>');
+        var firt_load = <?php echo $limit_popular;?>;
+
+        clickMore($('.sm-searchbox-more', searchbox));
+
+        function clickMore(more) {
+            more.click(function () {
+                var that = $(this);
+                var sb_ajaxurl = that.attr('data-ajaxmore');
+                var count = that.attr('data-count');
+                count = parseInt(count);
+                if (firt_load >= count) {
+                    count = count + parseInt(firt_load);
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: sb_ajaxurl,
+                    data: {
+                        is_ajax: 1,
+                        count_term: count
+                    },
+                    success: function (data) {
+                        $('.sm-searchbox-keyword', searchbox).html(data.htm);
+                        clickMore($('a.sm-searchbox-more', searchbox));
+                        $('a.sm-searchbox-more', searchbox).attr({
+                            'data-count': count + parseInt(firt_load)
+                        });
+                    },
+                    dataType: 'json'
+                });
+            });
+        }
+
+    });
+</script>

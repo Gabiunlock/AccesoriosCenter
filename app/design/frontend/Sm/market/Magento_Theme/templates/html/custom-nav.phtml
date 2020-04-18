@@ -1,0 +1,24 @@
+<?php
+$_config = $this->helper('Sm\Market\Helper\Data');
+?>
+
+<div class="sidebar-megamenu">
+    <div class="megamenu-content-sidebar">
+        <div class="btn-megamenu">
+            <a href="javascript:void(0)"
+               title="<?php echo __('All Categories') ?>"><?php echo __('All Categories') ?></a>
+        </div>
+
+        <?php if ($_config->getGeneral('menu_style') == 'megamenu') {
+            echo $block->getLayout()->createBlock('Sm\MegaMenu\Block\MegaMenu\View')->setTemplate('Sm_MegaMenu::megamenu-index.phtml')->toHtml();
+        } else { ?>
+            <div class="navigation-wrapper">
+                <?php echo $block->getLayout()->createBlock('Magento\Theme\Block\Html\Topmenu')->setTemplate('html/topmenu-index.phtml')->toHtml(); ?>
+            </div>
+        <?php } ?>
+    </div>
+</div>
+
+
+
+

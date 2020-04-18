@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * SM CartQuickPro - Version 1.0.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="catalog_product_view"/>
+    <body>
+        <referenceContainer name="header.container" remove="true"/>
+        <referenceBlock name="catalog.product.related" remove="true"/>
+        <referenceBlock name="product.info.upsell" remove="true"/>
+        <referenceBlock name="header.container" remove="true"/>
+        <referenceBlock name="footer-container" remove="true"/>
+        <referenceBlock name="page.top" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="authentication-popup" remove="true"/>
+        <referenceBlock name="product.info.details" remove="true"/>
+
+        <referenceBlock name="header.content" remove="true"/>
+        <referenceBlock name="footer.content" remove="true"/>
+        <referenceBlock name="catalog.product.related.theme" remove="true"/>
+        <referenceBlock name="product.info.upsell.theme" remove="true"/>
+        <referenceBlock name="div.sidebar" remove="true"/>
+        <referenceBlock name="div.sidebar.left" remove="true"/>
+        <referenceBlock name="div.sidebar.right" remove="true"/>
+        <referenceBlock name="social.button.detail" remove="true"/>
+        <referenceBlock name="recentlyviewed.footer" remove="true"/>
+        <referenceBlock name="pageloader" remove="true"/>
+
+    </body>
+</page>

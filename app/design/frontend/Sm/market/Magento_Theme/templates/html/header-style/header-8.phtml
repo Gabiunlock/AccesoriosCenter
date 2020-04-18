@@ -1,0 +1,87 @@
+<div class="header-container header-style-8">
+    <div class="header-top">
+        <div class="container">
+            <div class="row row-topheader">
+                <div class="col-lg-5 col-md-5 col-sm-5 language-currency-top">
+                    <?php echo $block->getChildHtml('language-header'); ?>
+                    <?php echo $block->getChildHtml('currency-header'); ?>
+                </div>
+
+                <div class="col-lg-7 col-md-7 col-sm-7 header-top-links">
+                    <?php echo $block->getChildHtml('toplinks-header'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 logo-header">
+                    <?php echo $block->getChildHtml('logo_theme'); ?>
+                </div>
+
+                <div class="col-lg-9 header-middle-right">
+                    <div class="middle-right-content">
+                        <div class="searchbox-header">
+                            <?php echo $block->getChildHtml('search-header-pro'); ?>
+                        </div>
+
+                        <div class="minicart-header">
+                            <div class="minicart-content">
+                                <?php echo $block->getChildHtml('cart-header'); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 sidebar-megamenu">
+                    <div class="megamenu-content-sidebar">
+                        <div class="btn-megamenu">
+                            <a href="javascript:void(0)"
+                               title="<?php echo __('All Categories') ?>"><?php echo __('All Categories') ?></a>
+                        </div>
+
+                        <div class="menu-ver-content">
+                            <?php
+                            if ($_config->getGeneral('menu_style') == 'megamenu') {
+                                echo $block->getChildHtml('navigation-header-megamenu');
+                            } else {
+                                echo $block->getChildHtml('navigation-header');
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="navigation-mobile-container">
+                        <?php echo $block->getChildHtml('navigation.mobile'); ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-md-9 main-megamenu">
+                    <div class="main-megamenu-container">
+                        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        $(".header-style-8 .header-top .header-top-links .toplinks-wrapper .header.links li").not(".myaccount-link").mouseover(function () {
+            $(".header-style-8 .header-top .header-top-links .toplinks-wrapper .header.links").addClass('toplinks_hover');
+        }).mouseout(function () {
+            $(".header-style-8 .header-top .header-top-links .toplinks-wrapper .header.links").removeClass('toplinks_hover');
+        });
+    });
+</script>

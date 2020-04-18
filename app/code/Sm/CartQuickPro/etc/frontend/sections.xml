@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * SM CartQuickPro - Version 1.2.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+    <action name="cartquickpro/cart/add">
+        <section name="cart"/>
+    </action>
+	 <action name="cartquickpro/cart/delete">
+        <section name="cart"/>
+    </action>
+	<action name="cartquickpro/sidebar/removeItem">
+        <section name="cart"/>
+    </action>
+	<action name="cartquickpro/sidebar/updateItemQty">
+        <section name="cart"/>
+    </action>
+	 <action name="cartquickpro/cart/updateItemOptions">
+        <section name="cart"/>
+    </action>
+	<action name="cartquickpro/product_compare/add">
+        <section name="compare-products"/>
+    </action>
+	<action name="cartquickpro/product_compare/remove">
+        <section name="compare-products"/>
+    </action>
+	<action name="cartquickpro/product_compare/clear">
+        <section name="compare-products"/>
+    </action>
+	<action name="cartquickpro/wishlist_index/add">
+        <section name="wishlist"/>
+    </action>
+    <action name="cartquickpro/wishlist_index/remove">
+        <section name="wishlist"/>
+    </action>
+    <action name="cartquickpro/wishlist_index/updateItemOptions">
+        <section name="wishlist"/>
+    </action>
+    <action name="cartquickpro/wishlist_index/update">
+        <section name="wishlist"/>
+    </action>
+    <action name="cartquickpro/wishlist_index/cart">
+        <section name="wishlist"/>
+        <section name="cart"/>
+    </action>
+    <action name="cartquickpro/wishlist_index/fromcart">
+        <section name="cart"/>
+		<section name="checkout-data"/>
+		 <section name="wishlist"/>
+    </action>
+    <action name="cartquickpro/wishlist_index/allcart">
+        <section name="wishlist"/>
+        <section name="cart"/>
+    </action>
+
+    <!-- <action name="cartquickpro/wishlist_index/allcart"> -->
+        <!-- <section name="wishlist"/> -->
+        <!-- <section name="cart"/> -->
+    <!-- </action> -->
+    <!-- <action name="wishlist/shared/cart"> -->
+        <!-- <section name="cart"/> -->
+    <!-- </action> -->
+</config>

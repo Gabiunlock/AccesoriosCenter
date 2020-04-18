@@ -1,0 +1,1159 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magentech" translate="label" sortOrder="1">
+            <label>Magentech.com</label>
+        </tab>
+        <section id="market" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>SM Market</label>
+            <tab>magentech</tab>
+            <resource>Sm_Market::config_market</resource>
+
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>General Options</label>
+
+                <field id="theme_color" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Theme Color</label>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Field\Color</frontend_model>
+                </field>
+
+                <field id="heading_bodyfont" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Body Font</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="body_font" translate="label" type="select" sortOrder="15" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Main Font</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListBodyFont</source_model>
+                </field>
+
+                <field id="body_google_font" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Google Font Name</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListGoogleFont</source_model>
+                    <depends>
+                        <field id="body_font">google_font</field>
+                    </depends>
+                </field>
+
+                <field id="font_size" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Font Size</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListFontSize</source_model>
+                </field>
+
+                <field id="body_link_color" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Link Color</label>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Field\Color</frontend_model>
+                </field>
+
+                <field id="body_link_hover_color" translate="label" type="text" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Hover Link Color</label>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Field\Color</frontend_model>
+                </field>
+
+                <field id="body_text_color" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Field\Color</frontend_model>
+                </field>
+
+                <field id="body_background_color" translate="label" type="text" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Field\Color</frontend_model>
+                </field>
+
+                <field id="use_background_image" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Use Background Image</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="body_background_image" translate="label" type="select" sortOrder="55" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Image Pattern</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListBgImage</source_model>
+                    <depends>
+                        <field id="use_background_image">1</field>
+                        <field id="use_customize_image">0</field>
+                    </depends>
+                </field>
+
+                <field id="use_customize_image" translate="label" type="select" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Use Customize Background Image</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="use_background_image">1</field>
+                    </depends>
+                </field>
+
+                <field id="background_customize_image" translate="label" type="image" sortOrder="65" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Customize Background Image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">pattern</upload_dir>
+                    <base_url type="media" scope_info="1">pattern</base_url>
+                    <depends>
+                        <field id="use_background_image">1</field>
+                        <field id="use_customize_image">1</field>
+                    </depends>
+                </field>
+
+                <field id="background_repeat" translate="label" type="select" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Repeat</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListBgRepeat</source_model>
+                    <depends>
+                        <field id="use_background_image">1</field>
+                        <!-- <field id="use_customize_image">1</field> -->
+                    </depends>
+                </field>
+
+                <field id="background_position" translate="label" type="select" sortOrder="75" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Background Position</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListBgPosition</source_model>
+                    <depends>
+                        <field id="use_background_image">1</field>
+                        <!-- <field id="use_customize_image">1</field> -->
+                    </depends>
+                </field>
+
+                <field id="heading_element_googlefont" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Element Google Font</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="element_google_font" translate="label" type="select" sortOrder="85" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Google Font Target</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListGoogleFont</source_model>
+                </field>
+
+                <field id="google_font_targets" translate="label" type="textarea" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Google Font Elements</label>
+                </field>
+
+                <field id="heading_menu_style" translate="label" type="text" sortOrder="95" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Menu</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="menu_style" translate="label" type="select" sortOrder="100" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Menu Style</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListMenuStyles</source_model>
+                </field>
+
+                <field id="menu_ontop" translate="label" type="select" sortOrder="105" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Menu on Top</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="responsive_menu" translate="label" type="select" sortOrder="110" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Mobile Menu Type</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListResMenuStyles</source_model>
+                </field>
+
+                <field id="heading_mobile_style" translate="label" type="text" sortOrder="115" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Mobile Layout</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="home_page_mobile" translate="label" type="select" sortOrder="130" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>CMS Home Page Mobile</label>
+                    <source_model>Magento\Cms\Model\Config\Source\Page</source_model>
+                </field>
+
+                <field id="logo_mobile" translate="label" type="image" sortOrder="135" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Logo Mobile</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">logomobile</upload_dir>
+                    <base_url type="media" scope_info="1">logomobile</base_url>
+                </field>
+
+                <field id="logomobile_width" translate="label" type="text" sortOrder="140" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Logo Mobile Width</label>
+                    <comment>Example: 100</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number</validate>
+                </field>
+
+                <field id="logomobile_height" translate="label" type="text" sortOrder="145" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Logo Mobile Height</label>
+                    <comment>Example: 35</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number</validate>
+                </field>
+            </group>
+
+            <group id="theme_layout" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Theme Layout</label>
+
+                <field id="layout_style" translate="label" type="select" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Layout Style</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListLayoutStyles</source_model>
+                </field>
+
+                <field id="max_width" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Max Width</label>
+
+                    <comment>Unit(px), range 1170-1280. Example: 1170</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number validate-digits-range
+                        digits-range-1170-1280
+                    </validate>
+                </field>
+
+                <field id="home_style" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Home Style</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListHomeStyles</source_model>
+                </field>
+
+                <field id="header_style" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Header Style</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListHeaderStyles</source_model>
+                </field>
+
+                <field id="footer_style" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Footer Style</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListFooterStyles</source_model>
+                </field>
+
+                <field id="product_style" translate="label" type="select" sortOrder="23" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Product Style</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListProductStyles</source_model>
+                </field>
+
+                <field id="device_responsive" translate="label" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Responsive Layout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="direction_rtl" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Right To Left Layout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+            </group>
+
+            <group id="product_listing" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Product Listing</label>
+
+                <field id="one_column_heading" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Layout 1 Column</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="onecolumn_device_1200" translate="label" type="select" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than or equal to 1200px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="onecolumn_device_992" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 992px or equal to 1199px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="onecolumn_device_768" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 768px or equal to 991px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="onecolumn_device_481" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 481px or equal to 767px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="onecolumn_device_less_481" translate="label" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is less than 480px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <!-- 2 COLUMNS-->
+
+                <field id="two_column_heading" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Layout 2 Columns</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="twocolumn_device_1200" translate="label" type="select" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than or equal to 1200px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="twocolumn_device_992" translate="label" type="select" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 992px or equal to 1199px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="twocolumn_device_768" translate="label" type="select" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 768px or equal to 991px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="twocolumn_device_481" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 481px or equal to 767px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="twocolumn_device_less_481" translate="label" type="select" sortOrder="55" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is less than 480px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <!-- 3 COLUMNS-->
+
+                <field id="three_column_heading" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Layout 3 Columns</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="threecolumn_device_1200" translate="label" type="select" sortOrder="65" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than or equal to 1200px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="threecolumn_device_992" translate="label" type="select" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 992px or equal to 1199px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="threecolumn_device_768" translate="label" type="select" sortOrder="75" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 768px or equal to 991px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="threecolumn_device_481" translate="label" type="select" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is greater than 481px or equal to 767px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+                <field id="threecolumn_device_less_481" translate="label" type="select" sortOrder="85" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Device's screen is less than 480px</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListColumns</source_model>
+                </field>
+
+            </group>
+
+            <group id="product_detail" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Product Detail</label>
+
+                <field id="image_box" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Image Box</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="thumbs_style" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Thumbs Styles</label>
+                    <source_model>Sm\Market\Model\Config\Source\ListThumbs</source_model>
+                </field>
+
+                <field id="image_loop" translate="label" type="select" sortOrder="17" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Loop</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="image_keyboard" translate="label" type="select" sortOrder="19" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Keyboard Trigger</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="image_navigation" translate="label" type="select" sortOrder="21" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Navigation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="image_fullscreen" translate="label" type="select" sortOrder="23" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Popup Fullscreen</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="thumbs_width" translate="label" type="text" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Thumbs Width</label>
+                    <depends>
+                        <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                    </depends>
+                    <comment>Unit(px), range 50-150 . Example: 100</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number validate-digits-range
+                        digits-range-50-150
+                    </validate>
+                </field>
+
+                <field id="thumbs_height" translate="label" type="text" sortOrder="27" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Thumbs Height</label>
+                    <depends>
+                        <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                    </depends>
+                    <comment>Unit(px), range 50-150 . Example: 100</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number validate-digits-range
+                        digits-range-50-150
+                    </validate>
+                </field>
+
+                <field id="thumbs_navigation" translate="label" type="select" sortOrder="29" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Thumbs Navigation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                    </depends>
+                </field>
+
+                <field id="thumbs_margin" translate="label" type="text" sortOrder="31" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Thumbs Margin</label>
+                    <depends>
+                        <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                    </depends>
+                    <comment>Unit(px), range 1-30 . Example: 10</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number validate-digits-range
+                        digits-range-1-30
+                    </validate>
+                </field>
+
+                <field id="thumbs_borderwidth" translate="label" type="text" sortOrder="33" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Thumbs Border Active Width</label>
+                    <depends>
+                        <field id="thumbs_style" separator=",">horizontal,vertical</field>
+                    </depends>
+                    <comment>Unit(px), range 1-5 . Example: 1</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number validate-digits-range
+                        digits-range-1-5
+                    </validate>
+                </field>
+
+                <field id="breakpoints_width" translate="label" type="text" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Breakpoints</label>
+                    <comment>Unit(px), range 768-1366 . Example: 1200</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number validate-digits-range
+                        digits-range-768-1366
+                    </validate>
+                </field>
+
+                <field id="image_zoom_heading" translate="label" type="text" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Image Zoom</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="use_zoom_image" translate="label" type="select" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Product Image Zoom</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="zoom_width" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Zoom Width Container</label>
+                    <depends>
+                        <field id="use_zoom_image">1</field>
+                    </depends>
+                    <comment>Unit(px), range 200-600 . Example: 400</comment>
+                    <validate>validate-greater-than-zero integer required-entry validate-number validate-digits-range
+                        digits-range-200-600
+                    </validate>
+                </field>
+
+                <field id="social_button" translate="label" type="text" sortOrder="57" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Social Buttons</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_social_button" translate="label" type="select" sortOrder="58" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Social Buttons</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="related_upsell_heading" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Related - Upsell Product</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_related" translate="label" type="select" sortOrder="65" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Related Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="related_limit" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Related Product Limitation</label>
+                    <depends>
+                        <field id="show_related">1</field>
+                    </depends>
+                </field>
+
+                <field id="show_upsell" translate="label" type="select" sortOrder="75" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Upsell Product</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="upsell_limit" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Upsell Product Limitation</label>
+                    <depends>
+                        <field id="show_upsell">1</field>
+                    </depends>
+                </field>
+
+                <field id="tab_heading" translate="label" type="text" sortOrder="85" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Tab</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="tab_style" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Tab Style</label>
+                    <source_model>Sm\Market\Model\Config\Source\TabStyles</source_model>
+                </field>
+
+                <field id="custom_tab_heading" translate="label" type="text" sortOrder="95" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Tab</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_custom_tab" translate="label" type="select" sortOrder="100" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Custom Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="custom_tab_name" translate="label" type="text" sortOrder="105" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Tab Name</label>
+                    <depends>
+                        <field id="show_custom_tab">1</field>
+                    </depends>
+                </field>
+
+                <field id="customtab_content" translate="label" type="textarea" sortOrder="110" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Tab Content</label>
+                    <depends>
+                        <field id="show_custom_tab">1</field>
+                    </depends>
+                </field>
+
+            </group>
+
+            <group id="socials" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Socials</label>
+
+                <!--FACEBOOK-->
+
+                <field id="facebook_heading" translate="label" type="text" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Facebook</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_facebook" translate="label" type="select" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Facebook</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="facebook_name" translate="label" type="text" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Facebook Name</label>
+                    <depends>
+                        <field id="show_facebook">1</field>
+                    </depends>
+                </field>
+
+                <field id="facebook_url" translate="label" type="text" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Facebook Url</label>
+                    <depends>
+                        <field id="show_facebook">1</field>
+                    </depends>
+                </field>
+
+                <!--Twitter-->
+
+                <field id="twitter_heading" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Twitter</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_twitter" translate="label" type="select" sortOrder="25" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Twitter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="twitter_name" translate="label" type="text" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Twitter Name</label>
+                    <depends>
+                        <field id="show_twitter">1</field>
+                    </depends>
+                </field>
+
+                <field id="twitter_url" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Twitter Url</label>
+                    <depends>
+                        <field id="show_twitter">1</field>
+                    </depends>
+                </field>
+
+                <!--GOOGLE PLUS-->
+
+                <field id="google_heading" translate="label" type="text" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Google+</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_google" translate="label" type="select" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Google+</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="google_name" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Google+ Name</label>
+                    <depends>
+                        <field id="show_google">1</field>
+                    </depends>
+                </field>
+
+                <field id="google_url" translate="label" type="text" sortOrder="55" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Google+ Url</label>
+                    <depends>
+                        <field id="show_google">1</field>
+                    </depends>
+                </field>
+
+                <!--LINKEDIN-->
+
+                <field id="linkedin_heading" translate="label" type="text" sortOrder="60" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Linkedin</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_linkedin" translate="label" type="select" sortOrder="65" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Linkedin</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="linkedin_name" translate="label" type="text" sortOrder="70" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Linkedin Name</label>
+                    <depends>
+                        <field id="show_linkedin">1</field>
+                    </depends>
+                </field>
+
+                <field id="linkedin_url" translate="label" type="text" sortOrder="75" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Linkedin Url</label>
+                    <depends>
+                        <field id="show_linkedin">1</field>
+                    </depends>
+                </field>
+
+                <!--PINTEREST-->
+
+                <field id="pinterest_heading" translate="label" type="text" sortOrder="80" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Pinterest</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_pinterest" translate="label" type="select" sortOrder="85" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Pinterest</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="pinterest_name" translate="label" type="text" sortOrder="90" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Pinterest Name</label>
+                    <depends>
+                        <field id="show_pinterest">1</field>
+                    </depends>
+                </field>
+
+                <field id="pinterest_url" translate="label" type="text" sortOrder="95" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Linkedin Url</label>
+                    <depends>
+                        <field id="show_pinterest">1</field>
+                    </depends>
+                </field>
+
+                <!--Youtube-->
+
+                <field id="youtube_heading" translate="label" type="text" sortOrder="100" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Youtube</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_youtube" translate="label" type="select" sortOrder="105" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Youtube</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="youtube_name" translate="label" type="text" sortOrder="110" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Youtube Name</label>
+                    <depends>
+                        <field id="show_youtube">1</field>
+                    </depends>
+                </field>
+
+                <field id="youtube_url" translate="label" type="text" sortOrder="115" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Youtube Url</label>
+                    <depends>
+                        <field id="show_youtube">1</field>
+                    </depends>
+                </field>
+
+                <!--Instagram-->
+
+                <field id="instagram_heading" translate="label" type="text" sortOrder="120" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Instagram</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="show_instagram" translate="label" type="select" sortOrder="125" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Instagram</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="instagram_name" translate="label" type="text" sortOrder="130" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Instagram Name</label>
+                    <depends>
+                        <field id="show_instagram">1</field>
+                    </depends>
+                </field>
+
+                <field id="instagram_url" translate="label" type="text" sortOrder="135" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Instagram Url</label>
+                    <depends>
+                        <field id="show_instagram">1</field>
+                    </depends>
+                </field>
+
+            </group>
+
+            <group id="advanced" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Advanced</label>
+
+                <field id="compile_less" translate="label" type="select" sortOrder="1" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Compile Less</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_gototop" translate="label" type="select" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Go to Top</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_addtocart_button" translate="label" type="select" sortOrder="10" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Add to Cart</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_wishlist_button" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Add to Wishlist</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_compare_button" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Add to Compare</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_newlabel" translate="label" type="select" sortOrder="22" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show New Label</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_salelabel" translate="label" type="select" sortOrder="23" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Sale Label</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_newsletter_popup" translate="label" type="select" sortOrder="24" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Show Newsletter Popup</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="enable_ladyloading" translate="label" type="select" sortOrder="32" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Lazy loading</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="custom_copyright" translate="label" type="select" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Enable Custom Copyright</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="copyright_content" translate="label" type="textarea" sortOrder="40" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Copyright</label>
+                    <depends>
+                        <field id="custom_copyright">1</field>
+                    </depends>
+                </field>
+
+                <field id="developer_advance_heading" translate="label" type="text" sortOrder="45" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Developer</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="custom_css" translate="label" type="textarea" sortOrder="50" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Css</label>
+                </field>
+
+                <field id="custom_js" translate="label" type="textarea" sortOrder="55" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Custom Javascript</label>
+                </field>
+            </group>
+
+            <group id="theme_install" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Theme Installation</label>
+
+                <field id="import_blocks_heading" translate="label" type="text" sortOrder="5" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Import Static Blocks</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="import_blocks" translate="button_label" sortOrder="10" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Static Blocks</button_label>
+                    <attribute type="action_url">market_admin/system_config_cms/import</attribute>
+                    <attribute type="import_type">blocks</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Cms</frontend_model>
+                    <comment>
+                        <![CDATA[Click this button to create all static blocks provided with this theme.]]></comment>
+                </field>
+
+                <field id="overwrite_blocks" translate="label" type="select" sortOrder="15" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Overwrite Existing Blocks</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", imported blocks will overwrite existing blocks with the same identifiers
+                        (if any blocks with the same identifiers already exist). To change value of this field, save the
+                        configuration (without saving, the option will remain unchanged after you refresh the page).
+                    </comment>
+                </field>
+
+                <field id="import_pages_heading" translate="label" type="text" sortOrder="20" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Import Pages</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+
+                <field id="import_pages" translate="button_label" sortOrder="25" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Pages</button_label>
+                    <attribute type="action_url">market_admin/system_config_cms/import</attribute>
+                    <attribute type="import_type">pages</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Cms</frontend_model>
+                    <comment><![CDATA[Click this button to create CMS pages provided with this theme.]]></comment>
+                </field>
+
+                <field id="overwrite_pages" translate="label" type="select" sortOrder="30" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Overwrite Existing Pages</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>If set to "Yes", imported pages will overwrite existing pages with the same identifiers (if
+                        any pages with the same identifiers already exist). To change value of this field, save the
+                        configuration (without saving, the option will remain unchanged after you refresh the page).
+                    </comment>
+                </field>
+
+                <field id="import_demo_heading" translate="label comment" sortOrder="35" showInDefault="1"
+                       showInWebsite="1" showInStore="1">
+                    <label>Import Demo</label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+                <field id="import_demo1" translate="button_label" sortOrder="40" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 1</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo1</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo2" translate="button_label" sortOrder="45" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 2</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo2</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo3" translate="button_label" sortOrder="50" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 3</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo3</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo4" translate="button_label" sortOrder="55" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 4</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo4</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo5" translate="button_label" sortOrder="60" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 5</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo5</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo6" translate="button_label" sortOrder="65" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 6</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo6</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo7" translate="button_label" sortOrder="70" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 7</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo7</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo8" translate="button_label" sortOrder="75" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 8</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo8</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo9" translate="button_label" sortOrder="80" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 9</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo9</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo10" translate="button_label" sortOrder="85" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 10</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo10</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo11" translate="button_label" sortOrder="90" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 11</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo11</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+                <field id="import_demo12" translate="button_label" sortOrder="95" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 12</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo12</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo13" translate="button_label" sortOrder="100" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 13</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo13</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo14" translate="button_label" sortOrder="105" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 14</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo14</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo15" translate="button_label" sortOrder="110" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 15</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo15</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo16" translate="button_label" sortOrder="115" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 16</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo16</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo17" translate="button_label" sortOrder="120" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 17</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo17</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo18" translate="button_label" sortOrder="125" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 18</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo18</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo19" translate="button_label" sortOrder="130" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 19</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo19</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo20" translate="button_label" sortOrder="135" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 20</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo20</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo21" translate="button_label" sortOrder="140" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 21</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo21</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo22" translate="button_label" sortOrder="145" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 22</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo22</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+                <field id="import_demo23" translate="button_label" sortOrder="150" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <button_label>Demo 23</button_label>
+                    <attribute type="action_url">market_admin/system_config_demo/import</attribute>
+                    <attribute type="demo_version">demo23</attribute>
+                    <frontend_model>Sm\Market\Block\System\Config\Form\Button\Import\Demo</frontend_model>
+                </field>
+
+            </group>
+
+            <group id="product_information" translate="label" type="text" sortOrder="700" showInDefault="1"
+                   showInWebsite="1" showInStore="1">
+                <label>Product Information</label>
+                <field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
+											<p>Vesion: 5.5.1</p>
+											<p>Userguide: <a target="_blank" title="Usergide" href="http://www.magentech.com/documentation/sm-market-magento-2-1-0/">Userguide</a></p>
+											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">http://www.magentech.com/forum</a></p>
+								]]></label>
+                    <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

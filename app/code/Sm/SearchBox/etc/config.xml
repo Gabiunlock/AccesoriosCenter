@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<searchbox>
+			<general>
+				<isenabled>1</isenabled>
+				<root_catalog></root_catalog>
+				<max_level>3</max_level>
+				<show_popular>1</show_popular>
+				<limit_popular>5</limit_popular>
+				<show_more>1</show_more>
+				<more_text>More++</more_text>
+				<show_advanced>1</show_advanced>
+				<pretext>Pretext</pretext>
+				<posttext>Posttext</posttext>
+			</general>
+		</searchbox>
+	</default>
+</config>

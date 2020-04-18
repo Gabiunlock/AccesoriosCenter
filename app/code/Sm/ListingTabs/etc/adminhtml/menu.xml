@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Sm. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+		<add id="Sm_ListingTabs::ListingTabs" title="SM Listing Tabs" module="Sm_ListingTabs" action="adminhtml/system_config/edit/section/listingtabs/" sortOrder="60" parent="Sm_BackEnd::Magentech" resource="Sm_ListingTabs::ListingTabs"/>
+        <!--AddMenu-->
+    </menu>
+</config>

@@ -1,0 +1,390 @@
+button.back-form:hover
+{
+	background-color: #a09a8c !important;
+	border-color: #a09a8c !important;
+	box-shadow: 0 0 0 1px #a09a8c !important;
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+button.reset-form:hover
+{
+	background-color: #007bdb !important;
+	border-color: #007bdb !important;
+	box-shadow: 0 0 0 1px #007bdb !important;
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+button.save-form:hover
+{
+	background-color: #00aa00 !important;
+	border-color: #00aa00 !important;
+	box-shadow: 0 0 0 1px #00aa00 !important;
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+button.primary:hover
+{
+	box-shadow: 0 0 0 1px #ba4000 !important;
+}
+
+button.add-new-items:hover
+{
+	background-color: #eb9316 !important;
+	border-color: #eb9316 !important;
+	box-shadow: 0 0 0 1px #eb9316 !important;
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+button.duplicate-items:hover
+{
+	background-color: #800080 !important;
+	border-color: #800080 !important;
+	box-shadow: 0 0 0 1px #800080 !important;
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+button.delete-items:hover
+{
+	background-color: #FF0000 !important;
+	border-color: #FF0000 !important;
+	box-shadow: 0 0 0 1px #FF0000 !important;
+	color: #fff !important;
+	text-decoration: none !important;
+}
+
+button.action-add-image
+{
+	margin: 15px 0 5px;
+}
+
+.fieldset.no-spacing {
+	border: 0;
+	padding: 0;
+	background: none;
+}
+
+/*.box, .entry-edit fieldset, .entry-edit .fieldset {*/
+	/*margin-bottom: 15px;*/
+	/*padding: 10px;*/
+/*}*/
+
+/*.form-list td.label label*/
+/*{*/
+	/*display: block;*/
+	/*padding-right: 15px;*/
+	/*padding-top: 1px;*/
+	/*width: 95px;*/
+/*}*/
+
+/*#megamenu_left_fieldset*/
+/*{*/
+	/*width: 48%;*/
+	/*float: left;*/
+/*}*/
+
+/*#megamenu_right_fieldset*/
+/*{*/
+	/*width: 51%;*/
+	/*margin-left: 1%;*/
+	/*float: left;*/
+/*}*/
+
+#nestable-menu
+{
+	padding: 0;
+	margin: 20px 0;
+}
+
+.nestable-lists
+{
+	display: block;
+	clear: both;
+	padding: 30px 0;
+	width: 100%;
+	border: 0;
+	border-top: 2px solid #ddd;
+	border-bottom: 2px solid #ddd;
+}
+
+.cf:after
+{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+* html .cf
+{
+	zoom: 1;
+}
+
+*:first-child+html .cf
+{
+	zoom: 1;
+}
+
+.dd
+{
+	position: relative;
+	display: block;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	list-style: none;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.dd-list
+{
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.dd-list .dd-list
+{
+	padding-left: 30px;
+}
+
+.dd-collapsed .dd-list
+{
+	display: none;
+}
+
+.dd-item,
+.dd-empty,
+.dd-placeholder
+{
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	min-height: 20px;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.dd-handle
+{
+	display: block;
+	height: 30px;
+	margin: 5px 0;
+	padding: 5px 10px;
+	color: #333;
+	text-decoration: none;
+	font-weight: bold;
+	/*border: 1px solid #ccc;*/
+	background: #fafafa;
+	background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
+	background: -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+	background: linear-gradient(top, #fafafa 0%, #eee 100%);
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.dd-handle:hover
+{
+	color: #2ea8e5;
+	background: #fff;
+}
+
+.dd-item > button
+{
+	display: block;
+	position: relative;
+	cursor: pointer;
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin: 5px 0;
+	padding: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	border: 0;
+	color: #000000;
+	background: transparent;
+	font-size: 12px;
+	line-height: 1;
+	text-align: center;
+	font-weight: bold;
+}
+
+.dd-item > button:before
+{
+	content: '+';
+	display: block;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	text-indent: 0;
+}
+
+.dd-item > button[data-action="collapse"]:before
+{
+	content: '-';
+}
+
+.dd-placeholder,
+.dd-empty
+{
+	margin: 5px 0;
+	padding: 0;
+	min-height: 30px;
+	background: #f2fbff;
+	border: 1px dashed #b6bcbf;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+.dd-empty
+{
+	border: 1px dashed #bbb;
+	min-height: 100px;
+	background-color: #e5e5e5;
+	background-image: -webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+	-webkit-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+	background-image: -moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+	-moz-linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+	background-image: linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff),
+	linear-gradient(45deg, #fff 25%, transparent 25%, transparent 75%, #fff 75%, #fff);
+	background-size: 60px 60px;
+	background-position: 0 0, 30px 30px;
+}
+
+.dd-dragel
+{
+	position: absolute;
+	pointer-events: none;
+	z-index: 9999;
+}
+
+.dd-dragel > .dd-item .dd-handle
+{
+	margin-top: 0;
+}
+
+.dd-dragel .dd-handle
+{
+	-webkit-box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, .1);
+	box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, .1);
+}
+
+.dd-hover > .dd-handle
+{
+	background: #2ea8e5 !important;
+}
+
+.action_sortable
+{
+	float: right;
+	z-index: 9;
+	position: relative;
+	display: inline-block;
+	margin-top: -30px;
+}
+
+
+.disabled_items
+{
+	background: #8eb0bc;
+	color: #FFFFFF;
+}
+
+button.disabled_action
+{
+	background: #339933;
+	border: 1px solid #339933;
+	line-height: 1.35em;
+	padding: 1px 7px 2px 7px;
+	margin: 0 2px;
+	text-decoration: none;
+}
+
+button.disabled_action:hover
+{
+	background: #00ff00;
+	border: 1px solid #00ff00;
+	/*line-height: 1.35em;*/
+	/*padding: 1px 7px 2px 7px;*/
+	/*margin: 0 2px;*/
+	/*text-decoration: none;*/
+}
+
+.disabled_action
+{
+	color: #FFFFFF;
+}
+
+.action_sortable_duplicate, .action_sortable_edit, .action_sortable_delete, .action_sortable_changestatus
+{
+	line-height: 1.35em;
+	padding: 1px 7px 2px 7px;
+	margin: 0 2px;
+	text-decoration: none;
+	border: 1px solid #f77c16;
+}
+.action_sortable_duplicate:hover, .action_sortable_edit:hover, .action_sortable_delete:hover, .action_sortable_changestatus:hover
+{
+	border: 1px solid #f77312;
+}
+
+.side-col h3
+{
+	color: #eb5e00;
+}
+
+.renderer-input
+{
+	background-color: #fff;
+	/*border:1px solid;*/
+	border-color: #aaa #c8c8c8 #c8c8c8 #aaa;
+	float: left;
+	width: 100%;
+	height: 33px;
+	padding-left:4px;
+	margin-right:3px;
+	overflow:hidden;
+}
+
+div[id^="menuitems_box_product_"], div[id^="menuitems_box_category_"],
+div[id^="menuitems_box_page_"], div[id^="menuitems_box_block_"]
+{
+	margin-top: -10px;
+}
+
+#menuitems_tabs_menuitems_tabs_content i
+{
+	margin-right: 10px;
+}
+
+#page_tabs i, .content-header i, .side-col i, #nestable-menu i, .entry-edit .entry-edit-head i{
+	/*margin-right: 5px;*/
+	width: 20px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.value_sortable
+{
+	width: 48% !important;
+}
+
+.sortable_add, .sortable_update, .sortable_expand_all, .sortable_collapse_all, .changestatus
+{
+	line-height: 1.35em;
+	background-position: 0 50%;
+}

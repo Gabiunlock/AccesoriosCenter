@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Sm Categories</title>
+        <css src="Sm_Categories::css/categories.css" media="all"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Sm\Categories\Block\Categories" name="categories" as="categories"
+                   template="Sm_Categories::default.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

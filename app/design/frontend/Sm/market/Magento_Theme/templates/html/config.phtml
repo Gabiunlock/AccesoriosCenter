@@ -1,0 +1,322 @@
+<?php
+
+$_config           = $this->helper('Sm\Market\Helper\Data');
+$compile_less      = $_config->getAdvanced('compile_less');
+$enableLadyLoading = $_config->getAdvanced('enable_ladyloading');
+$url_static        = $_config->getUrlStatic();
+$store_id          = $_config->getStoreId();
+$store_code        = $_config->getStoreCode();
+$locale            = $_config->getLocale();
+$config_href       = $url_static . 'frontend/Sm/market/' . $locale . '/css/config_' . $store_code . '.css';
+
+if ($compile_less) {
+    echo $this->getLayout()->createBlock("Magento\Theme\Block\Html\Header")->setTemplate("Magento_Theme::html/compile_less.phtml")->toHtml();
+}
+?>
+
+<?php
+$main_font                = $_config->getGeneral('body_font');
+$main_google_font         = $_config->getGeneral('body_google_font');
+$google_font_element      = $_config->getGeneral('google_font_targets');
+$element_google_font_name = $_config->getGeneral('element_google_font');
+?>
+
+<?php if ($main_font == 'google_font') { ?>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=<?php echo $main_google_font; ?>"/>
+<?php } ?>
+<?php if ($google_font_element != '') { ?>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=<?php echo $element_google_font_name; ?>"/>
+<?php } ?>
+<link rel="stylesheet" href="<?php echo $config_href; ?>"/>
+
+<!--CUSTOM CSS-->
+<style>
+    <?php echo $_config->getAdvanced('custom_css');?>
+</style>
+
+<script>
+    require([
+        'jquery',
+        'jquerypopper',
+        'jquerybootstrap',
+        'jqueryunveil',
+        'yttheme',
+        'domReady!'
+    ], function ($, Popper) {
+        <?php if($enableLadyLoading){ ?>
+        function _runLazyLoad() {
+            $("img.lazyload").unveil(0, function () {
+                $(this).load(function () {
+                    this.classList.remove("lazyload");
+                });
+            });
+        }
+
+        _runLazyLoad();
+        $(document).on("afterAjaxLazyLoad", function (event) {
+            _runLazyLoad();
+        });
+
+        <?php } ?>
+    });
+</script>
+
+
+<!--CUSTOM JS-->
+<?php echo $_config->getAdvanced('custom_js'); ?>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'domReady!'
+    ], function ($) {
+        if ($('.breadcrumbs').length == 0) {
+            $('body').addClass("no-breadcrumbs");
+        }
+    });
+
+</script>
+
+<!--LISTING CONFIG-->
+<style>
+
+    <?php echo $google_font_element ?>
+    {
+        font-family:
+    <?php $namegooglefont_element = explode(":",str_replace("+", " ", $element_google_font_name));
+            echo $namegooglefont_element[0];
+        ?>
+    ;
+    }
+
+    @media (min-width: 1200px) {
+
+        .container {
+            width: <?php echo $_config->getThemeLayout('max_width') . 'px'; ?>;
+            max-width: <?php echo $_config->getThemeLayout('max_width') . 'px'; ?>;
+        }
+
+        /*==1 COLUMN==*/
+    <?php
+        $one_col_device_1200 = $_config->getProductListing('onecolumn_device_1200');
+        $one_class_device_1200 = 100 / $one_col_device_1200 . '%';
+    ?>
+
+        .col1-layout .category-product.products-grid .item {
+            width: <?php echo $one_class_device_1200; ?>;
+        }
+
+        .col1-layout .category-product.products-grid .item:nth-child(<?php echo $one_col_device_1200;?>n+1) {
+            clear: both;
+        }
+
+        /*==2 COLUMNS==*/
+    <?php
+        $two_col_device_1200 = $_config->getProductListing('twocolumn_device_1200');
+        $two_class_device_1200 = 100 / $two_col_device_1200 . '%';
+    ?>
+
+        .col2-layout .category-product.products-grid .item {
+            width: <?php echo $two_class_device_1200; ?>;
+        }
+
+        .col2-layout .category-product.products-grid .item:nth-child(<?php echo $two_col_device_1200;?>n+1) {
+            clear: both;
+        }
+
+        /*==3 COLUMNS==*/
+    <?php
+        $three_col_device_1200 = $_config->getProductListing('threecolumn_device_1200');
+        $three_class_device_1200 = 100 / $three_col_device_1200 . '%';
+    ?>
+
+        .col3-layout .category-product.products-grid .item {
+            width: <?php echo $three_class_device_1200; ?>;
+        }
+
+        .col3-layout .category-product.products-grid .item:nth-child(<?php echo $three_col_device_1200;?>n+1) {
+            clear: both;
+        }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+
+        /*==1 COLUMN==*/
+    <?php
+        $one_col_device_992 = $_config->getProductListing('onecolumn_device_992');
+        $one_class_device_992 = 100 / $one_col_device_992 . '%';
+    ?>
+
+        .col1-layout .category-product.products-grid .item {
+            width: <?php echo $one_class_device_992; ?>;
+        }
+
+        .col1-layout .category-product.products-grid .item:nth-child(<?php echo $one_col_device_992;?>n+1) {
+            clear: both;
+        }
+
+        /*==2 COLUMNS==*/
+    <?php
+        $two_col_device_992 = $_config->getProductListing('twocolumn_device_992');
+        $two_class_device_992 = 100 / $two_col_device_992 . '%';
+    ?>
+
+        .col2-layout .category-product.products-grid .item {
+            width: <?php echo $two_class_device_992; ?>;
+        }
+
+        .col2-layout .category-product.products-grid .item:nth-child(<?php echo $two_col_device_992;?>n+1) {
+            clear: both;
+        }
+
+        /*==3 COLUMNS==*/
+    <?php
+        $three_col_device_992 = $_config->getProductListing('threecolumn_device_992');
+        $three_class_device_992 = 100 / $three_col_device_992 . '%';
+    ?>
+
+        .col3-layout .category-product.products-grid .item {
+            width: <?php echo $three_class_device_992; ?>;
+        }
+
+        .col3-layout .category-product.products-grid .item:nth-child(<?php echo $three_col_device_992;?>n+1) {
+            clear: both;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+
+        /*==1 COLUMN==*/
+    <?php
+        $one_col_device_768 = $_config->getProductListing('onecolumn_device_768');
+        $one_class_device_768 = 100 / $one_col_device_768 . '%';
+    ?>
+
+        .col1-layout .category-product.products-grid .item {
+            width: <?php echo $one_class_device_768; ?>;
+        }
+
+        .col1-layout .category-product.products-grid .item:nth-child(<?php echo $one_col_device_768;?>n+1) {
+            clear: both;
+        }
+
+        /*==2 COLUMNS==*/
+    <?php
+        $two_col_device_768 = $_config->getProductListing('twocolumn_device_768');
+        $two_class_device_768 = 100 / $two_col_device_768 . '%';
+    ?>
+
+        .col2-layout .category-product.products-grid .item {
+            width: <?php echo $two_class_device_768; ?>;
+        }
+
+        .col2-layout .category-product.products-grid .item:nth-child(<?php echo $two_col_device_768;?>n+1) {
+            clear: both;
+        }
+
+        /*==3 COLUMNS==*/
+    <?php
+    $three_col_device_768 = $_config->getProductListing('threecolumn_device_768');
+    $three_class_device_768 = 100 / $three_col_device_768 . '%';
+    ?>
+
+        .col3-layout .category-product.products-grid .item {
+            width: <?php echo $three_class_device_768; ?>;
+        }
+
+        .col3-layout .category-product.products-grid .item:nth-child(<?php echo $three_col_device_768;?>n+1) {
+            clear: both;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+
+        /*==1 COLUMN==*/
+    <?php
+        $one_col_device_481 = $_config->getProductListing('onecolumn_device_481');
+        $one_class_device_481 = 100 / $one_col_device_481 . '%';
+    ?>
+
+        .col1-layout .category-product.products-grid .item {
+            width: <?php echo $one_class_device_481; ?>;
+        }
+
+        .col1-layout .category-product.products-grid .item:nth-child(<?php echo $one_col_device_481;?>n+1) {
+            clear: both;
+        }
+
+        /*==2 COLUMNS==*/
+    <?php
+    $two_col_device_481 = $_config->getProductListing('twocolumn_device_481');
+    $two_class_device_481 = 100 / $two_col_device_481 . '%';
+    ?>
+
+        .col2-layout .category-product.products-grid .item {
+            width: <?php echo $two_class_device_481; ?>;
+        }
+
+        .col2-layout .category-product.products-grid .item:nth-child(<?php echo $two_col_device_481;?>n+1) {
+            clear: both;
+        }
+
+        /*==3 COLUMNS==*/
+    <?php
+        $three_col_device_481 = $_config->getProductListing('threecolumn_device_481');
+        $three_class_device_481 = 100 / $three_col_device_481 . '%';
+    ?>
+
+        .col3-layout .category-product.products-grid .item {
+            width: <?php echo $three_class_device_481; ?>;
+        }
+
+        .col3-layout .category-product.products-grid .item:nth-child(<?php echo $three_col_device_481;?>n+1) {
+            clear: both;
+        }
+    }
+
+    @media (max-width: 480px) {
+
+        /*==1 COLUMN==*/
+    <?php
+        $one_col_device_less_481 = $_config->getProductListing('onecolumn_device_less_481');
+        $one_class_device_less_481 = 100 / $one_col_device_less_481 . '%';
+    ?>
+
+        .col1-layout .category-product.products-grid .item {
+            width: <?php echo $one_class_device_less_481; ?>;
+        }
+
+        .col1-layout .category-product.products-grid .item:nth-child(<?php echo $one_col_device_less_481;?>n+1) {
+            clear: both;
+        }
+
+        /*==2 COLUMNS==*/
+    <?php
+    $two_col_device_less_481 = $_config->getProductListing('twocolumn_device_less_481');
+    $two_class_device_less_481 = 100 / $two_col_device_less_481 . '%';
+    ?>
+
+        .col2-layout .category-product.products-grid .item {
+            width: <?php echo $two_class_device_less_481; ?>;
+        }
+
+        .col2-layout .category-product.products-grid .item:nth-child(<?php echo $two_col_device_less_481;?>n+1) {
+            clear: both;
+        }
+
+        /*==3 COLUMNS==*/
+    <?php
+    $three_col_device_less_481 = $_config->getProductListing('threecolumn_device_less_481');
+    $three_class_device_less_481 = 100 / $three_col_device_less_481 . '%';
+    ?>
+
+        .col3-layout .category-product.products-grid .item {
+            width: <?php echo $three_class_device_less_481; ?>;
+        }
+
+        .col3-layout .category-product.products-grid .item:nth-child(<?php echo $three_col_device_less_481;?>n+1) {
+            clear: both;
+        }
+    }
+
+</style>

@@ -1,0 +1,411 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ */
+
+$_config     = $this->helper('Sm\Market\Helper\Data');
+$footerStyle = $_config->getThemeLayout('footer_style');
+?>
+
+<?php if ($_config->getAdvanced('show_gototop')) { ?>
+    <a id="yt-totop-fix" href="javascript:void(0)" title="Go to Top"></a>
+<?php } ?>
+
+<?php if ($footerStyle == "footer-1") { ?>
+    <div class="footer-container footer-style-1">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-1-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-2") { ?>
+    <div class="footer-container footer-style-2">
+        <div class="footer-wrapper">
+            <div class="container">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-2-content')->toHtml(); ?>
+
+                <div class="footer-bottom">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-3") { ?>
+    <div class="footer-container footer-style-3">
+        <div class="footer-wrapper">
+            <div class="container">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-3-content')->toHtml(); ?>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer-2')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-4") { ?>
+    <div class="footer-container footer-style-4">
+        <div class="footer-wrapper">
+            <div class="footer-top">
+                <div class="container">
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ft4-block1')->toHtml(); ?>
+                </div>
+            </div>
+
+            <div class="container">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ft4-block2')->toHtml(); ?>
+
+                <div class="footer-bottom">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-5") { ?>
+    <div class="footer-container footer-style-5">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-5-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="bottom-content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                                <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                    <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                                <?php } else { ?>
+                                    <address><?php /* @escapeNotVerified */
+                                        echo $block->getCopyright() ?></address>
+                                <?php } ?>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer-2')->toHtml(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-6") { ?>
+    <div class="footer-container footer-style-6">
+        <div class="footer-wrapper">
+            <div class="container">
+                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-6-content')->toHtml(); ?>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-7") { ?>
+    <div class="footer-container footer-style-7">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-7-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-7 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-6 col-sm-5 payment-footer">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ft7-payment')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-8") { ?>
+    <div class="footer-container footer-style-8">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-8-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-8 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-6 col-md-4 payment-footer">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('ft7-payment')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-9") { ?>
+    <div class="footer-container footer-style-9">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-9-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-payment">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer-id16')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-10") { ?>
+    <div class="footer-container footer-style-10">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-10-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="copyright-footer">
+                        <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                            <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                        <?php } else { ?>
+                            <address><?php /* @escapeNotVerified */
+                                echo $block->getCopyright() ?></address>
+                        <?php } ?>
+                    </div>
+
+                    <div class="footer-payment">
+                        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer')->toHtml(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-11") { ?>
+    <div class="footer-container footer-style-11">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-11-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-links-id18')->toHtml(); ?>
+
+                    <div class="copyright-footer">
+                        <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                            <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                        <?php } else { ?>
+                            <address><?php /* @escapeNotVerified */
+                                echo $block->getCopyright() ?></address>
+                        <?php } ?>
+                    </div>
+
+                    <div class="footer-payment">
+                        <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer')->toHtml(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-12") { ?>
+    <div class="footer-container footer-style-12">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-12-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer-id16')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-13") { ?>
+    <div class="footer-container footer-style-13">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-13-content')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="bottom-content">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                                <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                    <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                                <?php } else { ?>
+                                    <address><?php /* @escapeNotVerified */
+                                        echo $block->getCopyright() ?></address>
+                                <?php } ?>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer-id16')->toHtml(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-14") { ?>
+    <div class="footer-container footer-style-14">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-14-content')->toHtml(); ?>
+
+            <div class="container">
+                <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                    <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                <?php } else { ?>
+                    <address><?php /* @escapeNotVerified */
+                        echo $block->getCopyright() ?></address>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+<?php } else if ($footerStyle == "footer-15") { ?>
+    <div class="footer-container footer-style-15">
+        <div class="footer-wrapper clearfix">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-15-content')->toHtml(); ?>
+
+            <div class="container">
+                <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                    <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                <?php } else { ?>
+                    <address><?php /* @escapeNotVerified */
+                        echo $block->getCopyright() ?></address>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+<?php } ?>
+
+<?php if ($footerStyle == "footer-rtl") { ?> <!-- Demo footer RTL -->
+    <div class="footer-container footer-style-1">
+        <div class="footer-wrapper">
+            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-1-content-rtl')->toHtml(); ?>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 copyright-footer">
+                            <?php if ($_config->getAdvanced('custom_copyright')) { ?>
+                                <address><?php echo $_config->getAdvanced('copyright_content') ?></address>
+                            <?php } else { ?>
+                                <address><?php /* @escapeNotVerified */
+                                    echo $block->getCopyright() ?></address>
+                            <?php } ?>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 footer-payment">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('payment-footer')->toHtml(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php } ?>

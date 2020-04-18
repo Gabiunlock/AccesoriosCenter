@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_layout.xsd">
+    <update handle="1column"/>
+    <referenceContainer name="page.wrapper">
+        <container name="main.content" htmlTag="main" htmlId="maincontent" htmlClass="page-main">
+            <container name="columns" htmlTag="div" htmlClass="columns col2-layout">
+                <container name="div.container" htmlTag="div" htmlClass="container">
+                    <container name="div.row" htmlTag="div" htmlClass="row">
+                        <container name="div.col-main" htmlTag="div" htmlClass="col-lg-9 col-md-9 col-left-sidebar">
+                            <container name="columns.top" label="Before Main Columns"/>
+                            <container name="main" label="Main Content Container" htmlTag="div"
+                                       htmlClass="column main"/>
+                        </container>
+                        <container name="div.sidebar" htmlTag="div" htmlClass="col-lg-3 col-md-3 col-right-main">
+                            <container name="div.sidebar.main" htmlTag="div" htmlClass="sidebar sidebar-main"
+                                       after="main">
+                                <container name="sidebar.main" as="sidebar_main" label="Sidebar Main"/>
+                            </container>
+                            <container name="div.sidebar.additional" htmlTag="div"
+                                       htmlClass="sidebar sidebar-additional" after="div.sidebar.main">
+                                <container name="sidebar.additional" as="sidebar_additional"
+                                           label="Sidebar Additional"/>
+                            </container>
+                        </container>
+                    </container>
+                </container>
+            </container>
+        </container>
+    </referenceContainer>
+</layout>

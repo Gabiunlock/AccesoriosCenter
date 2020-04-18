@@ -1,0 +1,77 @@
+<?php
+$_helper = $this->helper('Sm\Market\Helper\Data');
+?>
+<div class="socials-wrap">
+    <div class="title-follow"><?php echo __('Follow Us'); ?></div>
+    <ul>
+        <?php if ($_helper->getSocial('show_facebook')) { ?>
+            <li class="li-social facebook-social">
+                <a title="<?php echo $_helper->getSocial('facebook_name'); ?>"
+                   href="<?php echo $_helper->getSocial('facebook_url'); ?>" target="_blank">
+                    <span class="fa fa-facebook icon-social"></span><span
+                            class="name-social"><?php echo $_helper->getSocial('facebook_name'); ?></span>
+                </a>
+            </li>
+        <?php } ?>
+
+        <?php if ($_helper->getSocial('show_twitter')) { ?>
+            <li class="li-social twitter-social">
+                <a title="<?php echo $_helper->getSocial('twitter_name'); ?>"
+                   href="<?php echo $_helper->getSocial('twitter_url'); ?>" target="_blank">
+                    <span class="fa fa-twitter icon-social"></span> <span
+                            class="name-social"><?php echo $_helper->getSocial('twitter_name'); ?></span>
+                </a>
+            </li>
+        <?php } ?>
+
+        <?php if ($_helper->getSocial('show_google')) { ?>
+            <li class="li-social google-social">
+                <a title="<?php echo $_helper->getSocial('google_name'); ?>"
+                   href="<?php echo $_helper->getSocial('google_url'); ?>" target="_blank">
+                    <span class="fa fa-google-plus icon-social"></span> <span
+                            class="name-social"><?php echo $_helper->getSocial('google_name'); ?></span>
+                </a>
+            </li>
+        <?php } ?>
+
+        <?php if ($_helper->getSocial('show_linkedin')) { ?>
+            <li class="li-social linkedin-social">
+                <a title="<?php echo $_helper->getSocial('linkedin_name'); ?>"
+                   href="<?php echo $_helper->getSocial('linkedin_url'); ?>" target="_blank">
+                    <span class="fa fa-linkedin icon-social"></span> <span
+                            class="name-social"><?php echo $_helper->getSocial('linkedin_name'); ?></span>
+                </a>
+            </li>
+        <?php } ?>
+
+        <?php if ($_helper->getSocial('show_pinterest')) { ?>
+            <li class="li-social pinterest-social">
+                <a title="<?php echo $_helper->getSocial('pinterest_name'); ?>"
+                   href="<?php echo $_helper->getSocial('pinterest_url'); ?>" target="_blank">
+                    <span class="fa fa-pinterest icon-social"></span> <span
+                            class="name-social"><?php echo $_helper->getSocial('pinterest_name'); ?></span>
+                </a>
+            </li>
+        <?php } ?>
+
+        <?php if ($_helper->getSocial('show_youtube')) { ?>
+            <li class="li-social youtube-social">
+                <a title="<?php echo $_helper->getSocial('youtube_name'); ?>"
+                   href="<?php echo $_helper->getSocial('youtube_url'); ?>" target="_blank">
+                    <span class="fa fa-youtube-play icon-social"></span> <span
+                            class="name-social"><?php echo $_helper->getSocial('youtube_name'); ?></span>
+                </a>
+            </li>
+        <?php } ?>
+
+        <?php if ($_helper->getSocial('show_instagram')) { ?>
+            <li class="li-social instagram-social">
+                <a title="<?php echo $_helper->getSocial('instagram_name'); ?>"
+                   href="<?php echo $_helper->getSocial('instagram_url'); ?>" target="_blank">
+                    <span class="fa fa-instagram icon-social"></span> <span
+                            class="name-social"><?php echo $_helper->getSocial('instagram_name'); ?></span>
+                </a>
+            </li>
+        <?php } ?>
+    </ul>
+</div>

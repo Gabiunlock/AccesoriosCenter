@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Sm_MegaMenu::megamenu" title="SM Mega Menu" module="Sm_MegaMenu" sortOrder="60" resource="Sm_MegaMenu::megamenu"/>
+		<add id="Sm_MegaMenu::megamenu_menugroup" title="Menu Manager" module="Sm_MegaMenu" sortOrder="20" action="megamenu/menugroup" parent="Sm_MegaMenu::megamenu" resource="Sm_MegaMenu::megamenu_menugroup" />
+		<add id="Sm_MegaMenu::megamenu_menuitems" title="Add New Menu" module="Sm_MegaMenu" sortOrder="20" action="megamenu/menugroup/new" parent="Sm_MegaMenu::megamenu" resource="Sm_MegaMenu::megamenu_menuitems" />
+		<add id="Sm_MegaMenu::configuration" title="Configuration" module="Sm_MegaMenu" sortOrder="40" action="adminhtml/system_config/edit/section/megamenu" parent="Sm_MegaMenu::megamenu" resource="Sm_MegaMenu::configuration" />
+	</menu>
+</config>

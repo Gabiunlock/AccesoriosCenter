@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="magentech" translate="label" sortOrder="1">
+			<label>Magentech.com</label>
+		</tab>
+		<section id="searchbox" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>SM Search Box</label>
+			<tab>magentech</tab>
+			<resource>Sm_SearchBox::config_searchbox</resource>
+			<group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>General Settings</label>
+				<field id="isenabled" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Enabled Extensions</label>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="root_catalog" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Root Catalog Id</label>
+					<validate>required-entry</validate>
+					<source_model>Sm\SearchBox\Model\Config\Source\ListCategory</source_model>
+					<comment>Please select one categories.</comment>
+				</field>
+				<field id="max_level" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Max Level</label>
+					<validate>required-entry integer validate-greater-than-zero validate-number</validate>
+					<comment>The number of child category levels to return.</comment>
+				</field>
+				<field id="show_popular" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Show Popular Search</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="limit_popular" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Limit Popular</label>
+					<validate>required-entry integer validate-greater-than-zero validate-number</validate>
+				</field>
+				<field id="show_more" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Show More Popular Search</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="more_text" translate="label" type="text" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Text Show More</label>
+				</field>
+				<field id="show_advanced" translate="label" type="select" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Show Advanced Search</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+			</group>
+			<group id="product_information" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Product Information</label>
+				<field id="author" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label><![CDATA[<p>Author: <a target="_blank" title="Magentech" href="http://www.magentech.com">Magentech</a></p>
+											<p>Vesion: 2.1.0</p>
+											<p>Userguide: <a target="_blank" title="Usergide" href="http://www.magentech.com/documentation/category/magento/magento-extension/">Userguide</a></p>
+											<p>Support: <a target="_blank" href="http://www.magentech.com/forum">Forum</a></p>
+								]]></label>
+					<frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

@@ -1,0 +1,202 @@
+// FOOTER STYLE 10
+
+.footer-container {
+    color: #bbbbbb;
+    position: relative;
+
+    a {
+        color: #bbbbbb;
+    }
+
+    .footer-top {
+        background-color: #333333;
+        padding: 40px 0 40px;
+        text-align: center;
+
+        p {
+            padding: 17px 0 20px;
+            font-size: 108.33%;
+        }
+    }
+
+    .footer-middle {
+        background-color: #2c2c2c;
+        padding: 60px 0;
+    }
+
+    .subscribe-footer {
+        .footer-block-content {
+            p {
+                font-size: 108.33%;
+            }
+
+            .title-middle-footer {
+                display: none;
+            }
+
+            .input-box {
+                #newsletter-footer {
+                    background: none;
+                    border: 1px solid #565656;
+                    color: #fff;
+                }
+
+                margin-bottom: 10px;
+            }
+
+            .action-button {
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        background-color: #333333;
+        padding: 15px 0;
+        color: #fff;
+        text-align: center;
+
+        .copyright-footer {
+            address {
+                margin-top: 3px;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .footer-payment {
+            padding-top: 13px;
+        }
+
+    }
+
+    .about-store {
+        .footer-block {
+            padding-right: 30px;
+        }
+    }
+
+    .footer-block {
+        .footer-block-title {
+            h3 {
+                font-weight: 700;
+                font-size: 116.67%;
+                color: #fff;
+                text-transform: uppercase;
+            }
+
+            margin-bottom: 15px;
+        }
+
+        .footer-block-content {
+            .links-footer {
+                li {
+                    a {
+                        display: inline-block;
+                        padding: 4px 0;
+                        font-size: 108.33%;
+
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            height: 1px;
+                            vertical-align: middle;
+                            width: 0;
+                            .transition(.2s);
+                        }
+
+                        &:hover {
+                            &:before {
+                                width: 13px;
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .links-contact {
+                li {
+                    position: relative;
+                    padding-right: 39px;
+                    min-height: 30px;
+                    line-height: 18px;
+                    font-size: 108.33%;
+
+                    &:before {
+                        position: absolute;
+                        right: 0;
+                        top: 4px;
+                        content: "";
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background: url(../images/icon-image.png) #4f4f4f;
+                        border-radius: 3px;
+                        -webkit-border-radius: 3px;
+                    }
+
+                    &.add-icon {
+                        &:before {
+                            background-position: -8px -10px;
+                        }
+                    }
+
+                    &.email-icon {
+                        &:before {
+                            background-position: -11px -51px;
+                        }
+                    }
+
+                    &.phone-icon {
+                        &:before {
+                            background-position: -11px -91px;
+                        }
+                    }
+
+                    &.middle-content {
+                        padding-top: 9px;
+                        margin: 16px 0 22px;
+                    }
+                }
+            }
+        }
+    }
+
+    .socials-wrap {
+        .title-follow {
+            display: none;
+        }
+
+        ul {
+            .li-social {
+                display: inline-block;
+                margin: 0 15px;
+
+                a {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    color: #fff;
+                    font-size: 30px;
+                    opacity: 0.5;
+
+                    .name-social {
+                        display: none;
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+

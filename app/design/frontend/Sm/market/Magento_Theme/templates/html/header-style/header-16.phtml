@@ -1,0 +1,60 @@
+<div class="header-container header-style-16">
+    <div class="header-top">
+        <div class="container">
+            <div class="row row-topheader">
+                <div class="col-lg-4 language-currency">
+                    <?php echo $block->getChildHtml('language-header'); ?>
+                    <?php echo $block->getChildHtml('currency-header'); ?>
+                </div>
+
+                <div class="col-lg-8 toplinks-wrapper">
+                    <?php echo $block->getChildHtml('toplinks-header'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-2 logo-header">
+                    <?php echo $block->getChildHtml('logo_theme'); ?>
+                </div>
+
+                <div class="col-xl-10 header-middle-right">
+                    <div class="middle-right-content">
+                        <div class="main-megamenu">
+                            <?php
+                            if ($_config->getGeneral('menu_style') == 'megamenu') {
+                                echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml();
+                            } else {
+                                echo $block->getChildHtml('navigation-header');
+                            }
+                            ?>
+                        </div>
+
+                        <div class="navigation-mobile-container">
+                            <?php echo $block->getChildHtml('navigation.mobile'); ?>
+                        </div>
+
+                        <div class="search-header">
+                            <?php echo $block->getChildHtml('search-header'); ?>
+                        </div>
+
+                        <div class="minicart-header">
+                            <div class="minicart-content">
+                                <?php echo $block->getChildHtml('cart-header'); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-categories">
+                <div class="hot-cat-wrapper">
+                    <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('header-categories-slider')->toHtml(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

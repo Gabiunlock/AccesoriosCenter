@@ -1,0 +1,124 @@
+<?php
+
+$_config                  = $this->helper('Sm\Market\Helper\Data');
+$baseUrl                  = $_config->getUrl();
+$store_id                 = $_config->getStoreId();
+$store_code               = $_config->getStoreCode();
+$locale                   = $_config->getLocale();
+$mediaUrl                 = $_config->getMediaUrl();
+$theme_color              = $_config->getGeneral('theme_color');
+$header_select            = $_config->getThemeLayout('header_style');
+$footer_select            = $_config->getThemeLayout('footer_style');
+$product_select           = $_config->getThemeLayout('product_style');
+$home_select              = $_config->getThemeLayout('home_style');
+$body_font_size           = $_config->getGeneral('font_size');
+$text_color               = $_config->getGeneral('body_text_color');
+$link_color               = $_config->getGeneral('body_link_color');
+$link_hover_color         = $_config->getGeneral('body_link_hover_color');
+$body_background_color    = $_config->getGeneral('body_background_color');
+$main_font                = $_config->getGeneral('body_font');
+$main_google_font         = $_config->getGeneral('body_google_font');
+$google_font_element      = $_config->getGeneral('google_font_targets');
+$element_google_font_name = $_config->getGeneral('element_google_font');
+$background_path          = "";
+$use_bg_image             = $_config->getGeneral('use_background_image');
+$use_custom_image         = $_config->getGeneral('use_customize_image');
+$background_repeat        = $_config->getGeneral('background_repeat');
+$background_position      = $_config->getGeneral('background_position');
+$rtl_direction            = $_config->getThemeLayout('direction_rtl');
+
+if ($use_bg_image && $use_custom_image == '0') {
+    $bg_pattern      = $_config->getGeneral('body_background_image');
+    $background_path = $mediaUrl . 'pattern/' . $bg_pattern . '.png';
+}
+
+if ($use_bg_image && $use_custom_image == '1') {
+    $custom_bg       = $_config->getGeneral('background_customize_image');
+    $background_path = $mediaUrl . 'pattern/' . $custom_bg;
+}
+/* END BACKGROUND IMAGE */
+
+if ($main_font != 'google_font') {
+    $body_font_family = $main_font;
+} else {
+    $namefontmain     = explode(":", str_replace("+", " ", $main_google_font));
+    $body_font_family = $namefontmain[0];
+}
+
+//google font element
+$namegooglefont_element = explode(":", str_replace("+", " ", $element_google_font_name));
+$element_googlefont     = $namegooglefont_element[0];
+
+$root_path = BP . '/';
+if (file_exists($root_path . "vendor/wikimedia/less.php/lessc.inc.php")) {
+    require_once($root_path . "vendor/wikimedia/less.php/lessc.inc.php");
+} else {
+    require_once($root_path . "vendor/oyejorge/less.php/lessc.inc.php");
+}
+
+$less = new lessc;
+
+$less->setVariables(array(
+    "@theme_color" => '#' . $theme_color,
+    "@body_font_size" => $body_font_size,
+    "@body_font_family" => $body_font_family,
+    "@text_color" => '#' . $text_color,
+    "@link_color" => '#' . $link_color,
+    "@link_hover_color" => '#' . $link_hover_color,
+    "@body_background_color" => '#' . $body_background_color,
+    "@background_path" => '"' . $background_path . '"',
+    "@background_repeat" => $background_repeat,
+    "@background_position" => $background_position
+));
+
+include($block->getTemplateFile("Magento_Theme::html/config_less.phtml"));
+
+if ($rtl_direction) {
+    $ex_rtl = '_rtl';
+} else {
+    $ex_rtl = '';
+}
+
+$mixin = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/_mixin.less');
+
+$header_general   = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/header/_header_general' . $ex_rtl . '.less');
+$header_style     = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/header/' . $header_select . '/_styles' . $ex_rtl . '.less');
+$header_style_res = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/header/' . $header_select . '/_responsive' . $ex_rtl . '.less');
+$footer_general   = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/footer/_footer_general' . $ex_rtl . '.less');
+$footer_style     = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/footer/' . $footer_select . '/_styles' . $ex_rtl . '.less');
+$footer_style_res = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/footer/' . $footer_select . '/_responsive' . $ex_rtl . '.less');
+$product_style    = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/product/' . $product_select . '/_styles.less');
+$home_general     = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/home/_home_general' . $ex_rtl . '.less');
+$home_style       = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/home/' . $home_select . '/_styles' . $ex_rtl . '.less');
+$home_style_res   = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/home/' . $home_select . '/_responsive' . $ex_rtl . '.less');
+$listing_style    = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/_listing' . $ex_rtl . '.less');
+$detail_general   = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/detail/_detail_general' . $ex_rtl . '.less');
+$style            = str_replace('"', "'", $mixin . $header_general . $header_style . $header_style_res . $product_style . $footer_general . $footer_style . $footer_style_res . $home_general . $home_style . $home_style_res . $listing_style . $detail_general);
+$extend_css       = $less->compile($style);
+
+if ($rtl_direction) {
+    $bootstrap       = file_get_contents($root_path . 'app/design/frontend/Sm/market/web/css/source/bootstrap/_bootstrap-rtl.less');
+    $bootstrap_style = str_replace('"', "'", $bootstrap);
+    $out             = $bootstrap_style . $less->compile($str_less) . $extend_css;
+} else {
+    $out = $less->compile($str_less) . $extend_css;
+}
+
+if (!file_exists($root_path . "pub/static/frontend/Sm/market/" . $locale . "/css")) {
+    mkdir($root_path . "pub/static/frontend/Sm/market/" . $locale . "/css", 0777, true);
+}
+
+
+file_put_contents($root_path . "pub/static/frontend/Sm/market/" . $locale . "/css/config_" . $store_code . ".css", $out);
+
+
+/*****************************************************/
+
+$array_files = array(
+    $root_path . "app/design/frontend/Sm/market/web/css/yttheme.less" => $root_path . "pub/static/frontend/Sm/market/" . $locale . "/css/yttheme.css"
+);
+foreach ($array_files as $key => $val) {
+    $less->compileFile($key, $val);
+}
+
+?>

@@ -1,0 +1,162 @@
+<?php
+/**------------------------------------------------------------------------
+ * SM Search Box - Version 2.0.0
+ * Copyright (c) 2015 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ * -------------------------------------------------------------------------*/
+
+if (!$this->_getConfig('isenabled', 1)) return;
+
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $helper \Sm\SearchBox\Helper\Data */
+/** @var $helperSearch \Magento\Search\Helper\Data */
+
+$helperSearch = $this->helper('Magento\Search\Helper\Data');
+$helper       = $this->helper('Sm\SearchBox\Helper\Data');
+$tag_id       = 'sm_searchbox' . rand() . time();
+$cat_list     = $this->getCategories();
+
+$show_popular  = $this->_getConfig('show_popular');
+$limit_popular = $this->_getConfig('limit_popular');
+
+$show_advanced = $this->_getConfig('show_advanced');
+$pretext       = $this->_getConfig('pretext');
+$posttext      = $this->_getConfig('posttext');
+
+$show_more = $this->_getConfig('show_more');
+$more_text = $this->_getConfig('more_text', 'More++');
+?>
+
+<div id="<?php echo $tag_id; ?>" class="sm-searchbox">
+    <?php
+    if (!empty($pretext)) { ?>
+        <div class="pre-text"><?php echo $pretext; ?></div>
+    <?php } ?>
+
+
+    <div class="sm-searchbox-content">
+        <form class="form minisearch" id="searchbox_mini_form" action="<?php /* @escapeNotVerified */
+        echo $helperSearch->getResultUrl() ?>" method="get">
+            <div class="field searchbox">
+                <div class="control">
+                    <select class="cat searchbox-cat" name="cat">
+                        <option value=""><?php echo __('All Categories') ?></option>
+                        <?php foreach ($cat_list as $cat) { ?>
+                            <option value="<?php echo $cat['value']; ?>" <?php echo(($this->getRequest()->getParam('cat') && ($this->getRequest()->getParam('cat') == $cat['value'])) ? "selected" : ''); ?> ><?php echo $cat['label']; ?></option>
+                        <?php } ?>
+                    </select>
+
+                    <input id="searchbox"
+                           data-mage-init='{"quickSearch":{
+									"formSelector":"#searchbox_mini_form",
+									"url":"<?php /* @escapeNotVerified */
+                           echo $block->getUrl('search/ajax/suggest'); ?>",
+									"destinationSelector":"#searchbox_autocomplete"}
+							   }'
+                           type="text"
+                           name="<?php /* @escapeNotVerified */
+                           echo $helperSearch->getQueryParamName() ?>"
+                           placeholder="<?php echo __('Enter keywords to search...') ?>"
+                           class="input-text input-searchbox"
+                           maxlength="<?php /* @escapeNotVerified */
+                           echo $helperSearch->getMaxQueryLength(); ?>"
+                           role="combobox"
+                           aria-haspopup="false"
+                           aria-expanded="true"
+                           aria-autocomplete="both"
+                           autocomplete="off"/>
+                    <div id="searchbox_autocomplete" class="search-autocomplete"></div>
+                    <?php echo $block->getChildHtml() ?>
+
+                </div>
+            </div>
+            <div class="actions">
+                <button type="submit" title="<?php echo $block->escapeHtml(__('Search')) ?>" class="btn-searchbox">
+						<span><?php /* @escapeNotVerified */
+                            echo __('Search'); ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <?php
+    if ($show_popular) { ?>
+        <div class="sm-searchbox-popular">
+            <div class="sm-searchbox-popular-title"><?php echo __('Top Search:'); ?></div>
+            <div class="sm-searchbox-keyword">
+                <?php
+                if (sizeof($this->getTerms()) > 0) { ?>
+                    <ul class="sm-searchbox-keyword-list">
+                        <?php foreach ($this->getTerms() as $_term) { ?>
+                            <li>
+                                <a href="<?php echo $this->getSearchUrl($_term); ?>"><?php echo $this->escapeHtml($_term->getQueryText()); ?></a>
+                            </li>
+                        <?php } ?>
+
+                        <?php if ($show_more) { ?>
+                            <li>
+                                <a class="sm-searchbox-more" data-ajaxmore="<?php echo $this->getSearchBoxAjax(); ?>"
+                                   data-count="<?php echo $limit_popular; ?>"><?php echo $more_text; ?></a>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                <?php } else { ?>
+                    <p class="note-msg"><?php echo __(' There are no search terms available.'); ?></p>
+                <?php } ?>
+            </div>
+        </div>
+    <?php } ?>
+    <?php if ($show_advanced) { ?>
+        <div class="sm-searchbox-advanced">
+            <a href="<?php echo $this->getSearchBoxAdvanced(); ?>"><?php echo __('Advanced ++'); ?></a>
+        </div>
+    <?php } ?>
+
+    <?php
+    if (!empty($posttext)) { ?>
+        <div class="post-text"><?php echo $posttext; ?></div>
+    <?php } ?>
+</div>
+
+
+<script type="text/javascript">
+    require([
+        'jquery'
+    ], function ($) {
+        var searchbox = $('#<?php echo $tag_id;?>');
+        var firt_load = <?php echo $limit_popular;?>;
+
+        clickMore($('.sm-searchbox-more', searchbox));
+
+        function clickMore(more) {
+            more.click(function () {
+                var that = $(this);
+                var sb_ajaxurl = that.attr('data-ajaxmore');
+                var count = that.attr('data-count');
+                count = parseInt(count);
+                if (firt_load >= count) {
+                    count = count + parseInt(firt_load);
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: sb_ajaxurl,
+                    data: {
+                        is_ajax: 1,
+                        count_term: count
+                    },
+                    success: function (data) {
+                        $('.sm-searchbox-keyword', searchbox).html(data.htm);
+                        clickMore($('a.sm-searchbox-more', searchbox));
+                        $('a.sm-searchbox-more', searchbox).attr({
+                            'data-count': count + parseInt(firt_load)
+                        });
+                    },
+                    dataType: 'json'
+                });
+            });
+        }
+
+    });
+</script>

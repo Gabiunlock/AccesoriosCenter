@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *
+ * SM CartQuickPro - Version 1.4.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+	<container name="root" label="Root">
+            <block class="Magento\Checkout\Block\Cart" name="checkout.cart"  template="Magento_Checkout::cart.phtml" cacheable="false">
+                <container name="checkout.cart.items" as="with-items" >
+                    <container name="checkout.cart.container" htmlTag="div" htmlClass="cart-container" before="-">
+                        <container name="checkout.cart.form.before" as="form_before" label="Shopping Cart Items Before" htmlTag="div" htmlClass="rewards"/>
+                        <block class="Magento\Checkout\Block\Cart" name="checkout.cart.form"  before="-" as="cart-items" template="Magento_Checkout::cart/form.phtml" >
+                            <block class="Magento\Framework\View\Element\RendererList" name="checkout.cart.item.renderers" as="renderer.list">
+								<block class="Magento\Checkout\Block\Item\Price\Renderer" name="checkout.item.price.unit" template="Magento_Checkout::item/price/unit.phtml" cacheable="false"/>
+								<block class="Magento\Checkout\Block\Item\Price\Renderer" name="checkout.item.price.row" template="Magento_Checkout::item/price/row.phtml" cacheable="false"/>
+								<block class="Magento\Checkout\Block\Item\Price\Renderer" name="checkout.onepage.review.item.price.unit.excl" template="Magento_Checkout::onepage/review/item/price/unit_excl_tax.phtml" cacheable="false"/>
+								<block class="Magento\Checkout\Block\Item\Price\Renderer" name="checkout.onepage.review.item.price.unit.incl" template="Magento_Checkout::onepage/review/item/price/unit_incl_tax.phtml" cacheable="false"/>
+								<block class="Magento\Checkout\Block\Item\Price\Renderer" name="checkout.onepage.review.item.price.rowtotal.excl" template="Magento_Checkout::onepage/review/item/price/row_excl_tax.phtml" cacheable="false"/>
+								<block class="Magento\Checkout\Block\Item\Price\Renderer" name="checkout.onepage.review.item.price.rowtotal.incl" template="Magento_Checkout::onepage/review/item/price/row_incl_tax.phtml" cacheable="false"/>
+								<referenceBlock name="checkout.cart.item.renderers.default.actions">
+									<block class="Magento\Wishlist\Block\Cart\Item\Renderer\Actions\MoveToWishlist" name="checkout.cart.item.renderers.default.actions.move_to_wishlist" template="Magento_Wishlist::cart/item/renderer/actions/move_to_wishlist.phtml" before="checkout.cart.item.renderers.default.actions.edit"/>
+								</referenceBlock>
+								<referenceBlock name="checkout.cart.item.renderers.simple.actions">
+									<block class="Magento\Wishlist\Block\Cart\Item\Renderer\Actions\MoveToWishlist" name="checkout.cart.item.renderers.simple.actions.move_to_wishlist" template="Magento_Wishlist::cart/item/renderer/actions/move_to_wishlist.phtml" before="checkout.cart.item.renderers.simple.actions.edit"/>
+								</referenceBlock>
+								<referenceBlock name="checkout.cart.item.renderers.bundle.actions">
+									<block class="Magento\Wishlist\Block\Cart\Item\Renderer\Actions\MoveToWishlist" name="checkout.cart.item.renderers.bundle.actions.move_to_wishlist" template="Magento_Wishlist::cart/item/renderer/actions/move_to_wishlist.phtml" before="checkout.cart.item.renderers.bundle.actions.edit"/>
+								</referenceBlock>
+								<referenceBlock name="checkout.cart.item.renderers.downloadable.actions">
+									<block class="Magento\Wishlist\Block\Cart\Item\Renderer\Actions\MoveToWishlist" name="checkout.cart.item.renderers.downloadable.actions.move_to_wishlist" template="Magento_Wishlist::cart/item/renderer/actions/move_to_wishlist.phtml" before="checkout.cart.item.renderers.downloadable.actions.edit"/>
+								</referenceBlock>
+								<referenceBlock name="checkout.cart.item.renderers.grouped.actions">
+									<block class="Magento\Wishlist\Block\Cart\Item\Renderer\Actions\MoveToWishlist" name="checkout.cart.item.renderers.grouped.actions.move_to_wishlist" template="Magento_Wishlist::cart/item/renderer/actions/move_to_wishlist.phtml" before="checkout.cart.item.renderers.grouped.actions.edit"/>
+								</referenceBlock>
+								<referenceBlock name="checkout.cart.item.renderers.configurable.actions">
+									<block class="Magento\Wishlist\Block\Cart\Item\Renderer\Actions\MoveToWishlist" name="checkout.cart.item.renderers.configurable.actions.move_to_wishlist" template="Magento_Wishlist::cart/item/renderer/actions/move_to_wishlist.phtml" before="checkout.cart.item.renderers.configurable.actions.edit"/>
+								</referenceBlock>
+								<referenceBlock name="checkout.cart.item.renderers.virtual.actions">
+									<block class="Magento\Wishlist\Block\Cart\Item\Renderer\Actions\MoveToWishlist" name="checkout.cart.item.renderers.virtual.actions.move_to_wishlist" template="Magento_Wishlist::cart/item/renderer/actions/move_to_wishlist.phtml" before="checkout.cart.item.renderers.virtual.actions.edit"/>
+								</referenceBlock>
+							</block>
+                            <block class="Magento\Framework\View\Element\Text\ListText" name="checkout.cart.order.actions"/>
+                        </block>
+                        <container name="checkout.cart.widget" as="checkout_cart_widget" label="Shopping Cart Items After"/>
+                    </container>
+                    <block class="Magento\Checkout\Block\Cart\Crosssell" name="checkout.cart.crosssell" template="Magento_Catalog::product/list/items.phtml" after="-">
+                        <arguments>
+                            <argument name="type" xsi:type="string">crosssell</argument>
+                        </arguments>
+                        <block class="Magento\Catalog\Block\Product\ProductList\Item\Container" name="crosssell.product.addto" as="addto">
+                            <block class="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare"
+                                   name="crosssell.product.addto.compare" as="compare"
+                                   template="Magento_Catalog::product/list/addto/compare.phtml"/>
+							   <block class="Magento\Wishlist\Block\Catalog\Product\ProductList\Item\AddTo\Wishlist"
+								   name="crosssell.product.addto.wishlist" as="wishlist" before="compare"
+								   template="Magento_Wishlist::catalog/product/list/addto/wishlist.phtml"/>	   
+                        </block>
+                    </block>
+                </container>
+                <container name="checkout.cart.noitems" as="no-items">
+                    <block class="Magento\Checkout\Block\Cart" name="checkout.cart.empty" before="-" template="Magento_Checkout::cart/noItems.phtml">
+                        <container name="checkout.cart.empty.widget" as="checkout_cart_empty_widget" label="Empty Shopping Cart Content Before"/>
+                    </block>
+                </container>
+            </block>
+        <block class="Magento\Checkout\Block\Cart\Additional\Info" name="additional.product.info" template="Magento_Checkout::cart/additional/info.phtml"/>
+		 <referenceContainer name="product.info.type">
+            <block class="Magento\Catalog\Block\Product\View\Type\Simple" name="product.info.simple" as="product_type_data" template="product/view/type/default.phtml"/>
+            <container name="product.info.simple.extra" after="product.info.simple" as="product_type_data_extra" label="Product Extra Info"/>
+        </referenceContainer>
+    </container>
+	<!-- <update handle="checkout_cart_item_renderers"/> -->
+</layout>

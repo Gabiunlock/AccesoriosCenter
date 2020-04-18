@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Sm. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+		<add id="Sm_CartQuickPro::CartQuickPro" title="SM Cart Quick Pro" module="Sm_CartQuickPro" action="adminhtml/system_config/edit/section/cartquickpro/" sortOrder="60" parent="Sm_BackEnd::Magentech" resource="Sm_CartQuickPro::CartQuickPro"/>
+        <!--AddMenu-->
+    </menu>
+</config>

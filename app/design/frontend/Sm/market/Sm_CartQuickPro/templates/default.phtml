@@ -1,0 +1,76 @@
+<?php
+/**
+ *
+ * SM CartQuickPro - Version 1.0.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+
+if (!(int)$this->_getConfig('isenabled', 1))
+    return;
+
+$countdown_number = (int)$this->_getConfig('countdown_number') > 0 ? $this->_getConfig('countdown_number') : 0;
+
+?>
+
+<script type="text/x-magento-init">
+{
+	"#maincontent": {
+		"Sm_CartQuickPro/js/custom-addtocart": {
+			"isEnabled": <?php echo $this->_getConfig('isenabled', 1) ? 'true' : 'false'; ?>,
+			"isAjaxCart": <?php echo $this->_isAjaxCart() ? 'true' : 'false'; ?>,
+			"urlLogin": "<?php echo $this->_urlLogin(); ?>",
+			"isLoggedIn": <?php echo $this->_isLoggedIn() ? 'true' : 'false'; ?>,
+			"addUrl": "<?php echo $this->getUrl() ?>cartquickpro/cart/add",
+			"isUpdateConfigure": <?php echo $this->_isConfigure() ? 'true' : 'false'; ?>,
+			"isCompareIndex": <?php echo $this->_isCompareIndex() ? 'true' : 'false'; ?>,
+			"isProductView": <?php echo $this->_isProductView() ? 'true' : 'false'; ?>,
+			"isCheckoutPage":  <?php echo $this->_isPageCheckout() ? 'true' : 'false'; ?>,
+			"isWishlistPage": <?php echo $this->_isWishlistIndex() ? 'true' : 'false'; ?>,
+			"urlCurrent": "<?php echo $this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]); ?>",
+			"countDownNumber": <?php echo $countdown_number; ?>
+		}
+	}
+}
+
+
+</script>
+
+
+<div id="smcqp-container" style="display:none;">
+    <div data-role="loader" class="loading-mask">
+        <div class="loader">
+            <img src="<?php /* @escapeNotVerified */
+            echo $block->getViewFileUrl('images/loader-1.gif'); ?>"
+                 alt="<?php /* @escapeNotVerified */
+                 echo __('Loading...') ?>">
+        </div>
+    </div>
+    <div id="smcqp-contents">
+    </div>
+    <div id="smcqp-report" style="display:none;">
+        <div class="smcqp-messages">
+        </div>
+        <div class="smcqp-actions">
+            <a class="smcqp-continue <?php echo $countdown_number ? 'spcqp-count' : '' ?>"
+               data-count="<?php echo $countdown_number; ?>" href="#" title="<?php echo __('Continue'); ?>">
+                <?php echo __('Continue'); ?>
+            </a>
+            <a class="smcqp-btn smcqp-view-cart " href="<?php echo $this->getUrl('checkout/cart/'); ?>"
+               title="<?php echo __('View Cart'); ?>">
+                <?php echo __('View Cart'); ?>
+            </a>
+            <a class="smcqp-btn smcqp-view-compare "
+               href="<?php echo $this->getUrl('catalog/product_compare/index/'); ?>"
+               title="<?php echo __('Compare Products'); ?>">
+                <?php echo __('Compare Products'); ?>
+            </a>
+            <a class="smcqp-btn smcqp-view-wishlist " href="<?php echo $this->getUrl('wishlist/'); ?>"
+               title="<?php echo __('My Wishlist'); ?>">
+                <?php echo __('My Wishlist'); ?>
+            </a>
+        </div>
+    </div>
+</div>

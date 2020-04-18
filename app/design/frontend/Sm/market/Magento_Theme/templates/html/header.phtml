@@ -1,0 +1,52 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ */
+
+$_config     = $this->helper('Sm\Market\Helper\Data');
+$headerStyle = $_config->getThemeLayout('header_style');
+
+include($block->getTemplateFile("Magento_Theme::html/header-style/" . $headerStyle . ".phtml"));
+?>
+
+<?php
+if ($_config->getAdvanced('show_newsletter_popup')) {
+    echo $block->getChildHtml('form.subscribe.popup');
+}
+?>
+
+<?php if ($_config->getGeneral('menu_ontop') == 1) { ?>
+    <script type="text/javascript">
+        require([
+            'jquery'
+        ], function ($) {
+            $window = $(window);
+            if ($('.header-bottom').length) {
+                menu_offset_top = $('.header-bottom').offset().top;
+
+                function processScroll() {
+                    var scrollTop = $window.scrollTop();
+                    if (scrollTop >= menu_offset_top) {
+                        $('.header-bottom').addClass('menu-on-top');
+                        $('body').addClass('body-on-top');
+                    } else if (scrollTop <= menu_offset_top) {
+                        $('.header-bottom').removeClass('menu-on-top');
+                        $('body').removeClass('body-on-top');
+                    }
+                }
+
+                processScroll();
+                $window.scroll(function () {
+                    processScroll();
+                });
+            }
+        });
+    </script>
+<?php } ?>

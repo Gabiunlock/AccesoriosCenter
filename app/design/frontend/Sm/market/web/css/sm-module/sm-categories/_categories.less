@@ -1,0 +1,113 @@
+
+.sm-categories {
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.sm-categories .cat-wrap .content-box {
+    overflow: hidden;
+    line-height: 20px;
+    padding-bottom: 15px;
+}
+
+.sm-categories .cat-wrap .content-box .cat-title a {
+    font-weight: bold;
+}
+
+.sm-categories .cat-wrap .content-box .child-cat .child-cat-title {
+    float: left;
+    padding-right: 5px;
+}
+
+.sm-categories .cat-wrap .image-cat {
+    overflow: hidden;
+    position: relative;
+
+    .lazyload {
+        min-height: 110px;
+    }
+
+    .btn-categories {
+        font-size: 83.33%;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+        display: inline-block;
+        padding: 1px 10px;
+        position: absolute;
+        left: 20px;
+        bottom: 36px;
+
+        &:after {
+            .font-awesome(f0da, 14px);
+            position: relative;
+            top: 1px;
+            margin-left: 3px;
+        }
+
+        &:hover {
+            background-color: #444 !important;
+        }
+    }
+}
+
+.cat-wrap {
+    .content-box {
+
+        .cat-title {
+            padding: 10px 10px 0;
+            text-transform: uppercase;
+
+            a {
+                font-size: 116.67%;
+                display: inline-block;
+                margin-bottom: 3px;
+            }
+        }
+
+        .child-cat {
+            padding: 0 10px 10px;
+
+            .sub-cats {
+                li {
+                    a {
+                        font-size: 108.33%;
+                        display: inline-block;
+                        padding: 2px 0;
+
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 4px;
+                            height: 4px;
+                            background-color: #999999;
+                            margin-right: 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+.direction-rtl {
+    .cat-wrap .content-box .child-cat .sub-cats li a:before {
+        margin-left: 3px;
+        margin-right: 0;
+    }
+
+    .sm-categories .cat-wrap .image-cat .btn-categories {
+        right: 20px;
+        left: auto;
+
+        &:after {
+            margin-right: 3px;
+            margin-left: 0;
+            transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+        }
+    }
+}

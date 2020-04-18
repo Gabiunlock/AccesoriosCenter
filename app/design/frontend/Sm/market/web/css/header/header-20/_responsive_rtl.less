@@ -1,0 +1,203 @@
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .main-megamenu {
+        display: none;
+    }
+
+    .minicart-wrapper {
+        float: left;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-megamenu {
+        display: none;
+    }
+
+    .minicart-wrapper {
+        float: left;
+    }
+
+    .header-style-20 .header-top .header-top-links .toplinks-wrapper .header.links li {
+        margin-right: 15px;
+        padding-right: 15px;
+    }
+
+    .megamenu-content-sidebar {
+        display: none;
+    }
+
+    .navigation-mobile-container {
+        display: block;
+    }
+
+    .btn-mobile .button-mobile {
+        vertical-align: middle;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 21px;
+        background-color: #fff;
+        color: #333;
+        .border_radius(3px);
+    }
+
+    .search-wrapper {
+        right: 66px;
+        position: absolute;
+        left: 15px;
+        top: -44px;
+    }
+}
+
+@media (max-width: 767px) {
+    .row-topheader,
+    .row-middle {
+        display: block;
+    }
+
+    .option-store,
+    .header-top-links,
+    .logo-header,
+    .header-middle-right {
+        width: auto;
+    }
+
+    .main-megamenu {
+        display: none;
+    }
+
+    .header-style-20 .header-top .header-top-links .toplinks-wrapper .header.links li {
+        margin-right: 15px;
+        padding-right: 15px;
+    }
+
+    .megamenu-content-sidebar {
+        display: none;
+    }
+
+    .navigation-mobile-container {
+        display: block;
+    }
+
+    .btn-mobile .button-mobile {
+        vertical-align: middle;
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 21px;
+        background-color: #fff;
+        color: #333;
+        .border_radius(3px);
+    }
+
+    .search-wrapper {
+        right: 66px;
+        position: absolute;
+        left: 15px;
+        top: -44px;
+    }
+
+    .header-style-20 .header-bottom .sm-searchbox .sm-searchbox-content .control {
+        .searchbox-cat {
+            display: none;
+        }
+
+        #searchbox {
+            padding-right: 10px;
+            padding-left: 40px;
+        }
+    }
+
+    .header-top {
+        .header-top-links {
+            position: relative;
+
+            .toplinks-wrapper {
+                position: relative;
+
+                &:before {
+                    height: 40px;
+                    width: 40px;
+                    text-align: center;
+                    .font-awesome(f007, 16px);
+                    line-height: 40px;
+                    color: #333;
+                    margin-top: -1px;
+                    border: 1px solid #f5f5f5;
+                    border-bottom: none;
+                }
+
+                .header.links {
+                    display: none;
+                    position: absolute;
+                    background-color: #333;
+                    top: 35px;
+                    left: 0;
+                    padding: 10px 20px;
+                    z-index: 50;
+
+                    li {
+                        display: block !important;
+                        float: none !important;
+                        margin: 0 !important;
+                        padding: 0 !important;
+
+                        &:before {
+                            display: none !important;
+                        }
+
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+
+                &:hover {
+                    &:before {
+                        background-color: #333;
+                        border-color: #333;
+                        color: #fff;
+                    }
+
+                    .header.links {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    .minicart-content .minicart-wrapper .action.showcart .counter.qty,
+    .showcart .text {
+        display: none !important;
+    }
+
+    .header-style-20 .header-middle .middle-right-content .minicart-header .minicart-content .cart-wrapper .minicart-wrapper .showcart {
+        padding: 0;
+        height: 44px;
+        width: 44px;
+
+        &:before {
+            right: 2px;
+            top: 3px;
+        }
+    }
+
+    .logo-header {
+        float: right;
+    }
+
+    .header-middle-right {
+        float: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-wrapper .mage-dropdown-dialog {
+        width: 290px;
+    }
+}

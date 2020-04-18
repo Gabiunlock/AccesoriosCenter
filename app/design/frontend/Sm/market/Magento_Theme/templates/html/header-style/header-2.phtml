@@ -1,0 +1,117 @@
+<?php $welcomeMessage = $block->getWelcome(); ?>
+
+<div class="header-container header-style-2">
+    <div class="header-top">
+        <div class="container">
+            <div class="row row-topheader">
+                <div class="col-lg-5 col-md-3 customer-action-header">
+                    <div class="customer-action-hd">
+						<span class="welcome-text">
+
+							<span class="greet welcome" data-bind="scope: 'customer'">
+								<!-- ko if: customer().fullname  -->
+								<span data-bind="text: new String('<?php echo $block->escapeHtml(__('Welcome, %1!', '%1')); ?>').replace('%1', customer().firstname)">
+								</span>
+                                <!-- /ko -->
+                                <!-- ko ifnot: customer().fullname  -->
+								<span data-bind="html:'<?= $block->escapeHtml($welcomeMessage) ?>'"></span>
+                                <!-- /ko -->
+							</span>
+							<script type="text/x-magento-init">
+							{
+								"*": {
+									"Magento_Ui/js/core/app": {
+										"components": {
+											"customer": {
+												"component": "Magento_Customer/js/view/customer"
+											}
+										}
+									}
+								}
+							}
+							</script>
+
+						</span>
+
+                        <?php
+                        $login_customer = $block->getLayout()->createBlock('Magento\Customer\Block\Account\Customer');
+                        ?>
+
+                        <?php if ($login_customer->customerLoggedIn()) { ?>
+                            <a href="<?php echo $this->getUrl('customer/account/logout') ?>"
+                               title="<?php echo __('Logout') ?>"><?php echo __('Logout') ?></a>
+                        <?php } else { ?>
+                            <a href="<?php echo $this->getUrl('customer/account/create') ?>"
+                               title="<?php echo __('Create Your Account') ?>"><?php echo __('Join Free') ?></a> <?php echo __('or') ?>
+                            <a href="<?php echo $this->getUrl('customer/account/login') ?>"
+                               title="<?php echo __('Sign In') ?>"><?php echo __('Sign in') ?></a>
+                        <?php } ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-md-9 header-top-links">
+                    <?php echo $block->getChildHtml('currency-header'); ?>
+                    <?php echo $block->getChildHtml('language-header'); ?>
+                    <?php echo $block->getChildHtml('toplinks-header'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 logo-header">
+                    <?php echo $block->getChildHtml('logo_theme'); ?>
+                </div>
+
+                <div class="col-lg-10 header-middle-right">
+                    <div class="middle-right-content">
+                        <div class="main-megamenu">
+                            <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml(); ?>
+                        </div>
+
+                        <div class="minicart-header">
+                            <div class="minicart-content">
+                                <?php echo $block->getChildHtml('cart-header'); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="navigation-mobile-container">
+                    <?php echo $block->getChildHtml('navigation.mobile'); ?>
+                </div>
+
+                <div class="col-lg-3 sidebar-megamenu">
+                    <div class="megamenu-content-sidebar">
+                        <div class="btn-megamenu">
+                            <a href="javascript:void(0)"
+                               title="<?php echo __('All Categories') ?>"><?php echo __('All Categories') ?></a>
+                        </div>
+
+                        <div class="menu-ver-content">
+                            <?php
+                            if ($_config->getGeneral('menu_style') == 'megamenu') {
+                                echo $block->getChildHtml('navigation-header-megamenu');
+                            } else {
+                                echo $block->getChildHtml('navigation-header');
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 searchbox-header">
+                    <?php echo $block->getChildHtml('search-header-pro'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

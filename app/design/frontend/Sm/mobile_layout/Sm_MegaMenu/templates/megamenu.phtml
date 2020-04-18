@@ -1,0 +1,140 @@
+<?php
+/*------------------------------------------------------------------------
+# SM Mega Menu - Version 3.1.0
+# Copyright (c) 2015 YouTech Company. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: YouTech Company
+# Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+use \Sm\MegaMenu\view\frontend\templates\MobileDetect;
+
+$detect = new MobileDetect();
+
+$prefix       = \Sm\MegaMenu\Model\Config\Source\Html::PREFIX;
+$status       = \Sm\MegaMenu\Model\Config\Source\Status::STATUS_ENABLED;
+$menuItems    = $this->createMenuItems();
+$itemsStartLv = $this->getItems();
+$uq           = uniqid($prefix . 'menu');
+$nametable    = $this->nameTable();
+$config       = $this->getConfigObject();
+$instance     = rand() . time();
+$id           = ($this->getFrontController()->getRequest()->getParam('id')) ? $this->getFrontController()->getRequest()->getParam('id') : ($this->getFrontController()->getRequest()->getParam('page_id') ? $this->getFrontController()->getRequest()->getParam('page_id') : '');
+?>
+<div class="megamenu-mobile">
+    <?php if (count($itemsStartLv)): ?>
+        <nav class="megamenu-mobile-sidebar" id="<?php echo $uq; ?>"
+             data-sam="<?php echo $instance; ?>">
+            <div class="sambar-inner">
+                <div class="mega-content">
+                    <ul class="list-megamenu-items">
+
+                        <?php foreach ($itemsStartLv as $itemStartLv) {
+                            $hasContent = !$this->isLeaf($itemStartLv) OR ($this->isLeaf($itemStartLv) AND $this->hasConntentType($itemStartLv));
+                            $hasLinkType  = $this->hasLinkType($itemStartLv);
+                            $isAlignRight = $this->isAlignRight($itemStartLv);
+                            ?>
+                            <?php
+                            $_active = '';
+                            if ($hasLinkType) {
+                                $extenal_link = $this->getCurrentUrl();
+                                if (strcasecmp($this->getLinkOfType($itemStartLv), $extenal_link) == 0) {
+                                    $_active = 'sm_megamenu_actived';
+                                }
+                            }
+                            ?>
+                            <li class="<?php if ($itemStartLv['custom_class']) {
+                                echo $itemStartLv['custom_class'] . '-parent ';
+                            } ?><?php if ($config['effect'] == 1 || $config['effect'] == 2) {
+                                echo 'other-toggle ';
+                            } ?>
+										<?php echo $prefix; ?>lv1 <?php echo ($hasContent) ? $prefix . 'drop parent' : $prefix . 'nodrop' ?>  <?php echo ($isAlignRight) ? $prefix . 'right' : '' ?>  <?php echo $_active; ?>">
+                                <a class="<?php echo $prefix; ?>head <?php echo ($hasContent) ? $prefix . 'drop' : $prefix . 'nodrop' ?> <?php if ($menuItems->getAllItemsByItemsIdEnabled($itemStartLv['items_id'], $itemStartLv['group_id']) || ($itemStartLv['type'] == 7)) {
+                                    echo $prefix . 'haschild';
+                                } ?>"
+                                   href="<?php echo ($hasLinkType) ? $this->getLinkOfType($itemStartLv) : 'javascript:void(0)' ?>" <?php echo ($hasLinkType) ? $this->getTargetAttr($itemStartLv['target']) : '' ?>
+                                   id="<?php echo $prefix . $itemStartLv['items_id']; ?>">
+                                    <?php if ($this->hasIcon($itemStartLv)) { ?>
+                                    <span class="icon_items"><img
+                                                src='<?php echo $this->filterImage($itemStartLv); ?>'
+                                                alt="icon items" width="1" height="1"></span>
+                                    <span class="<?php echo $prefix; ?>icon <?php if (!$itemStartLv['description']) {
+                                        echo $prefix . 'nodesc';
+                                    } ?>">
+																	<?php }else{ ?>
+												<span class="<?php echo $prefix; ?>icon <?php if (!$itemStartLv['description']) {
+                                                    echo $prefix . 'nodesc';
+                                                } ?>">
+																	<?php } ?>
+													<span class="<?php echo $prefix; ?>title"><?php echo __($itemStartLv['title']) ?></span>
+													<?php if ($itemStartLv['description']): ?>
+                                                        <span class="<?php echo $prefix; ?>description"><?php echo __($itemStartLv['description']) ?>
+															&nbsp;</span>
+                                                    <?php endif ?>
+												</span>
+                                </a>
+                                <?php $childItems = $menuItems->getAllItemsInEqLv($itemStartLv, 1); ?>
+                                <?php if ($this->isLeaf($itemStartLv) OR !count($childItems)) { ?>
+                                    <?php if ($this->hasConntentType($itemStartLv)) { ?>
+                                        <div class="sm-megamenu-child <?php echo $prefix; ?>dropdown_<?php echo $itemStartLv['cols_nb'] ?><?php if ($itemStartLv['cols_nb'] > 1) { ?>columns<?php } else { ?>column<?php } ?> <?php echo ($isAlignRight) ? $prefix . 'align_right' : '' ?> ">
+                                            <?php if ($itemStartLv['show_title'] == $status) { ?>
+                                                <div class="<?php echo $prefix; ?>title">
+                                                    <span><?php echo __($itemStartLv['title']) ?></span></div>
+                                            <?php } ?>
+                                            <div class="<?php echo $prefix; ?>content"><?php echo __($this->getContentType($itemStartLv)) ?></div>
+                                        </div>
+                                        <span class="btn-submobile"></span>
+                                    <?php }
+                                    continue;
+                                }
+                                if ($itemStartLv['cols_nb'] > 1) {
+                                    $divClassName = 'sm-megamenu-child ' . $prefix . 'dropdown_' . $itemStartLv['cols_nb'] . 'columns ';
+                                } else {
+                                    $divClassName = $prefix . 'dropdown_' . $itemStartLv['cols_nb'] . 'column sm-megamenu-child';
+                                }
+                                if ($isAlignRight) {
+                                    $divClassName .= $prefix . 'align_right';
+                                }
+
+                                if ($itemStartLv['depth'] + 1 <= $config['end_level']) {
+                                    if (count($childItems) > 0) {
+                                        ?>
+                                        <div class="<?php echo $divClassName ?>">
+                                            <?php echo $this->getItemHtml($itemStartLv, true, $id); ?>
+                                        </div>
+                                        <span class="btn-submobile"></span>
+                                    <?php }
+                                } ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <?php else: ?>
+        <p class="note-msg"><?php echo __('There are no items matching the selection.') ?></p>
+    <?php endif; ?>
+</div>
+
+<script>
+    require(["jquery", "mage/template"], function ($) {
+        var _item_active = $('div.sm_megamenu_actived');
+        if (_item_active.length) {
+            _item_active.each(function () {
+                var _self = $(this), _parent_active = _self.parents('.sm_megamenu_title'),
+                    _level1 = _self.parents('.sm_megamenu_lv1');
+                if (_parent_active.length) {
+                    _parent_active.each(function () {
+                        if (!$(this).hasClass('sm_megamenu_actived'))
+                            $(this).addClass('sm_megamenu_actived');
+                    });
+                }
+
+                if (_level1.length && !_level1.hasClass('sm_megamenu_actived')) {
+                    _level1.addClass('sm_megamenu_actived');
+                }
+            });
+        }
+    });
+</script>

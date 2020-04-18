@@ -1,0 +1,67 @@
+.placeholder(@color: @input-color-placeholder) {
+    // Firefox
+    &::-moz-placeholder {
+        color: @color;
+        opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+    }
+    &:-ms-input-placeholder {
+        color: @color;
+    }
+    // Internet Explorer 10+
+    &::-webkit-input-placeholder {
+        color: @color;
+    }
+    // Safari and Chrome
+}
+
+.transform_scale(@scale) {
+    transform: scale(@scale);
+    -moz-transform: scale(@scale);
+    -webkit-transform: scale(@scale);
+    -ms-transform: scale(@scale);
+}
+
+.transition(@transition) {
+    transition: @transition;
+    -moz-transition: @transition;
+    -webkit-transition: @transition;
+}
+
+.transform_origin(@var1,@var2) {
+    transform-origin: @var1 @var2;
+    -moz-transform-origin: @var1 @var2;
+    -webkit-transform-origin: @var1 @var2;
+    -ms-transform-origin: @var1 @var2;
+}
+
+.border_radius(@radius) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+
+.box_shadow(@shadow) {
+    box-shadow: @shadow;
+    -moz-box-shadow: @shadow;
+    -webkit-box-shadow: @shadow;
+}
+
+.font-awesome (@code, @size) {
+    content: '\@{code}';
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    font-synthesis: weight style;
+    font-stretch: normal;
+    font-size-adjust: none;
+    font-language-override: normal;
+    font-kerning: auto;
+    font-feature-settings: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    font-size: @size;
+}

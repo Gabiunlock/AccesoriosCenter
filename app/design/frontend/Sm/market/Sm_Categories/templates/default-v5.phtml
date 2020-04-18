@@ -1,0 +1,86 @@
+<?php
+/*------------------------------------------------------------------------
+# SM Categories - Version 3.2.0
+# Copyright (c) 2016 YouTech Company. All Rights Reserved.
+# @license - Copyrighted Commercial Software
+# Author: YouTech Company
+# Websites: http://www.magentech.com
+-------------------------------------------------------------------------*/
+
+$list = $this->_getList();
+if (!empty($list)) {
+    $_config           = $this->helper('Sm\Market\Helper\Data');
+    $enableLadyLoading = $_config->getAdvanced('enable_ladyloading');
+    $mediaSrc          = $_config->getMediaUrl();
+
+    if ($enableLadyLoading) {
+        $imgClass = 'lazyload';
+    } else {
+        $imgClass = '';
+    }
+    ?>
+    <?php if (!empty($this->_getConfig('title_module'))) { ?>
+        <div class="title-home">
+            <h2><span><?php echo $this->_getConfig('title_module'); ?></span></h2>
+        </div>
+    <?php } ?>
+    <div class="sm-categories">
+        <div class="cat-wrap">
+            <?php foreach ($list as $item) { ?>
+                <div class="item">
+                    <div class="content-box">
+                        <div class="parent-cat">
+                            <?php if ($item['cat_image']) { ?>
+                                <div class="image-cat static-image">
+                                    <a href="<?php echo $item['url'] ?>" title="<?php echo $item['name'] ?>">
+                                        <img class="<?php echo $imgClass; ?>"
+                                            <?php if ($enableLadyLoading) { ?>
+                                                src="<?php echo $mediaSrc . 'lazyloading/blank.png'; ?>"
+                                                data-src="<?php echo $item['cat_image']; ?>"
+                                            <?php } else { ?>
+                                                src="<?php echo $item['cat_image']; ?>"
+                                            <?php } ?>
+
+                                             alt="<?php echo $item['name'] ?>"
+                                        />
+                                    </a>
+                                </div>
+                            <?php } ?>
+                            <div class="cat-title">
+                                <a href="<?php echo $item['url'] ?>" title="<?php echo $item['name'] ?>">
+                                    <?php echo $item['name']; ?>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="child-cat">
+                            <ul class="sub-cats">
+                                <?php
+                                if (isset($item['children_info']) && !empty($item['children_info'])) {
+                                    $children_cats = $item['children_info'];
+                                    foreach ($children_cats as $children) { ?>
+                                        <li class="child-title">
+                                            <a href="<?php echo $children['url'] ?>"
+                                               title="<?php echo $children['name'] ?>">
+                                                <?php echo $children['name']; ?>
+                                            </a>
+                                        </li>
+                                        <?php
+                                    }
+                                } ?>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+    <?php
+} else { ?>
+    <div class="message info empty">
+        <div><?php /* @escapeNotVerified */
+            echo __('We can\'t find categories matching the selection.') ?></div>
+    </div>
+    <?php
+} ?>

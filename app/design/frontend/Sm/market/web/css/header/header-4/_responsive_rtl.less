@@ -1,0 +1,279 @@
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .header-style-4 {
+        .sidebar-megamenu {
+            max-width: 30%;
+            flex: 0 0 30%;
+        }
+
+        .searchbox-header {
+            max-width: 70%;
+            flex: 0 0 70%;
+        }
+
+        .call-free-header {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .header-style-4 {
+        .call-free-header {
+            display: none;
+        }
+
+        .sidebar-megamenu {
+            display: none;
+        }
+
+        .searchbox-header {
+            margin-right: 44px;
+            margin-top: -50px;
+            z-index: 10006;
+        }
+
+        .navigation-mobile-container {
+            display: block;
+            height: 50px;
+            margin: 0 15px;
+
+            .btn-mobile {
+                height: 50px;
+
+                .button-mobile {
+                    width: 36px;
+                    height: 36px;
+                    padding: 0;
+                    font-size: 24px;
+                    margin-top: 7px;
+                    color: #fff;
+
+                    i {
+                        display: inline-block !important;
+                        line-height: 35px;
+                        margin: 0;
+                        text-align: center;
+                        vertical-align: top;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .header-bottom .minicart-header {
+            padding-right: 8px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .row-topheader {
+        display: block;
+    }
+
+    .customer-action-header,
+    .header-top-links {
+        width: auto;
+    }
+
+    .header-style-4 {
+        .welcome-text,
+        .call-free-header {
+            display: none;
+        }
+
+        .customer-action-header {
+            float: right;
+        }
+
+        .header-top-links {
+            float: left;
+        }
+
+        .header-middle {
+            padding: 25px 0;
+
+            .logo-header {
+                width: 45%;
+                float: right;
+            }
+
+            .header-middle-right {
+                width: 55%;
+                float: right;
+            }
+        }
+
+        .header-bottom .minicart-header {
+            padding-right: 8px;
+        }
+
+        .sidebar-megamenu {
+            display: none;
+        }
+
+        .searchbox-header {
+            margin-right: 44px;
+            margin-top: -50px;
+            z-index: 10006;
+        }
+
+        .sm-searchbox .sm-searchbox-content .control {
+            &:before {
+                display: none;
+            }
+
+            .searchbox-cat {
+                display: none;
+            }
+
+            #searchbox {
+                padding-right: 10px !important;
+            }
+        }
+
+        .navigation-mobile-container {
+            display: block;
+            height: 50px;
+            margin: 0 15px;
+
+            .btn-mobile {
+                height: 50px;
+
+                .button-mobile {
+                    width: 36px;
+                    height: 36px;
+                    padding: 0;
+                    font-size: 24px;
+                    margin-top: 7px;
+                    color: #fff;
+
+                    i {
+                        display: inline-block !important;
+                        line-height: 35px;
+                        margin: 0;
+                        text-align: center;
+                        vertical-align: top;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .header-style-4 {
+        .header-top {
+            text-align: center;
+            height: auto;
+
+            .customer-action-header,
+            .header-top-links {
+                float: none;
+            }
+
+            .header-top-links {
+                .toplinks-wrapper {
+                    float: none;
+
+                    .header.links {
+                        li {
+                            float: none;
+                            display: inline-block;
+
+                            &:not(:first-child) {
+                                margin-right: 5px;
+                                padding-right: 5px;
+
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .header-middle {
+            text-align: center;
+
+            .logo-header,
+            .header-middle-right {
+                float: none;
+                width: 100%;
+            }
+
+            .header-middle-right {
+                padding-top: 15px;
+
+                .currency-wrapper,
+                .language-wrapper,
+                .compare-header-wrapper {
+                    float: none;
+                    display: inline-block;
+                    text-align: left;
+                    margin: 0 3px;
+                }
+            }
+        }
+
+        .header-bottom .minicart-header .minicart-content .cart-wrapper .minicart-wrapper .showcart {
+            width: 36px;
+            padding: 0;
+            height: 36px;
+            text-align: center;
+            line-height: 36px;
+
+            &:before {
+                display: none;
+            }
+
+            &:after {
+                .font-awesome(f291, 16px);
+                position: relative;
+                top: 2px;
+            }
+
+            .text {
+                display: none;
+            }
+
+            .counter.qty {
+                display: none;
+            }
+        }
+
+        .minicart-wrapper .block-minicart {
+            left: 0;
+        }
+
+        .cart-wrapper .mage-dropdown-dialog {
+            width: 290px;
+            left: 0;
+        }
+
+    }
+
+    .header-style-4 .header-bottom .sm-searchbox .sm-searchbox-content .actions .btn-searchbox {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+        padding: 0 !important;
+        text-align: center;
+
+        &:before {
+            .font-awesome(f002, 14px);
+        }
+
+        span {
+            display: none;
+        }
+    }
+}

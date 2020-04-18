@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<categoriesmenu>
+			<general>
+				<isenabled>1</isenabled>
+				<title_module>SM Categories Menu</title_module>
+			</general>
+
+			<source>
+				<select_category></select_category>
+				<max_depth>4</max_depth>
+				<visible_category>3</visible_category>
+			</source>
+		</categoriesmenu>
+	</default>
+</config>

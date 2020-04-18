@@ -1,0 +1,3098 @@
+<?xml version="1.0"?>
+<root>
+	<pages>
+		<cms_item>
+			<title>404 Not Found</title>
+			<identifier>no-route</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="wrapper_404page">
+<div class="col-lg-7 col-md-7">
+<div class="content-404page">
+<p class="top-text">Don't worry you will be back on track in no time!</p>
+<p class="img-404"><img src="{{media url="wysiwyg/404image/404-img-text.png"}}" alt="" /></p>
+<p class="bottom-text">Page doesn't exist or some other error occured. Go to our home page or go back previous page</p>
+<div class="button-404"><a class="btn-404 prev-page-btn" title="PREVIOUS PAGE" onclick="goBack()" href="javascript:void(0);">PREVIOUS PAGE</a> <a class="btn-404 back2home" title="BACK TO HOMEPAGE" href="{{store url=""}}">BACK TO HOMEPAGE</a></div>
+</div>
+</div>
+<div class="col-lg-5 col-md-5">
+<div class="img-right-404"><img src="{{media url="wysiwyg/404image/404-image.png"}}" alt="" /></div>
+</div>
+<div style="clear: both; height: 0px;">&nbsp;</div>
+<script type="text/javascript">
+	function goBack() {
+		window.history.back()
+	}
+</script>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 1</title>
+			<identifier>home-demo-01</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style home-page-1">
+<div class="row">
+<div class="col-xl-9 offset-xl-3">{{block class="Magento\\Cms\\Block\\Block" block_id="top-search"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-1-block-1"}}</div>
+</div>
+{{block class="Magento\\Cms\\Block\\Block" block_id="id-1-block-2"}}</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 2</title>
+			<identifier>home-demo-02</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style home-page-2">{{block class="Magento\\Cms\\Block\\Block" block_id="id-2-block-1"}}
+<div class="row">
+<div class="col-lg-9 left-main">{{block class="Magento\\Cms\\Block\\Block" block_id="id-2-block-2"}}</div>
+<div class="col-lg-3 right-main">{{block class="Magento\\Cms\\Block\\Block" block_id="id-2-block-3"}}</div>
+</div>
+<div class="full-categories">
+<div class="hot-categories-home">{{block class="Sm\Categories\Block\Categories" template="Sm_Categories::default.phtml" title_module="Hot categories" select_category="105,97,99,109,103,98,106,100" limitation="4"}}</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 3</title>
+			<identifier>home-demo-03</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style home-page-3">{{block class="Magento\\Cms\\Block\\Block" block_id="id-3-block-1"}}
+<div class="row">
+<div class="col-lg-3 sidebar-home">{{block class="Magento\\Cms\\Block\\Block" block_id="id-3-block-3"}}</div>
+<div class="col-lg-9 main-home">{{block class="Magento\\Cms\\Block\\Block" block_id="id-3-block-2"}}</div>
+</div>
+<div class="full-categories">
+<div class="hot-categories-home">{{block class="Sm\Categories\Block\Categories" template="Sm_Categories::default.phtml" title_module="Hot categories" select_category="105,97,99,109,103,98,106,100" limitation="4"}}</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 4</title>
+			<identifier>home-demo-04</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style home-page-4">{{block class="Magento\\Cms\\Block\\Block" block_id="id-4-block-1"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-4-block-2"}}
+<div class="full-categories">
+<div class="hot-categories-home">{{block class="Sm\Categories\Block\Categories" template="Sm_Categories::default.phtml" title_module="Hot categories" select_category="105,97,99,109,103,98,106,100" limitation="4"}}</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Pricing</title>
+			<identifier>pricing</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<!--PRICING TABLE 1-->
+
+<div class="pricing_table table-style-1">
+	<div class="pricing-title">
+		<h2>Price Table 1</h2>
+	</div>
+	
+	<div class="table-container">
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header">
+					<h3>Starter</h3>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li><b>20GB</b> Storage</li>
+						<li><b>10</b> Email Addresses</li>
+						<li><b>5</b> Domains</li>
+						<li><b>Endless</b> Support</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="dv-price">$</span><span class="price">20</span>
+						<p>per month</p>
+					</div>
+					
+					<div class="button-container">
+						<a href="#" title="Sign up">Sign up</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column column-active">
+			<div class="table-content">
+				<div class="table-header">
+					<h3>Pro</h3>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li><b>20GB</b> Storage</li>
+						<li><b>10</b> Email Addresses</li>
+						<li><b>5</b> Domains</li>
+						<li><b>Endless</b> Support</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="dv-price">$</span><span class="price">49</span>
+						<p>per month</p>
+					</div>
+					
+					<div class="button-container">
+						<a href="#" title="Sign up">Sign up</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header">
+					<h3>Value</h3>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li><b>20GB</b> Storage</li>
+						<li><b>10</b> Email Addresses</li>
+						<li><b>5</b> Domains</li>
+						<li><b>Endless</b> Support</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="dv-price">$</span><span class="price">69</span>
+						<p>per month</p>
+					</div>
+					
+					<div class="button-container">
+						<a href="#" title="Sign up">Sign up</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header">
+					<h3>Premium</h3>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li><b>20GB</b> Storage</li>
+						<li><b>10</b> Email Addresses</li>
+						<li><b>5</b> Domains</li>
+						<li><b>Endless</b> Support</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="dv-price">$</span><span class="price">89</span>
+						<p>per month</p>
+					</div>
+					
+					<div class="button-container">
+						<a href="#" title="Sign up">Sign up</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--END PRICING TABLE 1-->
+
+<!--PRICING TABLE 2-->
+
+<div class="pricing_table table-style-2">
+	<div class="pricing-title">
+		<h2>Price Table 2</h2>
+	</div>
+	
+	<div class="table-container">
+		<div class="col-lg-20 col-md-20 table-column">
+			<div class="table-content">
+				<div class="table-detail">
+					<div class="table-header">
+						<h3>Standard</h3>
+					</div>
+					
+					<ul class="table-option">
+						<li>5 Projects</li>
+						<li>5 GB Storage</li>
+						<li>Unlimited Users</li>
+						<li>10 GB Bandwith</li>
+						<li>Enhanced Security</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="price">$19.00</span>
+						<p>per month</p>
+					</div>
+				</div>
+				
+				<div class="button-container">
+					<a href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-20 col-md-20 table-column">
+			<div class="table-content">
+				<div class="table-detail">
+					<div class="table-header">
+						<h3>Premium</h3>
+					</div>
+					
+					<ul class="table-option">
+						<li>5 Projects</li>
+						<li>5 GB Storage</li>
+						<li>Unlimited Users</li>
+						<li>10 GB Bandwith</li>
+						<li>Enhanced Security</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="price">$19.00</span>
+						<p>per month</p>
+					</div>
+				</div>
+				
+				<div class="button-container">
+					<a href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-20 col-md-20 table-column column-active">
+			<div class="table-content">
+				<div class="table-detail">
+					<div class="table-header">
+						<h3>Professional</h3>
+					</div>
+					
+					<ul class="table-option">
+						<li>5 Projects</li>
+						<li>5 GB Storage</li>
+						<li>Unlimited Users</li>
+						<li>10 GB Bandwith</li>
+						<li>Enhanced Security</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="price">$19.00</span>
+						<p>per month</p>
+					</div>
+				</div>
+				
+				<div class="button-container">
+					<a href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-20 col-md-20 table-column">
+			<div class="table-content">
+				<div class="table-detail">
+					<div class="table-header">
+						<h3>Plus</h3>
+					</div>
+					
+					<ul class="table-option">
+						<li>5 Projects</li>
+						<li>5 GB Storage</li>
+						<li>Unlimited Users</li>
+						<li>10 GB Bandwith</li>
+						<li>Enhanced Security</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="price">$19.00</span>
+						<p>per month</p>
+					</div>
+				</div>
+				
+				<div class="button-container">
+					<a href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-20 col-md-20 table-column">
+			<div class="table-content">
+				<div class="table-detail">
+					<div class="table-header">
+						<h3>Maximum</h3>
+					</div>
+					
+					<ul class="table-option">
+						<li>5 Projects</li>
+						<li>5 GB Storage</li>
+						<li>Unlimited Users</li>
+						<li>10 GB Bandwith</li>
+						<li>Enhanced Security</li>
+					</ul>
+					
+					<div class="table-price">
+						<span class="price">$19.00</span>
+						<p>per month</p>
+					</div>
+				</div>
+				
+				<div class="button-container">
+					<a href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--END PRICING TABLE 2-->
+
+<!--PRICING TABLE 3-->
+
+<div class="pricing_table table-style-3">
+	<div class="pricing-title">
+		<h2>Price Table 3</h2>
+	</div>
+	
+	<div class="table-container">
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header color-1">
+					<h3>Standart</h3>
+					<p Class="short-des">Classic plan</p>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li>10GB file storage</li>
+						<li>5 new pages</li>
+						<li>100GB monthly data transfer</li>
+					</ul>
+				</div>
+				
+				<div class="table-price">
+					<span class="dv-price">$</span><span class="price">5</span>
+					<p>per month</p>
+				</div>
+					
+				<div class="button-container">
+					<a class="color-1" href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header color-2">
+					<h3>Business</h3>
+					<p Class="short-des">Best choice</p>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li>10GB file storage</li>
+						<li>5 new pages</li>
+						<li>100GB monthly data transfer</li>
+					</ul>
+				</div>
+				
+				<div class="table-price">
+					<span class="dv-price">$</span><span class="price">10</span>
+					<p>per month</p>
+				</div>
+					
+				<div class="button-container">
+					<a class="color-2" href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header color-3">
+					<h3>Premium</h3>
+					<p Class="short-des">Unlimited features</p>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li>10GB file storage</li>
+						<li>5 new pages</li>
+						<li>100GB monthly data transfer</li>
+					</ul>
+				</div>
+				
+				<div class="table-price">
+					<span class="dv-price">$</span><span class="price">25</span>
+					<p>per month</p>
+				</div>
+					
+				<div class="button-container">
+					<a class="color-3" href="#" title="Sign up">Sign up</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--END PRICING TABLE 3-->
+
+<!--PRICING TABLE 4-->
+
+<div class="pricing_table table-style-4">
+	<div class="pricing-title">
+		<h2>Price Table 4</h2>
+	</div>
+	
+	<div class="table-container">
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header">
+					<h3>Basic</h3>
+					
+					<div class="table-price">
+						$32/mo
+					</div>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li>1 GB space</li>
+						<li>10 GB Bandwidth</li>
+						<li>10 Portfolio Items</li>
+					</ul>
+				</div>
+
+				<div class="button-container">
+					<a href="#" title="Order Now">Order Now</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header">
+					<h3>Standard</h3>
+					
+					<div class="table-price">
+						$50/mo
+					</div>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li>5 GB space</li>
+						<li>50 GB Bandwidth</li>
+						<li>70 Portfolio Items</li>
+						<li>10 Video Uploads</li>
+						<li>24/7 Support</li>
+					</ul>
+				</div>
+
+				<div class="button-container">
+					<a href="#" title="Order Now">Order Now</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-header">
+					<h3>Pro</h3>
+					
+					<div class="table-price">
+						$80/mo
+					</div>
+				</div>
+				
+				<div class="table-detail">
+					<ul class="table-option">
+						<li>10 GB space</li>
+						<li>Unlimited Bandwidth</li>
+						<li>200 Portfolio Items</li>
+						<li>20 Video Uploads</li>
+						<li>Premium Email Support</li>
+						<li>Premium Phone Support</li>
+						<li>24/7 Support</li>
+					</ul>
+				</div>
+
+				<div class="button-container">
+					<a href="#" title="Order Now">Order Now</a>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+<!--END PRICING TABLE 4-->
+
+<!--PRICING TABLE 5-->
+
+<div class="pricing_table table-style-5">
+	<div class="pricing-title">
+		<h2>Price Table 5</h2>
+	</div>
+	
+	<div class="table-container">
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-price">
+					<span class="price">0</span><span class="dv-price">$</span>
+					<div class="short-des">Freeuser</div>
+				</div>
+
+				<div class="button-container">
+					<a class="color-1" href="#" title="Get">Get</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column column-active">
+			<div class="table-content">
+				<div class="table-price">
+					<span class="price">20</span><span class="dv-price">$</span>
+					<div class="short-des">POWERUSER</div>
+				</div>
+
+				<div class="button-container">
+					<a class="color-2" href="#" title="Buy">Buy</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="table-column">
+			<div class="table-content">
+				<div class="table-price">
+					<span class="price">40</span><span class="dv-price">$</span>
+					<div class="short-des">MADUSER</div>
+				</div>
+
+				<div class="button-container">
+					<a class="color-3" href="#" title="Buy">Buy</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--END PRICING TABLE 5-->]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Team</title>
+			<identifier>team</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<!--TEAM 1-->
+<div class="our-team team-style-1 lazyload-container">
+<div class="team-title">
+<h2>Our Team style 1</h2>
+</div>
+<div class="team-container">
+<div class="row">
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-1.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-2.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-3.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-4.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END TEAM 1-->
+<p></p>
+<!--TEAM 2-->
+<div class="our-team team-style-2 lazyload-container">
+<div class="team-title">
+<h2>Our Team style 2</h2>
+</div>
+<div class="team-container">
+<div class="row">
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-1.jpg"}}" alt="Team" />
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-2.jpg"}}" alt="Team" />
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-3.jpg"}}" alt="Team" />
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-4.jpg"}}" alt="Team" />
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END TEAM 2-->
+<p></p>
+<!--TEAM 3-->
+<div class="our-team team-style-3 lazyload-container">
+<div class="team-title">
+<h2>Our Team style 3</h2>
+</div>
+<div class="team-container">
+<div class="row">
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-1.jpg"}}" alt="Team" />
+<div class="team-info">
+<div class="team-info-middle">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-2.jpg"}}" alt="Team" />
+<div class="team-info">
+<div class="team-info-middle">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-3.jpg"}}" alt="Team" />
+<div class="team-info">
+<div class="team-info-middle">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-4.jpg"}}" alt="Team" />
+<div class="team-info">
+<div class="team-info-middle">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<div class="socials-container">
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END TEAM 3-->
+<p></p>
+<!--TEAM 4-->
+<div class="our-team team-style-4 lazyload-container">
+<div class="team-title">
+<h2>Our Team style 4</h2>
+</div>
+<div class="team-container">
+<div class="row">
+<div class="item-team col-lg-6 col-md-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-1.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#"><span class="hidden">RSS</span></a></li>
+<li class="facebook"><a title="Facebook" href="#"><span class="hidden">Facebook</span></a></li>
+<li class="twitter"><a title="Twitter" href="#"><span class="hidden">Twitter</span></a></li>
+<li class="google-plus"><a title="Google Plus" href="#"><span class="hidden">Google Plus</span></a></li>
+</ul>
+<ul class="contact">
+<li class="phone">0123-4567-8910</li>
+<li class="email">maria@elisting.domain</li>
+<li class="tool-contact">elisting.skype</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="item-team scol-lg-6 col-md-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-3.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#"><span class="hidden">RSS</span></a></li>
+<li class="facebook"><a title="Facebook" href="#"><span class="hidden">Facebook</span></a></li>
+<li class="twitter"><a title="Twitter" href="#"><span class="hidden">Twitter</span></a></li>
+<li class="google-plus"><a title="Google Plus" href="#"><span class="hidden">Google Plus</span></a></li>
+</ul>
+<ul class="contact">
+<li class="phone">0123-4567-8910</li>
+<li class="email">maria@elisting.domain</li>
+<li class="tool-contact">elisting.skype</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END TEAM 4-->
+<p></p>
+<!--TEAM 5-->
+<div class="our-team team-style-5 lazyload-container">
+<div class="team-title">
+<h2>Our Team style 5</h2>
+</div>
+<div class="team-container">
+<div class="row">
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-1.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-2.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-3.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-6">
+<div class="team-inner">
+<div class="team-image"><img src="{{media url="wysiwyg/team/team-4.jpg"}}" alt="Team" /></div>
+<div class="team-info">
+<h3>Dolor at tincidunt mollis</h3>
+<p>Maecenas a est tellus. Sed varius dui ut leo vehicula, ac eleifend enim eges</p>
+<ul class="socials">
+<li class="rss"><a title="RSS" href="#">RSS</a></li>
+<li class="facebook"><a title="Facebook" href="#">Facebook</a></li>
+<li class="twitter"><a title="Twitter" href="#">Twitter</a></li>
+<li class="google-plus"><a title="Google Plus" href="#">Google Plus</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END TEAM 5-->]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Categories</title>
+			<identifier>categories-page</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="categories-page">
+	<div class="row">
+		<div class="col-lg-8 col-md-8 category-item category-1">
+			<div class="image-category">
+				<img src="{{media url="wysiwyg/categories/category-1.jpg"}}" alt="Category" />
+				
+				<div class="description-category left-center">
+					<div class="title-category">
+						<h2><a href="#" title="Tablet Design">Tablet Design</a></h2>
+						
+						<div class="description">Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore.</div>
+						
+						<a class="btn-shopnow" href="#" title="Shop Now">Shop Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-6 category-item category-2">
+			<div class="image-category">
+				<img src="{{media url="wysiwyg/categories/category-2.jpg"}}" alt="Category" />
+				
+				<div class="title-category center-bottom">
+					<h2><a href="#" title="Tablet Design">Tablet Design</a></h2>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-6 category-item category-3">
+			<div class="image-category">
+				<img src="{{media url="wysiwyg/categories/category-3.jpg"}}" alt="Category" />
+				
+				<div class="title-category center-bottom">
+					<h2><a href="#" title="electronic season">electronic season</a></h2>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-8 col-md-8 category-item category-4">
+			<div class="image-category">
+				<img src="{{media url="wysiwyg/categories/category-4.jpg"}}" alt="Category" />
+				
+				<div class="description-category left-center">
+					<div class="title-category">
+						<h2><a href="#" title="Home & Kitchen">Home & Kitchen</a></h2>
+						
+						<div class="description">Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit, sed do eiusmod tempor<br>incididunt ut labore.</div>
+						
+						<a class="btn-shopnow" href="#" title="Shop Now">Shop Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-6 category-item category-5">
+			<div class="image-category">
+				<img src="{{media url="wysiwyg/categories/category-5.jpg"}}" alt="Category" />
+				
+				<div class="title-category center-bottom">
+					<h2><a href="#" title="new camera">new camera</a></h2>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-6 category-item category-6">
+			<div class="image-category">
+				<img src="{{media url="wysiwyg/categories/category-6.jpg"}}" alt="Category" />
+				
+				<div class="title-category center-bottom">
+					<h2><a href="#" title="computers">computers</a></h2>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-lg-4 col-md-4 col-sm-6 category-item category-7">
+			<div class="image-category">
+				<img src="{{media url="wysiwyg/categories/category-7.jpg"}}" alt="Category" />
+				
+				<div class="title-category center-bottom">
+					<h2><a href="#" title="accessories">accessories</a></h2>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>FAQs</title>
+			<identifier>faqs</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<!--FAQS 1-->
+<div id="accordion" class="panel-group accordion-type-1">
+<div class="panel faq-accordion">
+<div id="headingOne" class="accordion-heading">
+<h4 class="panel-title"><a href="#collapseOne" data-toggle="collapse" data-parent="#accordion"> Ask a question 1 </a></h4>
+</div>
+<div id="collapseOne" class="panel-collapse collapse show in">
+<div class="panel-body">
+<div class="row">
+<div class="col-lg-4 col-md-4 imagebox-faq"><img src="{{media url="wysiwyg/faqs/image-faq.jpg"}}" alt="Faq" /></div>
+<div class="col-lg-8 col-md-8 info-faq">
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="headingTwo" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapseTwo" data-toggle="collapse" data-parent="#accordion"> Ask a question 2 </a></h4>
+</div>
+<div id="collapseTwo" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="headingThree" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapseThree" data-toggle="collapse" data-parent="#accordion"> Ask a question 3 </a></h4>
+</div>
+<div id="collapseThree" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="headingFour" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapseFour" data-toggle="collapse" data-parent="#accordion"> Ask a question 4 </a></h4>
+</div>
+<div id="collapseFour" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="headingFive" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapseFive" data-toggle="collapse" data-parent="#accordion"> Ask a question 5 </a></h4>
+</div>
+<div id="collapseFive" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+</div>
+<!--END FAQS 1-->
+<p></p>
+<!--FAQS 2-->
+<div class="full-wrapper full-wrapper-faq-4">
+<div class="container">
+<div id="accordion2" class="panel-group accordion-type-2">
+<div class="panel faq-accordion">
+<div id="heading2One" class="accordion-heading">
+<h4 class="panel-title"><a href="#collapse2One" data-toggle="collapse" data-parent="#accordion2"> Ask a question 1 <span class="faq-icon1">Icon</span> </a></h4>
+</div>
+<div id="collapse2One" class="panel-collapse collapse show in">
+<div class="panel-body">
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading2Two" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse2Two" data-toggle="collapse" data-parent="#accordion2"> Ask a question 2 <span class="faq-icon2">Icon</span> </a></h4>
+</div>
+<div id="collapse2Two" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading2Three" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse2Three" data-toggle="collapse" data-parent="#accordion2"> Ask a question 3 <span class="faq-icon3">Icon</span> </a></h4>
+</div>
+<div id="collapse2Three" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading2Four" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse2Four" data-toggle="collapse" data-parent="#accordion2"> Ask a question 4 <span class="faq-icon4">Icon</span> </a></h4>
+</div>
+<div id="collapse2Four" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading2Five" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse2Five" data-toggle="collapse" data-parent="#accordion2"> Ask a question 5 <span class="faq-icon5">Icon</span> </a></h4>
+</div>
+<div id="collapse2Five" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END FAQS 2-->
+<p></p>
+<!--FAQS 3-->
+<div class="row">
+<div class="col-lg-12 col-md-12">
+<div id="accordion3" class="panel-group accordion-type-3">
+<div class="panel faq-accordion color-1">
+<div id="heading3One" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse3One" data-toggle="collapse" data-parent="#accordion3"> Ask a question 1 </a></h4>
+</div>
+<div id="collapse3One" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion color-2">
+<div id="heading3Two" class="accordion-heading">
+<h4 class="panel-title"><a href="#collapse3Two" data-toggle="collapse" data-parent="#accordion3"> Ask a question 2 </a></h4>
+</div>
+<div id="collapse3Two" class="panel-collapse collapse show in">
+<div class="panel-body">
+<div class="imagebox-faq"><img src="{{media url="wysiwyg/faqs/image-faq.jpg"}}" alt="Faq" /></div>
+<div class="info-faq">
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel faq-accordion  color-3">
+<div id="heading3Three" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse3Three" data-toggle="collapse" data-parent="#accordion3"> Ask a question 3 </a></h4>
+</div>
+<div id="collapse3Three" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion  color-4">
+<div id="heading3Four" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse3Four" data-toggle="collapse" data-parent="#accordion3"> Ask a question 4 </a></h4>
+</div>
+<div id="collapse3Four" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion  color-5">
+<div id="heading3Five" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse3Five" data-toggle="collapse" data-parent="#accordion3"> Ask a question 5 </a></h4>
+</div>
+<div id="collapse3Five" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion  color-6">
+<div id="heading3Six" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse3Six" data-toggle="collapse" data-parent="#accordion3"> Ask a question 6 </a></h4>
+</div>
+<div id="collapse3Six" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END FAQS 3-->
+<p></p>
+<!--FAQS 4-->
+<div class="full-wrapper full-wrapper-faq-4">
+<div class="container">
+<div id="accordion4" class="panel-group accordion-type-4">
+<div class="panel faq-accordion">
+<div id="heading4One" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse4One" data-toggle="collapse" data-parent="#accordion4"> <span class="number">1</span>Ask a question 1 </a></h4>
+</div>
+<div id="collapse4One" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading4Two" class="accordion-heading">
+<h4 class="panel-title"><a href="#collapse4Two" data-toggle="collapse" data-parent="#accordion4"> <span class="number">2</span>Ask a question 2 </a></h4>
+</div>
+<div id="collapse4Two" class="panel-collapse collapse show in">
+<div class="panel-body">
+<div class="imagebox-faq"><img src="{{media url="wysiwyg/faqs/image-faq.jpg"}}" alt="Faq" /></div>
+<div class="info-faq">
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading4Three" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse4Three" data-toggle="collapse" data-parent="#accordion4"> <span class="number">3</span>Ask a question 3 </a></h4>
+</div>
+<div id="collapse4Three" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading4Four" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse4Four" data-toggle="collapse" data-parent="#accordion4"> <span class="number">4</span>Ask a question 4 </a></h4>
+</div>
+<div id="collapse4Four" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+<div class="panel faq-accordion">
+<div id="heading4Five" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse4Five" data-toggle="collapse" data-parent="#accordion4"> <span class="number">5</span>Ask a question 5 </a></h4>
+</div>
+<div id="collapse4Five" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--END FAQS 4-->
+<p></p>
+<!--FAQS 5-->
+<div id="accordion5" class="panel-group row accordion-type-5">
+<div class="col-lg-3 col-md-6 panel faq-accordion">
+<div id="heading5One" class="accordion-heading">
+<h4 class="panel-title"><a href="#collapse5One" data-toggle="collapse" data-parent="#accordion5"> Ask a question 1 </a></h4>
+</div>
+<div id="collapse5One" class="panel-collapse collapse show in">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 panel faq-accordion">
+<div id="heading5Two" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse5Two" data-toggle="collapse" data-parent="#accordion5"> Ask a question 2 </a></h4>
+</div>
+<div id="collapse5Two" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 panel faq-accordion">
+<div id="heading5Three" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse5Three" data-toggle="collapse" data-parent="#accordion5"> Ask a question 3 </a></h4>
+</div>
+<div id="collapse5Three" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</div>
+</div>
+</div>
+<div class="col-lg-3 col-md-6 panel faq-accordion">
+<div id="heading5Four" class="accordion-heading">
+<h4 class="panel-title"><a class="collapsed" href="#collapse5Four" data-toggle="collapse" data-parent="#accordion5"> Ask a question 4 </a></h4>
+</div>
+<div id="collapse5Four" class="panel-collapse collapse">
+<div class="panel-body">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia</div>
+</div>
+</div>
+</div>
+<!--END FAQS 5-->]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Popular Search</title>
+			<identifier>popular-search</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="popular-search">
+	<div class="search-title">
+		<h2>Search</h2>
+	</div>
+	
+	<div class="search-container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-6 search-column">
+				<ul class="link-list">
+					<li><a href="#" title="MOBILES & TABLETS">MOBILES & TABLETS</a></li>
+					<li><a href="#" title="COMPUTERS & ACCESSORIES">COMPUTERS & ACCESSORIES</a></li>
+					<li><a href="#" title="ELECTRONICS & CAMERAS">ELECTRONICS & CAMERAS</a></li>
+					<li><a href="#" title="BOOKS & MAGAZINES">BOOKS & MAGAZINES</a></li>
+					<li><a href="#" title="GIFTS">GIFTS</a></li>
+					<li><a href="#" title="FASHION & ACCESSORIES">FASHION & ACCESSORIES</a></li>
+					<li><a href="#" title="HOME & KITCHEN">HOME & KITCHEN</a></li>
+					<li><a href="#" title="BABY CARE & TOYS">BABY CARE & TOYS</a></li>
+					<li><a href="#" title="MOVIES & MUSIC">MOVIES & MUSIC</a></li>
+					<li><a href="#" title="Sports & Fitness">Sports & Fitness</a></li>
+					<li><a href="#" title="Food & Drink">Food & Drink</a></li>
+					<li><a href="#" title="BEAUTY & HEALTH">BEAUTY & HEALTH</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-6 search-column">
+				<ul class="link-list">
+					<li><a href="#" title="honda v919">honda v919</a></li>
+					<li><a href="#" title="Go Pro">Go Pro</a></li>
+					<li><a href="#" title="rda">rda</a></li>
+					<li><a href="#" title="electronic Cigarette">electronic Cigarette</a></li>
+					<li><a href="#" title="drip Tip">drip Tip</a></li>
+					<li><a href="#" title="letv 1s">letv 1s</a></li>
+					<li><a href="#" title="Watch">Watch</a></li>
+					<li><a href="#" title="hoverboard">hoverboard</a></li>
+					<li><a href="#" title="tablet">tablet</a></li>
+					<li><a href="#" title="bluboo">bluboo</a></li>
+					<li><a href="#" title="Solar">Solar</a></li>
+					<li><a href="#" title="mod">mod</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-6 search-column">
+				<ul class="link-list">
+					<li><a href="#" title="Teclast x98">Teclast x98</a></li>
+					<li><a href="#" title="cubot">cubot</a></li>
+					<li><a href="#" title="Mi 5">Mi 5</a></li>
+					<li><a href="#" title="syma x5c">syma x5c</a></li>
+					<li><a href="#" title="Xiaomi Redmi Note 2">Xiaomi Redmi Note 2</a></li>
+					<li><a href="#" title="laptop">laptop</a></li>
+					<li><a href="#" title="mouse">mouse</a></li>
+					<li><a href="#" title="Eleaf">Eleaf</a></li>
+					<li><a href="#" title="xiaomi redmi 3">xiaomi redmi 3</a></li>
+					<li><a href="#" title="microphone">microphone</a></li>
+					<li><a href="#" title="syma x5c">syma x5c</a></li>
+					<li><a href="#" title="Xiaomi Redmi Note 2">Xiaomi Redmi Note 2</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 col-sm-6 search-column">
+				<ul class="link-list">
+					<li><a href="#" title="Charger">Charger</a></li>
+					<li><a href="#" title="micro Sd">micro Sd</a></li>
+					<li><a href="#" title="oppo">oppo</a></li>
+					<li><a href="#" title="meizu Pro 5">meizu Pro 5</a></li>
+					<li><a href="#" title="led">led</a></li>
+					<li><a href="#" title="phone">phone</a></li>
+					<li><a href="#" title="Xiaomi Mi4s">Xiaomi Mi4s</a></li>
+					<li><a href="#" title="box mod">box mod</a></li>
+					<li><a href="#" title="gopro">gopro</a></li>
+					<li><a href="#" title="projector">projector</a></li>
+					<li><a href="#" title="redmi Note 3 Pro">redmi Note 3 Pro</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Sitemap</title>
+			<identifier>site-map</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="popular-search">
+
+	<div class="sitemap-container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 search-column">
+				<ul class="link-list">
+					<li class="category-link-title"><a href="#" title="Electronics & COmputers">Electronics & COmputers</a></li>
+					<li><a href="#" title="MOBILES & TABLETS">MOBILES & TABLETS</a></li>
+					<li><a href="#" title="COMPUTERS & ACCESSORIES">COMPUTERS & ACCESSORIES</a></li>
+					<li><a href="#" title="ELECTRONICS & CAMERAS">ELECTRONICS & CAMERAS</a></li>
+					<li><a href="#" title="BOOKS & MAGAZINES">BOOKS & MAGAZINES</a></li>
+					<li><a href="#" title="GIFTS">GIFTS</a></li>
+					<li><a href="#" title="FASHION & ACCESSORIES">FASHION & ACCESSORIES</a></li>
+					<li><a href="#" title="HOME & KITCHEN">HOME & KITCHEN</a></li>
+					<li><a href="#" title="BABY CARE & TOYS">BABY CARE & TOYS</a></li>
+					<li><a href="#" title="MOVIES & MUSIC">MOVIES & MUSIC</a></li>
+					<li><a href="#" title="Sports & Fitness">Sports & Fitness</a></li>
+					<li><a href="#" title="Food & Drink">Food & Drink</a></li>
+					<li><a href="#" title="BEAUTY & HEALTH">BEAUTY & HEALTH</a></li>
+					<li><a href="#" title="FASHION & ACCESSORIES">FASHION & ACCESSORIES</a></li>
+					<li><a href="#" title="HOME & KITCHEN">HOME & KITCHEN</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 search-column">
+				<ul class="link-list">
+					<li class="category-link-title"><a href="#" title="Books & Audible">Books & Audible</a></li>
+					<li><a href="#" title="Books">Books</a></li>
+					<li><a href="#" title="Kindle Books">Kindle Books</a></li>
+					<li><a href="#" title="Children's Books">Children's Books</a></li>
+					<li><a href="#" title="Textbooks">Textbooks</a></li>
+					<li><a href="#" title="Magazines">Magazines</a></li>
+					<li><a href="#" title="Sell Your Books">Sell Your Books</a></li>
+					
+					<li class="category-link-title"><a href="#" title="Beauty, health & Grocery">Beauty, health & Grocery</a></li>
+					<li><a href="#" title="All Beauty">All Beauty</a></li>
+					<li><a href="#" title="Luxury Beauty">Luxury Beauty</a></li>
+					<li><a href="#" title="Men's Grooming">Men's Grooming</a></li>
+					<li><a href="#" title="Health, Household & Baby Care">Health, Household & Baby Care</a></li>
+					<li><a href="#" title="Grocery & Gourmet Food">Grocery & Gourmet Food</a></li>
+					<li><a href="#" title="Natural & Organic">Natural & Organic</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 search-column">
+				<ul class="link-list">
+					<li class="category-link-title"><a href="#" title="Digital games & Software">Digital games & Software</a></li>
+					<li><a href="#" title="Digital Games">Digital Games</a></li>
+					<li><a href="#" title="Free-to-Play Games">Free-to-Play Games</a></li>
+					<li><a href="#" title="Indie Games">Indie Games</a></li>
+					<li><a href="#" title="Digital Software">Digital Software</a></li>
+					
+					<li class="category-link-title"><a href="#" title="Clothing, Shoes & Jewelry">Clothing, Shoes & Jewelry</a></li>
+					<li><a href="#" title="Shoes, Boots & Trainers">Shoes, Boots & Trainers</a></li>
+					<li><a href="#" title="Shorts">Shorts</a></li>
+					<li><a href="#" title="Suits & Blazers">Suits & Blazers</a></li>
+					<li><a href="#" title="Sunglasses">Sunglasses</a></li>
+					<li><a href="#" title="Swimwear">Swimwear</a></li>
+					<li><a href="#" title="Ties & Pocket Squares">Ties & Pocket Squares</a></li>
+					<li><a href="#" title="Trousers & Chinos">Trousers & Chinos</a></li>
+					<li><a href="#" title="T-Shirts">T-Shirts</a></li>
+				</ul>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 search-column">
+				<ul class="link-list">
+					<li class="category-link-title"><a href="#" title="Women category">Women category</a></li>
+					<li><a href="#" title="Abercrombie & Fitch">Abercrombie & Fitch</a></li>
+					<li><a href="#" title="adidas Originals">adidas Originals</a></li>
+					<li><a href="#" title="ASOS">ASOS</a></li>
+					<li><a href="#" title="Cheap Monday">Cheap Monday</a></li>
+					<li><a href="#" title="Diesel">Diesel</a></li>
+					<li><a href="#" title="Ellesse">Ellesse</a></li>
+					<li><a href="#" title="Fred Perry">Fred Perry</a></li>
+					<li><a href="#" title="Jack & Jones">Jack & Jones</a></li>
+					<li><a href="#" title="New Balance">New Balance</a></li>
+					<li><a href="#" title="New Look">New Look</a></li>
+					<li><a href="#" title="Nike">Nike</a></li>
+					<li><a href="#" title="Polo Ralph Lauren">Polo Ralph Lauren</a></li>
+					<li><a href="#" title="Religion">Religion</a></li>
+					<li><a href="#" title="adidas Originals">adidas Originals</a></li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Country Support</title>
+			<identifier>country-support</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="country-container lazyload-container">
+<div class="row">
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-1.jpg"}}" alt="Country" />
+<h2>England</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-2.jpg"}}" alt="Country" />
+<h2>American</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-3.jpg"}}" alt="Country" />
+<h2>Canada</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-4.jpg"}}" alt="Country" />
+<h2>New Zealand</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-5.jpg"}}" alt="Country" />
+<h2>Czech Republic</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-6.jpg"}}" alt="Country" />
+<h2>Czech Republic</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-7.jpg"}}" alt="Country" />
+<h2>China</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-8.jpg"}}" alt="Country" />
+<h2>Angola</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-9.jpg"}}" alt="Country" />
+<h2>Slovenia</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-10.jpg"}}" alt="Country" />
+<h2>Spain</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-11.jpg"}}" alt="Country" />
+<h2>France</h2>
+</div>
+</div>
+<div class="col-lg-2 col-md-2 col-sm-3 country-item">
+<div class="country-info"><img src="{{media url="wysiwyg/country/ct-12.jpg"}}" alt="Country" />
+<h2>Cuba</h2>
+</div>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Typography</title>
+			<identifier>typography</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="paragraph">
+	<h3 class="typography-h3">Paragraph</h3>
+	
+	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam </p>
+	
+</div>
+
+<div class="typography-container">
+	<div class="heading-typography">
+		<h1 class="typography-h1 hd-typography">H1 Heading</h1>
+		<h2 class="typography-h2 hd-typography">H2 Heading</h2>
+		<h3 class="typography-h3 hd-typography">H3 Heading</h3>
+		<h4 class="typography-h4 hd-typography">H4 Heading</h4>
+		<h5 class="typography-h5 hd-typography">H5 Heading</h5>
+		<h6 class="typography-h6 hd-typography">H6 Heading</h6>
+	</div>
+</div>
+
+<div class="dropcap-container">
+	<h3 class="typography-h3">Dropcap</h3>
+	
+	<div class="dropcaps">
+		<div class="row">
+			<div class="col-lg-4 col-md-4">
+				<div class="dropcap dropcap-type1">
+					Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Ut ut lorem vitae sem adipscing volutpat vel vitae orci. Vivamus eros nunc, lacinia et vehicula quis, elementum id mi. Nulla vehicula lobortis est quis dictum. Aliquam erat volutpat. Sed sollicitudin iaculis urna, egestas dapibus sem 
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-4">
+				<div class="dropcap dropcap-type2">
+					Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Ut ut lorem vitae sem adipscing volutpat vel vitae orci. Vivamus eros nunc, lacinia et vehicula quis, elementum id mi. Nulla vehicula lobortis est quis dictum. Aliquam erat volutpat. Sed sollicitudin iaculis urna, egestas dapibus sem 
+				</div>
+			</div>
+			
+			<div class="col-lg-4 col-md-4">
+				<div class="dropcap dropcap-type3">
+					Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Ut ut lorem vitae sem adipscing volutpat vel vitae orci. Vivamus eros nunc, lacinia et vehicula quis, elementum id mi. Nulla vehicula lobortis est quis dictum. Aliquam erat volutpat. Sed sollicitudin iaculis urna, egestas dapibus sem 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="blockquotes-container">
+	<h3 class="typography-h3">Blockquotes</h3>
+	
+	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+	<div class="blockquotes">
+		<p>"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive. Not only do they look great, but when I had some issues at my end in configuring them”</p>
+		<h3 class="name-qte">- Jack Andrson -</h3>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Partners</title>
+			<identifier>partners</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="partners-container lazyload-container">
+<ul class="parners-list row">
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-1.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-2.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-3.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-4.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-5.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-6.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-1.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-2.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-3.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-4.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-5.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-6.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-1.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-2.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-3.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-4.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-5.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-6.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-1.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-2.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-3.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-4.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-5.jpg"}}" alt="Partner" /></a></li>
+<li class="col-lg-2 col-md-2 col-sm-3"><a title="Partner" href="#"><img src="{{media url="wysiwyg/partners/partner-6.jpg"}}" alt="Partner" /></a></li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Events</title>
+			<identifier>events</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="events-container lazyload-container">
+<ul class="events-list">
+<li class="item">
+<div class="event-image static-image"><a title="Event" href="#"><img src="{{media url="wysiwyg/events/event-1.jpg"}}" alt="Event" /></a></div>
+<div class="event-info">
+<div class="event-title">
+<h2><a title="Watersports we are proud of our range of sea kayaks" href="#">Watersports we are proud of our range of sea kayaks</a></h2>
+</div>
+<div class="event-date">Friday, July 12, 2014 <span>-</span> End: 26 Jan 2016</div>
+<div class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam.</div>
+<div class="bottom-info">0 <a title="Comments" href="#">Comment</a> | Posted By admin</div>
+</div>
+</li>
+<li class="item">
+<div class="event-image static-image"><a title="Event" href="#"><img src="{{media url="wysiwyg/events/event-2.jpg"}}" alt="Event" /></a></div>
+<div class="event-info">
+<div class="event-title">
+<h2><a title="Watersports we are proud of our range of sea kayaks" href="#">Watersports we are proud of our range of sea kayaks</a></h2>
+</div>
+<div class="event-date">Friday, July 12, 2014 <span>-</span> End: 26 Jan 2016</div>
+<div class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam.</div>
+<div class="bottom-info">0 <a title="Comments" href="#">Comment</a> | Posted By admin</div>
+</div>
+</li>
+<li class="item">
+<div class="event-image static-image"><a title="Event" href="#"><img src="{{media url="wysiwyg/events/event-3.jpg"}}" alt="Event" /></a></div>
+<div class="event-info">
+<div class="event-title">
+<h2><a title="Watersports we are proud of our range of sea kayaks" href="#">Watersports we are proud of our range of sea kayaks</a></h2>
+</div>
+<div class="event-date">Friday, July 12, 2014 <span>-</span> End: 26 Jan 2016</div>
+<div class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam.</div>
+<div class="bottom-info">0 <a title="Comments" href="#">Comment</a> | Posted By admin</div>
+</div>
+</li>
+<li class="item">
+<div class="event-image static-image"><a title="Event" href="#"><img src="{{media url="wysiwyg/events/event-4.jpg"}}" alt="Event" /></a></div>
+<div class="event-info">
+<div class="event-title">
+<h2><a title="Watersports we are proud of our range of sea kayaks" href="#">Watersports we are proud of our range of sea kayaks</a></h2>
+</div>
+<div class="event-date">Friday, July 12, 2014 <span>-</span> End: 26 Jan 2016</div>
+<div class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam.</div>
+<div class="bottom-info">0 <a title="Comments" href="#">Comment</a> | Posted By admin</div>
+</div>
+</li>
+<li class="item">
+<div class="event-image static-image"><a title="Event" href="#"><img src="{{media url="wysiwyg/events/event-5.jpg"}}" alt="Event" /></a></div>
+<div class="event-info">
+<div class="event-title">
+<h2><a title="Watersports we are proud of our range of sea kayaks" href="#">Watersports we are proud of our range of sea kayaks</a></h2>
+</div>
+<div class="event-date">Friday, July 12, 2014 <span>-</span> End: 26 Jan 2016</div>
+<div class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam.</div>
+<div class="bottom-info">0 <a title="Comments" href="#">Comment</a> | Posted By admin</div>
+</div>
+</li>
+<li class="item">
+<div class="event-image static-image"><a title="Event" href="#"><img src="{{media url="wysiwyg/events/event-6.jpg"}}" alt="Event" /></a></div>
+<div class="event-info">
+<div class="event-title">
+<h2><a title="Watersports we are proud of our range of sea kayaks" href="#">Watersports we are proud of our range of sea kayaks</a></h2>
+</div>
+<div class="event-date">Friday, July 12, 2014 <span>-</span> End: 26 Jan 2016</div>
+<div class="event-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam.</div>
+<div class="bottom-info">0 <a title="Comments" href="#">Comment</a> | Posted By admin</div>
+</div>
+</li>
+</ul>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>2columns-left</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Testimonials</title>
+			<identifier>testimonials</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<!-- TESTIMONIALS 1 -->
+<div class="testimonials testimonials-style-1 lazyload-container">
+<div class="testimonials-title">
+<h2>Testimonials in 3 columns</h2>
+</div>
+<div class="testimonials-container">
+<div class="testimonials-slider slider-type-1">
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-1.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-1.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-1.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+				var testimonial_1 = $(".slider-type-1");
+				testimonial_1.owlCarousel({
+					nav: false,
+					dots:true,
+					
+					responsive: {
+						0: {
+							items:1
+						},
+						480: {
+							items:1
+						},
+						768: {
+							items:2
+						},
+						991: {
+							items:3
+						},						
+						1200: {
+							items:3
+						}
+					}
+							  
+				});	  
+			});
+ 
+</script>
+</div>
+</div>
+<!-- TESTIMONIALS 1 -->
+<p> </p>
+<!-- TESTIMONIALS 2 -->
+<div class="full-wrapper testimonial_2_wrapper lazyload-container">
+<div class="container">
+<div class="testimonials testimonials-style-2">
+<div class="testimonials-title">
+<h2>Testimonials in 2 columns with border</h2>
+</div>
+<div class="testimonials-container">
+<div class="testimonials-slider slider-type-2">
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+						var testimonial_2 = $(".slider-type-2");
+						testimonial_2.owlCarousel({
+							nav: false,
+						dots:true,
+						
+						responsive: {
+							0: {
+								items:1
+							},
+							480: {
+								items:1
+							},
+							768: {
+								items:1
+							},
+							991: {
+								items:2
+							},						
+							1200: {
+								items:2
+							}
+						}
+						});	  
+					});
+ 
+</script>
+</div>
+</div>
+</div>
+</div>
+<!-- TESTIMONIALS 2 -->
+<p> </p>
+<!-- TESTIMONIALS 3 -->
+<div class="testimonials testimonials-style-3 lazyload-container">
+<div class="testimonials-title">
+<h2>Testimonials in 2 columns</h2>
+</div>
+<div class="testimonials-container">
+<div class="testimonials-slider slider-type-3">
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+						var testimonial_3 = $(".slider-type-3");
+						testimonial_3.owlCarousel({
+							nav: false,
+							dots:true,
+							
+							responsive: {
+								0: {
+									items:1
+								},
+								480: {
+									items:1
+								},
+								768: {
+									items:1
+								},
+								991: {
+									items:2
+								},						
+								1200: {
+									items:2
+								}
+							}
+						});	  
+					});
+ 
+</script>
+</div>
+</div>
+<!-- TESTIMONIALS 3 -->
+<p> </p>
+<!-- TESTIMONIALS 4 -->
+<div class="full-wrapper testimonial_4_wrapper lazyload-container">
+<div class="container">
+<div class="testimonials testimonials-style-4">
+<div class="testimonials-title">
+<h2>Testimonial With Images</h2>
+</div>
+<div class="testimonials-container">
+<div class="testimonials-slider slider-type-4">
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-1.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">"Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+						var testimonial_4 = $(".slider-type-4");
+						testimonial_4.owlCarousel({
+							nav: true,
+							dots:false,
+							
+							responsive: {
+								0: {
+									items:1
+								},
+								480: {
+									items:1
+								},
+								768: {
+									items:1
+								},
+								991: {
+									items:1
+								},						
+								1200: {
+									items:1
+								}
+							}
+
+						});	  
+					});
+ 
+</script>
+</div>
+</div>
+</div>
+</div>
+<!-- TESTIMONIALS 4 -->
+<p> </p>
+<!-- TESTIMONIALS 5 -->
+<div class="full-wrapper blurred-background lazyload-container">
+<div class="container">
+<div class="testimonials testimonials-style-5">
+<div class="testimonials-title">
+<h2>Testimonials in 2 columns with border &amp; blurred image Background</h2>
+</div>
+<div class="testimonials-container">
+<div class="testimonials-slider slider-type-5">
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-2.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+<div class="item">
+<div class="testimonials-image"><img src="{{media url="wysiwyg/testimonials/client-3.jpg"}}" alt="Testimonial" /></div>
+<div class="testimonials-info">
+<p class="description-client">“Just wanted to say how happy I am with the WordPress plugin sliders I have purchased from SliderVilla. Not only do they look great, but when I had some issues at my end in configuring them, the support you gave was prompt and comprehensive”</p>
+<h3 class="name-client">- Jack Andrson -</h3>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+						var testimonial_5 = $(".slider-type-5");
+						testimonial_5.owlCarousel({
+							nav: false,
+							dots:true,
+							
+							responsive: {
+								0: {
+									items:1
+								},
+								480: {
+									items:1
+								},
+								768: {
+									items:1
+								},
+								991: {
+									items:2
+								},						
+								1200: {
+									items:2
+								}
+							}
+						});	  
+					});
+ 
+</script>
+</div>
+</div>
+</div>
+</div>
+<!-- TESTIMONIALS 5 -->]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Newsletter</title>
+			<identifier>popup-newsletter</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="aboutus-page">
+<div class="row box-1-about">
+<div class="col-md-9 welcome-about-us">
+<div class="title-about-us">
+<h2>Welcome To Shop</h2>
+</div>
+<div class="content-about-us">
+<div class="image-about-us"><img src="{{media url="wysiwyg/about-us.png"}}" alt="About Us" /></div>
+<div class="des-about-us">Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim. Nunc non nisl lacus. Integer pharetra lacinia dapibus. Donec eu dolor dui, vel posuere mauris.<br /><br /> Pellentesque semper congue sodales. In consequat, metus eget con sequat ornare, augue dolor blandit purus, vitae lacinia nisi tellus in erat. Nulla ac justo eget massa aliquet sodales. Maecenas mattis male suada sem, in fringilla massa dapibus quis. Suspendisse aliquam leo id neque auctor molestie. Etiam at nulla tellus.<br /><br /> Nulla auctor mauris ut dui luctus semper. In hac habitasse platea dictumst. Duis pellentesque ligula a risus suscipit dignissim.</div>
+</div>
+</div>
+<div class="col-md-3 why-choose-us">
+<div class="title-about-us">
+<h2>Why Choose Us</h2>
+</div>
+<div class="content-why">
+<ul class="why-list">
+<li><a title="Shipping &amp; Returns" href="#">Shipping &amp; Returns</a></li>
+<li><a title="Secure Shopping" href="#">Secure Shopping</a></li>
+<li><a title="International Shipping" href="#">International Shipping</a></li>
+<li><a title="Affiliates" href="#">Affiliates</a></li>
+<li><a title="Group Sales" href="#">Group Sales</a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-12 our-member">
+<div class="title-about-us">
+<h2>Our Member</h2>
+</div>
+<div class="short-des">Consectetur adipiscing elit. Donec pellentesque venenatis elit, quis aliquet mauris malesuada vel. Donec vitae libero dolor, eget dapibus justo.<br />Aenean facilisis aliquet feugiat. Suspendisse lacinia congue est ac semper. Nulla ut elit magna, vitae volutpat magna.</div>
+<div class="sm_imageslider slider-ourmember">
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-1.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Tech Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-2.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Manager</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-3.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Art Director</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-4.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Design Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-1.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Tech Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-2.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Manager</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-3.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Art Director</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-4.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Design Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-1.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Tech Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-4.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Design Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-4.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Design Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+<div class="item respl-item">
+<div class="item-inner">
+<div class="w-image-box">
+<div class="item-image"><a title="Jennifer lawrence" href="#"><img src="{{media url="wysiwyg/cl-image-3.png"}}" alt="Jennifer lawrence" /></a></div>
+<a class="cl-nw cl-facebook" title="Facebook" href="#">Facebook</a> <a class="cl-nw cl-flickr" title="Flickr" href="#">Flickr</a> <a class="cl-nw cl-twitter" title="Twitter" href="#">Twitter</a></div>
+<div class="info-member">
+<h2 class="cl-name"><a title="Jennifer lawrence" href="#">Jennifer lawrence</a></h2>
+<p class="cl-job">Design Leader</p>
+<p class="cl-des">Pellentesque dictumst nibh nulla dui at urna leo wisi dui</p>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+				$('.slider-ourmember').owlCarousel({
+					pagination: false,
+					center: false,
+					nav: true,
+					loop: false,
+					margin: 30,
+					navText: [ 'prev', 'next' ],
+					slideBy: 1,
+					autoplay: false,
+					autoplayTimeout: 2500,
+					autoplayHoverPause: true,
+					autoplaySpeed: 800,
+					startPosition: 0, 
+					responsive:{
+						0:{
+							items:1
+						},
+						480:{
+							items:2
+						},
+						768:{
+							items:3
+						},
+						1200:{
+							items:4
+						}
+					}
+				});	  
+			});
+</script>
+</div>
+<div class="col-md-12 happy-about-us">
+<div id="slider-happy-about-us" class="happy-ab carousel slide" data-ride="carousel">
+<div class="title-happy-about">
+<h2>Happy customer says</h2>
+</div>
+<div class="sm_imageslider slider-happy-client">
+<div class="item active">
+<div class="ct-why">
+<div class="client-say">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue, justo non cursus adipiscing, dui nibh scelerisque justo, quis pretium turpis neque eget nulla. Curabitur dictum consectetur metus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue, justo non cursus adipiscing, dui nibh scelerisque justo non cursus adipiscing, dui nibh scelerisque justo, quis pretium turpis.</div>
+<p class="client-info-about"><span class="name">- Mama Duo - </span>Social Media Strategist</p>
+</div>
+</div>
+<div class="item">
+<div class="ct-why">
+<div class="client-say">In congue, justo non cursus adipiscing, dui nibh scelerisque justo, lorem ipsum dolor sit amet, consectetur adipiscing elit. quis pretium turpis neque eget nulla. Curabitur dictum consectetur metus nec dignissim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue, justo non cursus adipiscing, dui nibh scelerisque justo non cursus adipiscing, dui nibh scelerisque justo, quis pretium turpis.</div>
+<p class="client-info-about"><span class="name">- Jonh Doe - </span>Supporter</p>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+	require([
+		'jquery',
+		'owlcarousel'
+	], function ($) {
+					$('.slider-happy-client').owlCarousel({
+						pagination: false,
+						center: false,
+						nav: true,
+						loop: false,
+						margin: 30,
+						navText: [ 'prev', 'next' ],
+						slideBy: 1,
+						autoplay: false,
+						autoplayTimeout: 2500,
+						autoplayHoverPause: true,
+						autoplaySpeed: 800,
+						startPosition: 0, 
+						responsive:{
+							0:{
+								items:1
+							},
+							480:{
+								items:1
+							},
+							768:{
+								items:1
+							},
+							1200:{
+								items:1
+							}
+						}
+					});	  
+				});
+</script>
+</div>
+</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="content">
+<block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe.popup" as="subscribe.popup" before="-" template="subscribe-popup.phtml"/>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 5</title>
+			<identifier>home-demo-05</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-5">
+<div class="row">
+<div class="col-lg-3 sidebar-home">{{block class="Magento\\Cms\\Block\\Block" block_id="id-5-block-1"}}</div>
+<div class="col-lg-9 content-home">{{block class="Magento\\Cms\\Block\\Block" block_id="id-5-block-2"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-5-block-3"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-5-block-4"}}</div>
+</div>
+{{block class="Magento\\Cms\\Block\\Block" block_id="id-5-block-5"}}</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="slideshow-header">
+	<block class="Magento\Cms\Block\Block" name="id5.slidershow">
+			<arguments>
+				<argument name="block_id" xsi:type="string">id-5-slidershow</argument>
+			</arguments>
+		</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 6</title>
+			<identifier>home-demo-06</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-6">{{block class="Magento\\Cms\\Block\\Block" block_id="id-6-block-1"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-6-block-2"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-6-block-3"}}
+<div class="full-categories">
+<div class="hot-categories-home">{{block class="Sm\Categories\Block\Categories" template="Sm_Categories::default.phtml" title_module="Hot categories" select_category="105,97,99,109,103,98,106,100" limitation="4"}}</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 7</title>
+			<identifier>home-demo-07</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-7">{{block class="Magento\\Cms\\Block\\Block" block_id="id-7-block-1"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-7-block-2"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-7-block-3"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-7-block-4"}}
+<div class="full-categories">
+<div class="hot-categories-home">{{block class="Sm\Categories\Block\Categories" template="Sm_Categories::default.phtml" title_module="Hot categories" select_category="105,97,99,109,103,98,106,100" limitation="4"}}</div>
+</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 8</title>
+			<identifier>home-demo-08</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-8">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-8-block-1"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-8-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-8-block-3"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-8-block-4"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Daily Deals</title>
+			<identifier>daily-deals</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="extend-container">
+	<div class="extend-banner">
+		<img src="{{media url="wysiwyg/banner-extend/banner-listingextend.jpg"}}" alt="Banner" />
+	</div>
+	
+	<div class="product-extend">
+		{{block class="Sm\ListingTabs\Block\ListingTabs" template="Sm_ListingTabs::default.phtml" title="Daily Deals" type_show="loadmore" type_listing="deals" display_countdown="1" under_price="100" type_filter="categories" field_tabs="" category_select="" category_tabs="97,98,99" order_by="created_at" order_dir="ASC" limitation="6"}}
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>2columns-left</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Under $100</title>
+			<identifier>under-price</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="extend-container">
+	<div class="extend-banner">
+		<img src="{{media url="wysiwyg/banner-extend/banner-listingextend.jpg"}}" alt="Banner" />
+	</div>
+	
+	<div class="product-extend">
+		{{block class="Sm\ListingTabs\Block\ListingTabs" template="Sm_ListingTabs::default.phtml" title="Under Price $100" type_show="loadmore" type_listing="under" display_countdown="0" under_price="100" type_filter="categories" field_tabs="" category_select="" category_tabs="97,98,99" order_by="ordered_qty" order_dir="ASC" limitation="6"}}
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>2columns-left</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>New Arrivals</title>
+			<identifier>new-arrivals</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="extend-container">
+	<div class="extend-banner">
+		<img src="{{media url="wysiwyg/banner-extend/banner-listingextend.jpg"}}" alt="Banner" />
+	</div>
+	
+	<div class="product-extend">
+		{{block class="Sm\ListingTabs\Block\ListingTabs" template="Sm_ListingTabs::default.phtml" title="New Arrivals" type_show="loadmore" type_listing="all" display_countdown="0" under_price="100" type_filter="categories" field_tabs="" category_select="" category_tabs="97,98,99" order_by="created_at" order_dir="ASC" limitation="6"}}
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>2columns-left</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 9</title>
+			<identifier>home-demo-09</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-9">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-9-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-9-block-3"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="page.top">
+
+	
+	<block class="Magento\Cms\Block\Block" name="block-1-index">
+		<arguments>
+			<argument name="block_id" xsi:type="string">id-9-block-1</argument>
+		</arguments>
+	</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 10</title>
+			<identifier>home-demo-10</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-10">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-10-block-1"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-10-block-2"}}
+</div>
+]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="page.bottom">
+	<block class="Magento\Cms\Block\Block" name="id-10-block-3">
+		<arguments>
+			<argument name="block_id" xsi:type="string">id-10-block-3</argument>
+		</arguments>
+	</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 11</title>
+			<identifier>home-demo-11</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-11">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-11-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-11-block-3"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-11-block-4"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="page.top">
+	<block class="Magento\Cms\Block\Block" name="id11-block1">
+		<arguments>
+			<argument name="block_id" xsi:type="string">id-11-block-1</argument>
+		</arguments>
+	</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 12</title>
+			<identifier>home-demo-12</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-12">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-12-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-12-block-3"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-12-block-4"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="page.top">
+	<block class="Magento\Cms\Block\Block" name="id12-block1">
+		<arguments>
+			<argument name="block_id" xsi:type="string">id-12-block-1</argument>
+		</arguments>
+	</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 13</title>
+			<identifier>home-demo-13</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-13">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-13-block-1"}}
+	
+	<div class="full-wrapper full-content-home">
+		<div class="container">
+			{{block class="Magento\\Cms\\Block\\Block" block_id="id-13-block-2"}}
+			
+			{{block class="Magento\\Cms\\Block\\Block" block_id="id-13-block-3"}}
+			
+			{{block class="Magento\\Cms\\Block\\Block" block_id="id-13-block-4"}}
+		</div>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 14</title>
+			<identifier>home-demo-14</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-14">
+	<div class="full-wrapper" style="background-color: #f2f3f7;">
+		<div class="full-content">
+			<div class="container">
+				{{block class="Magento\\Cms\\Block\\Block" block_id="id-14-block-1"}}
+				
+				{{block class="Magento\\Cms\\Block\\Block" block_id="id-14-block-2"}}
+				
+				{{block class="Magento\\Cms\\Block\\Block" block_id="id-14-block-3"}}
+				
+				{{block class="Magento\\Cms\\Block\\Block" block_id="id-14-block-4"}}
+			</div>
+		</div>
+	</div>
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 15</title>
+			<identifier>home-demo-15</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-15">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-15-block-2"}}
+
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-15-block-3"}}
+
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="page.top">
+	<block class="Magento\Cms\Block\Block" name="id-15-block-1">
+			<arguments>
+				<argument name="block_id" xsi:type="string">id-15-block-1</argument>
+			</arguments>
+		</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 16</title>
+			<identifier>home-demo-16</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-16">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-16-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-16-block-3"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-16-block-4"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="page.top">
+	<block class="Magento\Cms\Block\Block" name="id-16-block-1">
+		<arguments>
+			<argument name="block_id" xsi:type="string">id-16-block-1</argument>
+		</arguments>
+	</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 17</title>
+			<identifier>home-demo-17</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-17">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-17-block-3"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-17-block-4"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-17-block-5"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[<referenceContainer name="page.top">
+	<block class="Magento\Cms\Block\Block" name="id-17-block-1">
+		<arguments>
+			<argument name="block_id" xsi:type="string">id-17-block-1</argument>
+		</arguments>
+	</block>
+	
+	<block class="Magento\Cms\Block\Block" name="id-17-block-2">
+		<arguments>
+			<argument name="block_id" xsi:type="string">id-17-block-2</argument>
+		</arguments>
+	</block>
+</referenceContainer>]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 18</title>
+			<identifier>home-demo-18</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-18">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-18-block-1"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-18-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-18-block-3"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 19</title>
+			<identifier>home-demo-19</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-19">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-19-block-1"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-19-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-19-block-3"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 20</title>
+			<identifier>home-demo-20</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-20">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-20-block-1"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-20-block-2"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-20-block-3"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-20-block-4"}}
+</div>
+
+]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 1 - Right to Left</title>
+			<identifier>home-demo-01-rtl</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style home-page-1">
+<div class="row">
+<div class="col-xl-9 offset-xl-3">{{block class="Magento\\Cms\\Block\\Block" block_id="top-search"}} {{block class="Magento\\Cms\\Block\\Block" block_id="id-1-block-1-rtl"}}</div>
+</div>
+{{block class="Magento\\Cms\\Block\\Block" block_id="id-1-block-2-rtl"}}</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 21</title>
+			<identifier>home-demo-21</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-21">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-21-block-1"}}
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-21-block-2"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 22</title>
+			<identifier>home-demo-22</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-page-22">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-22-block-1"}} 
+	
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-22-block-2"}} 
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+		<cms_item>
+			<title>Home - SM Market Layout 23</title>
+			<identifier>home-demo-23</identifier>
+			<content_heading/>
+			<content>
+				<![CDATA[<div class="home-style home-page-23">
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-23-block-1"}}
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-23-block-2"}}
+	{{block class="Magento\\Cms\\Block\\Block" block_id="id-23-block-3"}}
+</div>]]>
+			</content>
+			<is_active>1</is_active>
+			<page_layout>1column</page_layout>
+			<layout_update_xml>
+				<![CDATA[]]>
+			</layout_update_xml>
+			<store_id>0</store_id>
+		</cms_item>
+	</pages>
+</root>

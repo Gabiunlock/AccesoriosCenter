@@ -1,0 +1,58 @@
+<?php
+/**
+ *
+ * SM Shop By - Version 2.0.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+?>
+
+<?php if ($filter instanceof Magento\CatalogSearch\Model\Layer\Filter\Price): ?>
+    <?php $range = $this->getPriceRange($filter); ?>
+    <?php if (isset($range['min_standard'])) { ?>
+        <div class="price-slider-wrap">
+            <div id="price-slider" data-rate="<?php echo $range['rate']; ?>"
+                 data-min-standard="<?php echo $range['min_standard'] ?>"
+                 data-max-standard="<?php echo $range['max_standard'] ?>"></div>
+            <div class="price-slider-values">
+                <span class="filter-currency"><?php echo $range['currency_symbol']; ?></span>
+                <input name="price_minimum" id="price_minimum" value="<?php echo $range['min_value'] ?>" type="text">
+                <span class="price-filter-separator">&nbsp;-&nbsp;</span>
+                <span class="filter-currency"><?php echo $range['currency_symbol']; ?></span>
+                <input name="price_maximum" id="price_maximum" value="<?php echo $range['max_value'] ?>" type="text">
+            </div>
+        </div>
+    <?php } ?>
+<?php else: ?>
+    <ol class="items">
+        <?php foreach ($filterItems as $filterItem): ?>
+            <li class="my item">
+                <?php if ($filterItem->getCount() > 0): ?>
+                    <a href="<?php echo $block->escapeUrl($filterItem->getUrl()) ?>">
+                        <?php /* @escapeNotVerified */
+                        echo $filterItem->getLabel() ?>
+                        <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                            <span class="count"><?php /* @escapeNotVerified */
+                                echo $filterItem->getCount() ?><span class="filter-count-label">
+                            <?php if ($filterItem->getCount() == 1): ?><?php /* @escapeNotVerified */
+                                echo __('item') ?><?php else: ?><?php /* @escapeNotVerified */
+                                echo __('items') ?><?php endif; ?></span></span>
+                        <?php endif; ?>
+                    </a>
+                <?php else: ?>
+                    <?php /* @escapeNotVerified */
+                    echo $filterItem->getLabel() ?>
+                    <?php if ($this->helper('\Magento\Catalog\Helper\Data')->shouldDisplayProductCountOnLayer()): ?>
+                        <span class="count"><?php /* @escapeNotVerified */
+                            echo $filterItem->getCount() ?><span class="filter-count-label">
+                        <?php if ($filterItem->getCount() == 1): ?><?php /* @escapeNotVerified */
+                            echo __('item') ?><?php else: ?><?php /* @escapeNotVerified */
+                            echo __('items') ?><?php endif; ?></span></span>
+                    <?php endif; ?>
+                <?php endif; ?>
+            </li>
+        <?php endforeach ?>
+    </ol>
+<?php endif; ?>

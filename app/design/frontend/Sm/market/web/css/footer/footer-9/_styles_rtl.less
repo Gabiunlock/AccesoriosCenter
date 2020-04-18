@@ -1,0 +1,303 @@
+// FOOTER STYLE 9
+
+.footer-container {
+    color: #444444;
+    position: relative;
+
+    a {
+        color: #666666;
+    }
+
+    .footer-top {
+        background-color: #f5f5f5;
+
+        .block-inline {
+            float: none;
+            display: table-cell;
+            padding: 70px 30px 60px;
+            width: 22.2222%;
+            max-width: unset;
+
+            &.contact-footer {
+                background-color: #f9f9f9;
+                width: 33.33%;
+            }
+        }
+
+    }
+
+    .footer-bottom {
+        background-color: #f5f5f5;
+        padding: 30px 0;
+        color: #555555;
+
+        .copyright-footer {
+            address {
+                margin-top: 9px;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .footer-payment {
+            text-align: left;
+        }
+
+    }
+
+    .footer-block {
+        .footer-block-title {
+            h3 {
+                font-weight: 700;
+                font-size: 116.67%;
+                text-transform: uppercase;
+                position: relative;
+                padding-bottom: 10px;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 40px;
+                    height: 2px;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+
+            margin-bottom: 15px;
+        }
+
+        .footer-block-content {
+            .links-footer {
+                li {
+                    a {
+                        display: inline-block;
+                        padding: 5px 0;
+                        font-size: 108.33%;
+
+                        &:before {
+                            .font-awesome(f101, 12px);
+                            margin-left: 5px;
+                            transform: rotate(180deg);
+                            -webkit-transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+
+            .links-contact {
+                padding-top: 7px;
+
+                li {
+                    position: relative;
+                    padding-right: 39px;
+                    min-height: 30px;
+                    line-height: 18px;
+                    font-size: 108.33%;
+
+                    &:before {
+                        position: absolute;
+                        right: 0;
+                        top: 4px;
+                        content: "";
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background: url(../images/icon-image.png) #969696;
+                        border-radius: 3px;
+                        -webkit-border-radius: 3px;
+                    }
+
+                    &.add-icon {
+                        &:before {
+                            background-position: -8px -10px;
+                        }
+                    }
+
+                    &.email-icon {
+                        &:before {
+                            background-position: -11px -51px;
+                        }
+                    }
+
+                    &.phone-icon {
+                        &:before {
+                            background-position: -11px -91px;
+                        }
+                    }
+
+                    &.middle-content {
+                        padding-top: 9px;
+                        margin: 14px 0 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .categories-footer {
+        font-size: 91.67%;
+        padding: 30px 0;
+        border-top: 1px solid #e4e4e4;
+
+        .footer-links-w {
+            .label-link {
+                font-weight: 700;
+                margin-bottom: 13px;
+            }
+
+            ul {
+                li {
+                    padding-bottom: 8px;
+
+                    h2 {
+                        font-size: 100%;
+                        display: inline-block;
+                        font-weight: 700;
+                        line-height: 18px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-middle {
+        background-color: #333;
+    }
+
+    .container-table {
+        display: table;
+    }
+
+    .social-wrapper,
+    .newsletter-wrapper {
+        padding: 30px;
+        float: right;
+    }
+
+    .social-wrapper {
+        background-color: #444;
+        padding: 32px 30px;
+    }
+
+    .socials-wrap {
+        .title-follow {
+            display: none;
+        }
+
+        ul {
+            .li-social {
+                float: right;
+                margin-left: 10px;
+
+                a {
+                    background-color: #fff;
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    color: #555555;
+                    font-size: 18px;
+                    border-radius: 4px;
+                    -webkit-border-radius: 4px;
+                    .transition(.2s);
+
+                    .name-social {
+                        display: none;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+
+            }
+        }
+    }
+
+    .newsletter-wrapper {
+        padding-left: 0;
+
+        .newsletter-title {
+            display: table-cell;
+            vertical-align: top;
+            white-space: nowrap;
+            text-transform: uppercase;
+            color: #fff;
+            padding: 0 70px 0 50px;
+            line-height: 1.1;
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 52px;
+                height: 52px;
+                background: url(../images/newsletter-icon.png) no-repeat top right;
+                position: absolute;
+                top: -7px;
+                right: 0;
+            }
+
+            .first-span {
+                font-size: 133.33%;
+                display: block;
+            }
+
+            .last-span {
+                font-size: 200%;
+                font-weight: 700;
+            }
+        }
+
+        .block-subscribe-footer {
+            display: table-cell;
+            width: 100%;
+            vertical-align: top;
+
+            .title-middle-footer {
+                display: none;
+            }
+
+            .newsletter-content {
+                display: table;
+                width: 100%;
+            }
+
+            form {
+                display: table;
+                width: 100%;
+            }
+
+            .input-box {
+                display: table-cell;
+                width: 100%;
+                vertical-align: top;
+                padding-left: 5px;
+
+                #newsletter-footer {
+                    border: none;
+                    height: 40px;
+                    border-radius: 4px;
+                    -webkit-border-radius: 4px;
+                }
+            }
+
+            .action-button {
+                display: table-cell;
+                vertical-align: top;
+
+                button {
+                    height: 40px;
+                    border-radius: 4px;
+                    -webkit-border-radius: 4px;
+                }
+            }
+        }
+    }
+}
+

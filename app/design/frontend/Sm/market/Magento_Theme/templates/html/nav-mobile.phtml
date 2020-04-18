@@ -1,0 +1,167 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+
+<?php
+$columnsLimit = $block->getColumnsLimit() ?: 0;
+$_menu        = $block->getHtml('level-top', 'submenu', $columnsLimit);
+$_config      = $this->helper('Sm\Market\Helper\Data');
+$menuType     = $_config->getGeneral('menu_style');
+$headerStyle  = $_config->getThemeLayout('header_style');
+?>
+
+<!--COLLAPSE-->
+<?php if ($_config->getGeneral('responsive_menu') == 'collapse') { ?>
+    <div class="nav-mobile-container collapse-type">
+        <div class="btn-mobile">
+            <a id="collapse-button" class="button-mobile collapse-nav" title="<?php echo __('Categories') ?>"><i
+                        class="fa fa-bars"></i><span class="hidden"><?php echo __('Categories') ?></span></a>
+        </div>
+
+        <?php if ($menuType == 'megamenu') { ?>
+            <nav id="navigation-mobile" class="navigation-mobile"></nav>
+
+            <script type="text/javascript">
+                require([
+                    'jquery'
+                ], function ($) {
+                    $('#collapse-button').click(function () {
+                        $('.navigation-mobile').slideToggle(200);
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>
+        <?php } else { ?>
+
+            <nav id="navigation-mobile" class="navigation-mobile">
+                <ul>
+                    <?php /* @escapeNotVerified */
+                    echo $_menu; ?>
+                </ul>
+            </nav>
+
+            <script type="text/javascript">
+                require([
+                    'jquery'
+                ], function ($) {
+                    $('#collapse-button').click(function () {
+                        $('.navigation-mobile').slideToggle(200);
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>
+        <?php } ?>
+
+    </div>
+<?php } ?>
+
+<!--SIDEBAR-->
+<?php if ($_config->getGeneral('responsive_menu') == 'sidebar') { ?>
+    <div class="nav-mobile-container sidebar-type">
+        <div class="btn-mobile">
+            <a id="sidebar-button" class="button-mobile sidebar-nav" title="<?php echo __('Categories') ?>"><i
+                        class="fa fa-bars"></i><span class="hidden"><?php echo __('Categories') ?></span></a>
+        </div>
+
+        <?php if ($menuType == 'megamenu') { ?>
+            <nav id="navigation-mobile" class="navigation-mobile"></nav>
+            <script type="text/javascript">
+                require([
+                    'jquery'
+                ], function ($) {
+                    $('#sidebar-button').click(function () {
+                        $('body').toggleClass('navbar-active');
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>
+        <?php } else { ?>
+
+            <nav class="navigation-mobile">
+                <ul>
+                    <?php /* @escapeNotVerified */
+                    echo $_menu; ?>
+                </ul>
+            </nav>
+
+            <script type="text/javascript">
+                require([
+                    'jquery'
+                ], function ($) {
+                    $('#sidebar-button').click(function () {
+                        $('body').toggleClass('navbar-active');
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>
+        <?php } ?>
+
+    </div>
+<?php } ?>
+
+<?php if ($menuType == 'megamenu') { ?>
+    <script type="text/javascript">
+        require([
+            'jquery'
+        ], function ($) {
+            $('.btn-submobile').click(function () {
+                $(this).prev().slideToggle(200);
+                $(this).toggleClass('btnsub-active');
+                $(this).parent().toggleClass('parent-active');
+            });
+
+            function cloneMegaMenu() {
+                var breakpoints = 991;
+                <?php if($headerStyle == "header-21" || $headerStyle == "header-23") { ?>
+                breakpoints = 1024;
+                <?php } ?>
+                var doc_width = $(window).width();
+                if (doc_width <= breakpoints) {
+                    var horizontalMegamenu = $('.sm_megamenu_wrapper_horizontal_menu .horizontal-type');
+                    var verticalMegamenu = $('.sm_megamenu_wrapper_vertical_menu .vertical-type');
+                    $('#navigation-mobile').append(horizontalMegamenu);
+                    $('#navigation-mobile').append(verticalMegamenu);
+                } else {
+                    var horizontalMegamenu = $('#navigation-mobile .horizontal-type');
+                    var verticalMegamenu = $('#navigation-mobile .vertical-type');
+                    $('.sm_megamenu_wrapper_horizontal_menu .sambar-inner .mega-content').append(horizontalMegamenu);
+                    $('.sm_megamenu_wrapper_vertical_menu .sambar-inner .mega-content').append(verticalMegamenu);
+                }
+            }
+
+            cloneMegaMenu();
+
+            $(window).resize(function () {
+                cloneMegaMenu();
+            });
+
+        });
+    </script>
+<?php } else { ?>
+    <script type="text/javascript">
+        require([
+            'jquery'
+        ], function ($) {
+            $('.navigation-mobile > ul li').has('ul').append('<span class="touch-button"><span>open</span></span>');
+
+            $('.touch-button').click(function () {
+                $(this).prev().slideToggle(200);
+                $(this).toggleClass('active');
+                $(this).parent().toggleClass('parent-active');
+            });
+        });
+    </script>
+<?php } ?>

@@ -1,0 +1,61 @@
+<?php
+/**
+ * Copyright © 2016 Ihor Vansach (ihor@magefan.com). All rights reserved.
+ * See LICENSE.txt for license details (http://opensource.org/licenses/osl-3.0.php).
+ *
+ * Glory to Ukraine! Glory to the heroes!
+ */
+?>
+<?php
+/**
+ * Blog recent posts widget
+ *
+ * @var $block \Magefan\Blog\Block\Widget\Recent
+ */
+?>
+
+<?php
+$_postCollection = $block->getPostCollection();
+?>
+<?php if ($_postCollection->count()) { ?>
+    <div class="latest-post-container">
+        <div class="list-post">
+            <?php foreach ($_postCollection as $_post) { ?>
+                <?php
+                $_postUrl  = $_post->getPostUrl();
+                $_postName = $block->escapeHtml($_post->getTitle(), null, true);
+                ?>
+                <div class="item item-post clearfix">
+                    <div class="image-blog static-image">
+                        <?php if ($featuredImage = $_post->getFeaturedImage()) { ?>
+                            <a href="<?php echo $_postUrl ?>" title="<?php echo $_postName ?>">
+                                <img src="<?php echo $featuredImage ?>" alt="<?php echo $_postName ?>"/>
+                            </a>
+                        <?php } else { ?>
+                            <a title="<?php echo $_postName; ?>" href="<?php echo $_postUrl ?>">
+                                <img src="<?php /* @escapeNotVerified */
+                                echo $block->getViewFileUrl('images/post/no_image.jpg') ?>"
+                                     alt="<?php echo $_postName ?>"/>
+                            </a>
+                        <?php } ?>
+                    </div>
+
+                    <div class="info-blog">
+                        <h2 class="postTitle">
+                            <a class="post-item-link" href="<?php echo $_postUrl ?>">
+                                <?php echo $_postName; ?>
+                            </a>
+                        </h2>
+
+                        <div class="date-post">
+                            <?php
+                            echo $_post->getPublishDate('Y-m-d');
+                            ?>
+                        </div>
+                    </div>
+                </div>
+
+            <?php } ?>
+        </div>
+    </div>
+<?php } ?>

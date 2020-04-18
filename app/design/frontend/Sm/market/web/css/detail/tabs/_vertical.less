@@ -1,0 +1,107 @@
+﻿.vertical-style {
+    .resp-tabs-container {
+        padding: 0px;
+        background-color: #fff;
+        clear: left;
+    }
+
+    .resp-accordion {
+        display: none;
+    }
+
+    .active {
+        border-bottom: none;
+    }
+
+    .resp-content-active, .resp-accordion-active {
+        display: block;
+    }
+
+    .resp-tab-content {
+        border: 1px solid #ddd;
+        min-height: 268px;
+        padding: 30px;
+    }
+
+    h2.resp-tab-active {
+        border-bottom: 0px solid #c1c1c1 !important;
+        margin-bottom: 0px !important;
+    }
+
+    /*-----------Vertical tabs-----------*/
+
+    ul.resp-tabs-list {
+        float: left;
+        width: 200px;
+    }
+
+    .resp-tabs-list li {
+        display: block;
+        border: 1px solid #ddd;
+        border-bottom: none;
+        font-size: 133.33%;
+        color: #444;
+        padding: 15px 30px;
+        margin: 0 -1px 0 0;
+        cursor: pointer;
+        float: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        position: relative;
+
+        a {
+            color: inherit;
+        }
+
+        &.active {
+            &:before {
+                content: "";
+                display: inline-block;
+                width: 4px;
+                position: absolute;
+                left: -1px;
+                top: -1px;
+                bottom: -1px;
+            }
+        }
+
+        &:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+    }
+
+    .resp-tabs-container {
+        padding: 0px;
+        background-color: #fff;
+        min-height: 250px;
+        margin-left: 200px;
+        clear: none;
+    }
+
+}
+
+/* RTL */
+
+.direction-rtl {
+    .vertical-style ul.resp-tabs-list {
+        float: right;
+
+        li {
+            border-left: none;
+
+            &.resp-tab-active {
+                &:before {
+                    right: -1px;
+                    left: auto;
+                }
+            }
+        }
+    }
+
+    .vertical-style .resp-tabs-container {
+        margin-right: 200px;
+        margin-left: 0;
+    }
+}
+
+

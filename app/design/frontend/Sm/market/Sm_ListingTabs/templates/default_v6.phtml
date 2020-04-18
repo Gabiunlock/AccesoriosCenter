@@ -1,0 +1,85 @@
+<?php
+/**
+ *
+ * SM Listing Tabs - Version 2.5.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+
+$list   = $this->_getList();
+$tag_id = $this->_tagId();
+if (!empty($list)) {
+    ?>
+    <div id="<?php echo $tag_id; ?>"
+         class="sm-listing-tabs ltabs-loading-first <?php echo $this->_getConfig('type_show') . 'type'; ?>">
+        <div class="ltabs-loading-css">
+            <div class="loading-content">
+
+            </div>
+        </div>
+
+        <div class="title-home-page">
+            <span><?php echo $this->_getConfig('title', 'Tab Listing'); ?></span>
+        </div>
+
+        <div class="ltabs-wrap">
+            <!--Begin Tabs-->
+            <div class="ltabs-tabs-container">
+                <?php echo $this->getLayout()->createBlock("Sm\ListingTabs\Block\ListingTabs")->setData('list', $list)->setTemplate("Sm_ListingTabs::default_tabs_v6.phtml")->toHtml();
+                ?>
+            </div>
+            <!-- End Tabs-->
+            <!--Begin Items-->
+            <div class="ltabs-items-container ">
+                <?php foreach ($list as $items) {
+                    $products = isset($items['products_list']) ? $items['products_list'] : '';
+                    $cls      = (isset($items['sel'])) ? ' ltabs-items-selected ltabs-items-loaded ' : '';
+                    ?>
+                    <div class="ltabs-items <?php echo $cls; ?> <?php echo 'ltabs-items-' . $items['id_tab']; ?>">
+                        <div class="ltabs-items-inner">
+                            <?php if (!empty($products)) {
+                                echo $this->getLayout()->createBlock("Sm\ListingTabs\Block\ListingTabs")->setData(['products' => $products, 'config' => $this->_getConfig()])->setTemplate("Sm_ListingTabs::default_items_v6.phtml")->toHtml();
+                            } else {
+                                ?>
+                                <div class="ltabs-loading">
+                                    <div class="loading-content">
+
+                                    </div>
+                                </div>
+                            <?php } ?>
+                        </div>
+
+                        <?php if ($this->_getConfig('type_show') == 'loadmore') { ?>
+                            <?php $classloaded = ($this->_getConfig('limitation', 2) == 0) ? 'loaded' : ''; ?>
+                            <div class="ltabs-loadmore"
+                                 data-tab-id="<?php echo $items['id_tab']; ?>"
+                                 data-catids="<?php echo $items['cat_children'] ?>"
+                                 data-rl_start="<?php echo $this->_getConfig('limitation', 2) ?>"
+                                 data-rl_allready="<?php echo __('All ready'); ?>"
+                                 data-rl_load="<?php echo $this->_getConfig('limitation', 2) ?>">
+                                <div class="ltabs-loadmore-btn <?php echo $classloaded ?>"
+                                     data-label=" <?php echo ($classloaded) ? __('All ready') : __('Load more'); ?>">
+                                    <span class="ltabs-image-loading"></span>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
+            </div>
+            <!--End Items-->
+        </div>
+    </div>
+    <?php echo $this->getLayout()->createBlock("Sm\ListingTabs\Block\ListingTabs")->setData(['tagid' => $this->_tagId(), 'config' => $this->_getConfig()])->setTemplate("Sm_ListingTabs::default_js_v6.phtml")->toHtml(); ?>
+    <?php
+} else { ?>
+    <div class="message info empty">
+        <div><?php /* @escapeNotVerified */
+            echo __('We can\'t find products matching the selection.') ?></div>
+    </div>
+    <?php
+} ?>
+
+
+

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<!--
+/**
+ *
+ * SM CartQuickPro - Version 1.0.0
+ * Copyright (c) 2017 YouTech Company. All Rights Reserved.
+ * @license - Copyrighted Commercial Software
+ * Author: YouTech Company
+ * Websites: http://www.magentech.com
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <!-- <css src="Sm_CartQuickPro::css/quickview.css" /> -->
+    </head>
+    <body>
+        <referenceContainer name="before.body.end">
+            <block class="Sm\CartQuickPro\Block\CartQuickPro" name="quicview.footer"
+                   template="Sm_CartQuickPro::quickview.phtml"/>
+            <block class="Sm\CartQuickPro\Block\CartQuickPro" name="ajaxcart.footer"
+                   template="Sm_CartQuickPro::default.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

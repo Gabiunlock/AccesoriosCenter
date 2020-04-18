@@ -1,0 +1,67 @@
+<div class="header-container header-style-18">
+    <div class="header-middle header-bottom">
+        <div class="container">
+            <div class="middle-content">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-12 logo-header">
+                        <?php echo $block->getChildHtml('logo_theme'); ?>
+                    </div>
+
+                    <div class="col-xl-6 col-lg-8 menu-header">
+                        <div class="menu-container">
+                            <div class="main-megamenu">
+                                <?php
+                                if ($_config->getGeneral('menu_style') == 'megamenu') {
+                                    echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml();
+                                } else {
+                                    echo $block->getChildHtml('navigation-header');
+                                }
+                                ?>
+                            </div>
+
+                            <div class="navigation-mobile-container">
+                                <?php echo $block->getChildHtml('navigation.mobile'); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-lg-4 customer-action">
+                        <div class="setting-header">
+                            <div class="custom-icon custom-setting">
+                                <?php echo __('Setting') ?>
+                            </div>
+
+                            <div class="dropdown-header">
+                                <p class="title-dropdown"><?php echo __('Language') ?></p>
+                                <?php echo $block->getChildHtml('language-header'); ?>
+                                <p class="title-dropdown"><?php echo __('Currency') ?></p>
+                                <?php echo $block->getChildHtml('currency-header'); ?>
+                            </div>
+                        </div>
+
+                        <?php echo $block->getChildHtml('cart-header'); ?>
+
+                        <div class="customer-header">
+                            <div class="custom-icon custom-customer">
+                                <?php echo __('Customer') ?>
+                            </div>
+
+                            <div class="dropdown-header">
+                                <p class="title-dropdown"><?php echo __('My Account') ?></p>
+                                <?php echo $block->getChildHtml('toplinks-header'); ?>
+                            </div>
+                        </div>
+
+                        <div class="search-header">
+                            <div class="custom-icon custom-search">
+                                <?php echo __('Search') ?>
+                            </div>
+
+                            <?php echo $block->getChildHtml('search-header'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

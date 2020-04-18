@@ -1,0 +1,208 @@
+// FOOTER STYLE 8
+
+.footer-container {
+    background-color: #000000;
+    color: #999999;
+    position: relative;
+
+    a {
+        color: #999999;
+    }
+
+    .footer-top {
+        padding: 70px 0 60px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-bottom {
+        padding: 11px 0;
+
+        .copyright-footer {
+            address {
+                padding: 5px 0;
+
+                a {
+                    color: #999999;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+        }
+
+        .payment-footer {
+            text-align: right;
+
+            img {
+                margin-top: 4px;
+                opacity: 0.6;
+            }
+        }
+
+    }
+
+    .newsletter-footer {
+        #newsletter {
+            background: none;
+            border-color: #333333;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 108.33%;
+        }
+
+        .action-button {
+            button {
+                background-color: #1a1a1a;
+                width: 100%;
+                .transition(.2s);
+            }
+        }
+    }
+
+    .footer-block {
+        .footer-block-title {
+            h3 {
+                font-weight: 700;
+                font-size: 116.67%;
+                text-transform: uppercase;
+                color: #fff;
+            }
+
+            margin-bottom: 15px;
+        }
+
+        .footer-block-content {
+            .links-footer {
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        display: inline-block;
+                        font-size: 108.33%;
+
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 0;
+                            height: 1px;
+                            vertical-align: middle;
+                            .transition(.2s);
+                        }
+
+                        &:hover {
+                            &:before {
+                                width: 13px;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .links-contact {
+                li {
+                    position: relative;
+                    padding-left: 39px;
+                    min-height: 30px;
+                    line-height: 18px;
+
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        top: 4px;
+                        content: "";
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background: url(../images/icon-image.png) #3d3d3d;
+                        border-radius: 3px;
+                        -webkit-border-radius: 3px;
+                        .transition(.2s);
+                    }
+
+                    &.add-icon {
+                        &:before {
+                            background-position: -8px -10px;
+                        }
+                    }
+
+                    &.email-icon {
+                        &:before {
+                            background-position: -11px -51px;
+                        }
+                    }
+
+                    &.phone-icon {
+                        &:before {
+                            background-position: -11px -91px;
+                        }
+                    }
+
+                    &.middle-content {
+                        padding-top: 9px;
+                        margin: 20px 0 26px;
+                    }
+                }
+            }
+        }
+    }
+
+    .categories-footer {
+        font-size: 108.33%;
+        padding: 40px 0;
+        text-align: center;
+
+        ul {
+            li {
+                padding: 3px 0;
+            }
+        }
+    }
+
+}
+
+.footer-middle {
+    .footer-middle-content {
+        text-align: center;
+        font-size: 108.33%;
+        padding: 70px 0 50px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+
+        img {
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        .socials-wrap {
+            .title-follow {
+                display: none;
+            }
+
+            ul {
+                li {
+                    display: inline-block;
+                    font-size: 30px;
+                    margin: 0 15px;
+
+                    a:hover {
+                        color: #fff;
+                    }
+
+                    .name-social {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+

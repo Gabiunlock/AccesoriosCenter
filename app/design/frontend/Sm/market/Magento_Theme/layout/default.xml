@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Sm\Market\Block\Template" name="config.theme.setting"
+                   template="Magento_Theme::html/config.phtml"/>
+        </referenceBlock>
+        <referenceContainer name="page.wrapper">
+            <container name="header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-"/>
+            <block class="Magento\Theme\Block\Html\Header" name="header.content" template="html/header.phtml"
+                   before="page.top">
+                <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe.popup" as="form.subscribe.popup"
+                       before="-" template="subscribe-popup.phtml" ifconfig="market/advanced/show_newsletter_popup"/>
+
+                <container name="toplinks-header" label="Header Links" as="toplinks-header" htmlTag="div"
+                           htmlClass="toplinks-wrapper"/>
+
+                <container name="navigation-header" label="Navigation" as="navigation-header" htmlTag="div"
+                           htmlClass="navigation-wrapper"/>
+
+                <container name="navigation-header-megamenu" label="Megamenu" as="navigation-header-megamenu"
+                           htmlTag="div" htmlClass="navigation-megamenu-wrapper">
+                    <block class="Sm\MegaMenu\Block\MegaMenu\View" name="megamenu.topnav" as="megamenu_topnav"
+                           template="Sm_MegaMenu::megamenu.phtml"/>
+                </container>
+
+                <container name="toplinks-header" label="Header Links" as="toplinks-header" htmlTag="div"
+                           htmlClass="toplinks-wrapper">
+                    <block class="Magento\Framework\View\Element\Html\Links" name="top.links">
+                        <arguments>
+                            <argument name="css_class" xsi:type="string">header links</argument>
+                        </arguments>
+                    </block>
+                </container>
+
+                <block class="Magento\Theme\Block\Html\Header\Logo" name="logo_theme">
+                    <arguments>
+                        <argument name="logo_img_width" xsi:type="number">142</argument>
+                        <argument name="logo_img_height" xsi:type="number">42</argument>
+                    </arguments>
+                </block>
+
+                <block class="Magento\Theme\Block\Html\Topmenu" name="horizontal-css"
+                       template="html/horizontal-css.phtml" ttl="3600" before="-"/>
+
+                <container name="navigation.mobile">
+                    <block class="Magento\Theme\Block\Html\Topmenu" name="nav.mobile" template="html/nav-mobile.phtml"/>
+                </container>
+
+                <container name="compare-header-link" label="Compare Header" as="compare-header-link" htmlTag="div"
+                           htmlClass="compare-header-wrapper"/>
+
+                <container name="language-header" label="Language" as="language-header" htmlTag="div"
+                           htmlClass="language-wrapper"/>
+                <container name="currency-header" label="Currency" as="currency-header" htmlTag="div"
+                           htmlClass="currency-wrapper"/>
+                <container name="logo-header" label="Search" as="logo-header" htmlTag="div" htmlClass="logo-wrapper"/>
+
+                <container name="search-header" label="Search" as="search-header" htmlTag="div"
+                           htmlClass="search-wrapper">
+                    <block class="Magento\Framework\View\Element\Template" name="top.search" as="topSearch"
+                           template="Magento_Search::form.mini.phtml"/>
+                </container>
+
+                <container name="search-header-pro" label="Search" as="search-header-pro" htmlTag="div"
+                           htmlClass="search-wrapper">
+                    <block class="Sm\SearchBox\Block\SearchBox" name="searchbox" as="searchbox"
+                           template="Sm_SearchBox::searchbox.form.mini.phtml"/>
+                </container>
+
+                <container name="cart-header" label="Mini Cart" as="cart-header" htmlTag="div"
+                           htmlClass="cart-wrapper"/>
+
+                <container name="slideshow-header" label="Slideshow Header" as="slideshow-header" htmlTag="div"
+                           htmlClass="slideshow-wrapper"/>
+
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="top.links">
+            <referenceBlock name="my-account-link" remove="true"/>
+
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="myaccount-link"
+                   before="wish-list-link">
+                <arguments>
+                    <argument name="template" xsi:type="string">Magento_Theme::html/myaccount-link.phtml</argument>
+                </arguments>
+            </block>
+
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="checkout-link"
+                   before="authorization-link">
+                <arguments>
+                    <argument name="template" xsi:type="string">Magento_Theme::html/checkout-link.phtml</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+        <referenceBlock name="header" remove="true"/>
+        <referenceContainer name="header.panel" remove="true"/>
+        <referenceBlock name="navigation.sections" remove="true"/>
+        <referenceBlock name="register-link" remove="true"/>
+        <referenceBlock name="sale.reorder.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" remove="true"/>
+        <referenceBlock name="logo" remove="true"/>
+
+        <move element="catalog.compare.link" destination="compare-header-link"/>
+        <!-- <move element="logo" destination="logo-header" before="-"/> -->
+        <move element="catalog.topnav" destination="navigation-header"/>
+        <move element="store.settings.currency" destination="currency-header"/>
+        <move element="store.settings.language" destination="language-header"/>
+        <move element="minicart" destination="cart-header"/>
+
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Cms\Block\Block" name="product-sidebar">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">product-sidebar</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <referenceContainer name="footer-container">
+            <container name="footer" as="footer" label="Page Footer" htmlTag="div" htmlClass="footer footer-wrapper">
+                <block class="Magento\Theme\Block\Html\Footer" name="footer.content" template="html/footer.phtml">
+                    <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe.footer"
+                           as="form.subscribe.footer" before="-" template="subscribe-footer.phtml"/>
+                </block>
+
+            </container>
+        </referenceContainer>
+    </body>
+</page>

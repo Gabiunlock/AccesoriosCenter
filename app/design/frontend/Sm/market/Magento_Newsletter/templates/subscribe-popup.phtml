@@ -1,0 +1,99 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+
+?>
+<div class="display-popup" style="display:none;">
+    <div id="newsletter-popup">
+        <div class="promotional-popup">
+            <div class="pop-subscribe">
+                <form class="form subscribe"
+                      novalidate
+                      action="<?php /* @escapeNotVerified */
+                      echo $block->getFormActionUrl() ?>"
+                      method="post"
+                      data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+                      id="newsletter-popup-validate-detail">
+                    <div class="w-newsletter">
+                        <div class="newsletter-info">
+                            <div class="newsletter-title">
+                                <p><?php echo __('Sign Up') ?></p>
+                                <h3><?php echo __('Newsletter') ?></h3>
+                            </div>
+
+                            <div class="short-description">
+                                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('short-description-newsletter-popup')->toHtml(); ?>
+                            </div>
+
+                            <div class="form-newsletter-popup">
+                                <div class="input-box">
+                                    <input name="email" type="email" id="newsletter-popup" class="input-text"
+                                           onfocus="if(this.value=='<?php echo __("Your email address") ?>') this.value='';"
+                                           onblur="if(this.value=='') this.value='<?php echo __("Your email address") ?>';"
+                                           value="<?php echo __("Your email address") ?>"
+                                           data-validate="{required:true, 'validate-email':true}"/>
+                                </div>
+
+                                <div class="action-newsletter">
+                                    <button class="action subscribe primary" title="<?php /* @escapeNotVerified */
+                                    echo __('Subscribe') ?>" type="submit">
+										<span><?php /* @escapeNotVerified */
+                                            echo __('Subscribe') ?></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="subscribe-bottom">
+                                <div id="uniform-dont-show-again" class="checker"><span><input id="dont-show-again"
+                                                                                               type="checkbox"></span>
+                                </div>
+                                <label for="dont-show-again"><?php echo __('Don\'t show this popup again') ?></label>
+                            </div>
+
+                            <div class="socials-popup">
+                                <?php echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('social-newsletter-popup')->toHtml(); ?>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require([
+        'jquery',
+        'mage/cookies',
+        'jqueryfancyboxpack'
+    ], function ($) {
+        var check_cookie = jQuery.cookie('newsletter_popup');
+        if (check_cookie == null || check_cookie == 'shown') {
+            popupNewsletter();
+        }
+        jQuery('#newsletter-popup .subscribe-bottom input').on('click', function () {
+            if (jQuery(this).parent().find('input:checked').length) {
+                var check_cookie = jQuery.cookie('newsletter_popup');
+                if (check_cookie == null || check_cookie == 'shown') {
+                    jQuery.cookie('newsletter_popup', 'dontshowitagain');
+                } else {
+                    jQuery.cookie('newsletter_popup', 'shown');
+                    popupNewsletter();
+                }
+            } else {
+                jQuery.cookie('newsletter_popup', 'shown');
+            }
+        });
+    });
+
+    function popupNewsletter() {
+        jQuery(document).ready(function ($) {
+            $.fancybox.open('#newsletter-popup');
+        });
+    }
+    ;
+</script>

@@ -1,0 +1,55 @@
+<?php $welcomeMessage = $block->getWelcome(); ?>
+
+<div class="header-container header-style-21">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 language-currency-container">
+                    <div class="language-currency-top">
+                        <?php echo $block->getChildHtml('language-header'); ?>
+                        <?php echo $block->getChildHtml('currency-header'); ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 col-md-8 header-top-links">
+                    <?php echo $block->getChildHtml('toplinks-header'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-middle header-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <div class="logo-header">
+                        <?php echo $block->getChildHtml('logo_theme'); ?>
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-md-8">
+                    <div class="middle-right-content">
+                        <div class="desktop-menu">
+                            <?php
+                            if ($_config->getGeneral('menu_style') == 'megamenu') {
+                                echo $block->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('megamenu-horizontal')->toHtml();
+                            } else {
+                                echo $block->getChildHtml('navigation-header');
+                            }
+                            ?>
+                        </div>
+
+                        <div class="navigation-mobile-container">
+                            <?php echo $block->getChildHtml('navigation.mobile'); ?>
+                        </div>
+
+                        <div class="search-cart">
+                            <?php echo $block->getChildHtml('search-header'); ?>
+                            <?php echo $block->getChildHtml('cart-header'); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

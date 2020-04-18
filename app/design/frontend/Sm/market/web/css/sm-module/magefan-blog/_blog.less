@@ -1,0 +1,383 @@
+//  Magefan blog
+//  ---------------------------------------------
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.post-holder {
+    margin-bottom: 30px;
+}
+
+.post-holder .post-header {
+    position: relative;
+}
+
+.post-holder .post-header .post-info {
+    padding: 0 0 10px 0;
+}
+
+.post-holder .post-header .post-info .label {
+    color: #222;
+}
+
+.post-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.post-list .image-featured-post .post-content .post-description .post-ftimg-hld {
+    float: left;
+    position: relative;
+    line-height: 0;
+    width: 400px;
+    overflow: hidden;
+}
+
+.post-list .image-featured-post .post-content .post-description .post-ftimg-hld a {
+    position: static;
+    border: 1px solid #ddd;
+    padding: 5px;
+    display: block;
+}
+
+.post-list .image-featured-post .post-content .post-description .post-ftimg-hld img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.post-list .image-featured-post .post-content .post-text-hld {
+    margin-left: 430px;
+}
+
+.post-list .post-content .post-text-hld h2 {
+    margin: 0 0 10px;
+    font-size: 183.33%;
+}
+
+.post-list .post-content .post-text-hld .post-info {
+    margin-bottom: 10px;
+}
+
+.post-list .post-content .post-text-hld .post-info .label {
+    color: #222;
+}
+
+.post-list .post-content .post-text-hld .read-more-post {
+    margin-bottom: 15px;
+    text-align: right;
+
+    .post-read-more {
+        &:after {
+            margin-left: 2px;
+            .font-awesome(f101, 12px);
+            .transition(.2s);
+            position: relative;
+            right: 0;
+        }
+
+        &:hover {
+            &:after {
+                right: -5px;
+            }
+        }
+    }
+}
+
+.post-list .post-content .post-text-hld .share-post {
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.post-ftimg-hld .date-post {
+    position: absolute;
+    left: 17px;
+    top: 17px;
+    line-height: 1.6em;
+    background: #fff;
+    padding: 15px 13px 7px;
+    text-align: center;
+}
+
+.post-ftimg-hld .date-post .day-post {
+    font-size: 200%;
+    margin-bottom: 3px;
+}
+
+.post-list .post-content .post-text-hld .share-post .title-share {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.post-list .post-content .post-text-hld .share-post .addthis_toolbox {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+.blog-category-view .category-content {
+    padding-left: 40px;
+}
+
+.post-content .post-description img {
+    margin: 0 15px 0 15px;
+}
+
+.post-content .post-description ul,
+.post-content .post-description ol {
+    list-style-position: inside;
+}
+
+.post-view .post-description .post-ftimg-hld {
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 300px;
+}
+
+.post-view .post-description .post-ftimg-hld img {
+    margin: 0;
+}
+
+.post-bottom .block.related .block-content {
+    list-style: none;
+    padding: 0;
+}
+
+.post-list .post-header .post-title {
+    max-width: 80%;
+}
+
+.post-list .post-header .post-title a {
+    text-decoration: none;
+    font-size: 22px;
+    color: #636363;
+}
+
+.post-list .post-header .post-title {
+    margin: 0;
+    padding: 10px 0;
+    float: left;
+}
+
+.post-list .post-holder .post-header .addthis_toolbox {
+    float: right;
+    padding-top: 20px;
+}
+
+.post-list .hidden {
+    display: none;
+}
+
+.post-view .post-holder .post-header .addthis_toolbox {
+    float: right;
+}
+
+.post-view .post-bottom {
+    margin-top: 30px;
+}
+
+.post-view .post-nextprev-hld {
+    margin-bottom: 30px;
+}
+
+.post-view .post-nextprev-hld .prev-link {
+    float: left
+}
+
+.post-view .post-nextprev-hld .next-link {
+    float: right
+}
+
+.post-view .block {
+    margin-bottom: 30px;
+}
+
+.widget.block-categories ul {
+    list-style: initial;
+    padding-left: 0;
+}
+
+.widget.block-categories ul ul {
+    margin-left: 20px;
+}
+
+.widget.block-categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.widget.block-rss .rss-icon {
+    float: left;
+    width: 23px;
+    padding-right: 10px;
+    margin-top: 3px;
+}
+
+.widget.blog-search {
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+    float: right;
+    z-index: 4;
+}
+
+.widget.blog-search .block-content {
+    margin-bottom: 0;
+
+    .form {
+        position: relative;
+    }
+}
+
+.widget.blog-search label {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    text-decoration: none;
+    display: inline-block;
+    float: right;
+}
+
+.widget.blog-search .control {
+    border-top: 0;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+.widget.blog-search input {
+    padding-right: 45px;
+}
+
+.widget.blog-search .action.search {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    line-height: 36px;
+    background: none;
+    border: none;
+    padding: 0 !important;
+
+    &:before {
+        .font-awesome(f002, 14px);
+        color: #333;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+/* Tag claud widget */
+.widget.block-tagclaud ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: table;
+    width: 100%;
+
+    li {
+        float: left;
+        margin: 2px 0;
+
+        a {
+            display: inline-block;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            margin-right: 4px;
+            background-color: transparent;
+            .transition(.2s);
+        }
+    }
+}
+
+.blog-widget-recent .post-holder {
+    width: 29%;
+    float: left;
+    margin: 5px;
+}
+
+.blog-widget-recent .post-description .post-text-hld {
+    max-height: 150px;
+    min-height: 150px;
+    overflow-y: auto;
+}
+
+.blog-widget-recent-masonry .post-description .post-text-hld {
+    max-height: none;
+    min-height: 0;
+}
+
+.blog-widget-recent-masonry .post-description .post-ftimg-hld {
+    width: 100%;
+    margin: 0;
+}
+
+.mfblog-autoloader {
+    text-align: center;
+}
+
+.mfblog-autoloader .mfblog-show-onload {
+    display: none;
+}
+
+.sidebar .block.block-categories .block-content,
+.sidebar .block.block-recent-posts .block-content,
+.sidebar .block.block-archive .block-content {
+    padding: 0;
+
+    > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+        > li {
+            margin: 0;
+            background-color: transparent;
+            border-bottom: 1px solid #ddd;
+            display: block;
+            font-size: 116.67%;
+            transition: all 0.2s ease 0s;
+
+            > a {
+                padding: 13px 0 10px;
+                display: block;
+            }
+
+            &:last-child {
+                border: none;
+            }
+
+            &:hover {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.sidebar .block.block-categories .block-content > ul ul li {
+    padding-left: 10px;
+    font-size: 12px;
+}
+
+.catalog-product-view .post-bottom {
+    padding-bottom: 30px;
+}
+
+//  End magefan blog

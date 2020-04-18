@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<update handle="editor"/>
+	<head>
+		<title>SM Mega Menu</title>
+		<css src="Sm_MegaMenu::css/font-awesome.css" media="all" />
+		<css src="Sm_MegaMenu::css/megamenu.css" media="all" />
+		<!-- <script src="jquery.js" data-requiremodule="jquery" /> -->
+		<!-- <script src="Sm_MegaMenu::js/jquery.nestable.js" defer="defer" async="" data-requiremodule="Sm_MegaMenu/js/jquery.nestable"  data-requirecontext="jquery" /> -->
+	</head>
+	<body>
+		<!-- <referenceContainer name="js">
+			<block class="Magento\Framework\View\Element\Template" template="Magento_Catalog::catalog/wysiwyg/js.phtml" name="catalog.wysiwyg.js"/>
+		</referenceContainer> -->
+		<referenceContainer name="js">
+			<block class="Magento\Backend\Block\Template" template="Magento_Widget::instance/js.phtml" name="widget_instance_js"/>
+		</referenceContainer>
+	</body>
+</page>

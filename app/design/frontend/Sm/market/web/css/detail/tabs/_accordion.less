@@ -1,0 +1,75 @@
+﻿.product.data.items.accordion-style {
+    .item.title.resp-accordion {
+        border: 1px solid #ddd;
+        display: block;
+        float: none !important;
+        width: 100%;
+        font-size: 133.33%;
+        color: #444;
+        padding: 15px 20px !important;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin: 10px 0 0 !important;
+        height: unset !important;
+        line-height: unset !important;
+        position: relative;
+
+        a {
+            height: auto !important;
+            padding: 0 !important;
+            line-height: unset !important;
+            font-weight: 700;
+            color: #333 !important;
+            font-size: inherit;
+
+            &:before {
+                .font-awesome(f067, 14px);
+                float: right;
+                margin-top: 7px;
+            }
+        }
+
+        .resp-arrow {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            right: 10px;
+            top: 50%;
+            margin-top: -15px;
+            text-align: center;
+
+            &:before {
+                .font-awesome(f067, 16px);
+            }
+        }
+
+        &.active {
+            a {
+                &:before {
+                    .font-awesome(f068, 14px);
+                }
+            }
+        }
+    }
+
+    .resp-tab-content {
+        float: none !important;
+        padding: 20px !important;
+        border: none;
+        margin: 0 !important;
+        border-top: none !important;
+    }
+
+}
+
+/* RTL */
+
+.direction-rtl {
+    .product.data.items.accordion-style .item.title.resp-accordion a:before {
+        float: left;
+    }
+}
+
+

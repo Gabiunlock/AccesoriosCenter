@@ -1,0 +1,210 @@
+// FOOTER STYLE 1
+
+.footer-container {
+    background-color: #f2f3f7;
+    color: #666666;
+    position: relative;
+
+    a {
+        color: #666666;
+    }
+
+    .footer-top {
+        padding: 40px 0 30px;
+        border-bottom: 1px solid #e4e7eb;
+    }
+
+    .footer-bottom {
+        background-color: #383c41;
+        padding: 11px 0;
+        color: #fff;
+
+        .copyright-footer {
+            address {
+                text-align: center;
+                padding: 5px 0;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .footer-payment {
+            text-align: right;
+        }
+
+    }
+
+    .footer-block {
+        .footer-block-title {
+            h3 {
+                font-weight: 700;
+                font-size: 116.67%;
+            }
+
+            margin-bottom: 15px;
+        }
+
+        .footer-block-content {
+            .links-footer {
+                li {
+                    a {
+                        display: inline-block;
+                        padding: 2px 0;
+                        font-size: 108.33%;
+
+                        &:before {
+                            content: "";
+                            display: inline-block;
+                            width: 0;
+                            height: 1px;
+                            vertical-align: middle;
+                            .transition(.2s);
+                        }
+
+                        &:hover {
+                            &:before {
+                                width: 13px;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .links-contact {
+                li {
+                    position: relative;
+                    padding-left: 39px;
+                    min-height: 30px;
+                    line-height: 18px;
+
+                    &:before {
+                        position: absolute;
+                        left: 0;
+                        top: 4px;
+                        content: "";
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background: url(../images/icon-image.png) #969696;
+                        border-radius: 3px;
+                        -webkit-border-radius: 3px;
+                    }
+
+                    &.add-icon {
+                        &:before {
+                            background-position: -8px -10px;
+                        }
+                    }
+
+                    &.email-icon {
+                        &:before {
+                            background-position: -11px -51px;
+                        }
+                    }
+
+                    &.phone-icon {
+                        &:before {
+                            background-position: -11px -91px;
+                        }
+                    }
+
+                    &.middle-content {
+                        padding-top: 9px;
+                        margin: 4px 0 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .categories-footer {
+        font-size: 108.33%;
+        padding: 30px 0;
+        text-align: center;
+
+        ul {
+            li {
+                padding: 3px 0;
+            }
+        }
+    }
+
+}
+
+.footer-middle {
+    padding: 50px 0 0;
+
+    .app-store {
+        h4 {
+            font-size: 116.67%;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        ul {
+            display: inline-block;
+            vertical-align: middle;
+
+            li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .payment-footer {
+        text-align: center;
+    }
+
+    .socials-wrap {
+        float: right;
+
+        .title-follow {
+            font-size: 116.67%;
+            font-weight: 700;
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: middle;
+
+            &:after {
+                content: ":";
+            }
+        }
+
+        ul {
+            display: inline-block;
+            vertical-align: middle;
+
+            .li-social {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 3px;
+
+                a {
+                    display: inline-block;
+                    width: 34px;
+                    height: 34px;
+                    text-align: center;
+                    line-height: 34px;
+                    color: #fff;
+                    font-size: 15px;
+                    background-color: #999999;
+                    .transition(.2s);
+                    border-radius: 50%;
+                    -webkit-border-radius: 50%;
+
+                    .name-social {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+

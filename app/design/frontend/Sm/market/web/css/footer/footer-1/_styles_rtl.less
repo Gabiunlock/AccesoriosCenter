@@ -1,0 +1,225 @@
+// FOOTER STYLE 1
+
+.footer-container {
+    position: relative;
+
+    .footer-head {
+        background-color: #4a5678;
+        color: #fff;
+    }
+
+    .footer-top {
+        background-color: #f3f4f8;
+    }
+
+    .footer-bottom {
+        background-color: #f3f4f8;
+        padding: 11px 0;
+
+        .copyright-footer {
+            address {
+                margin-top: 3px;
+
+                a:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .footer-payment {
+            text-align: left;
+        }
+
+    }
+
+    .footer-block {
+        padding: 40px 0;
+
+        .footer-block-title {
+            h3 {
+                font-weight: 700;
+                font-size: 116.67%;
+                color: #222;
+                text-transform: uppercase;
+            }
+
+            margin-bottom: 15px;
+        }
+
+        .footer-block-content {
+            .links-footer {
+                li {
+                    a {
+                        display: inline-block;
+                        padding: 2px 0;
+                        font-size: 108.33%;
+                    }
+                }
+            }
+
+            .links-contact {
+                li {
+                    position: relative;
+                    padding-right: 39px;
+                    min-height: 30px;
+                    line-height: 18px;
+
+                    &:before {
+                        position: absolute;
+                        right: 0;
+                        top: 4px;
+                        content: "";
+                        display: inline-block;
+                        width: 30px;
+                        height: 30px;
+                        background: url(../images/icon-image.png) #4a5678;
+                        .border_radius(50%);
+                    }
+
+                    &.add-icon {
+                        &:before {
+                            background-position: -8px -10px;
+                        }
+                    }
+
+                    &.email-icon {
+                        &:before {
+                            background-position: -11px -51px;
+                        }
+                    }
+
+                    &.phone-icon {
+                        &:before {
+                            background-position: -11px -91px;
+                        }
+                    }
+
+                    &.middle-content {
+                        padding-top: 9px;
+                        margin: 10px 0 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .categories-footer {
+        font-size: 91.67%;
+        padding: 30px 0;
+
+        .footer-links-w {
+            .label-link {
+                font-weight: 700;
+                margin-bottom: 13px;
+                text-transform: uppercase;
+                font-size: 127.27%;
+                color: #222;
+            }
+
+            ul {
+                li {
+                    padding-bottom: 8px;
+
+                    h2 {
+                        font-size: 100%;
+                        display: inline-block;
+                        font-weight: 600;
+                        color: #222;
+                        line-height: 18px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+
+    .socials-wrap {
+        background-color: #2b375c;
+        padding: 25px 30px 15px;
+        display: table;
+        width: 100%;
+
+        .title-follow {
+            display: none;
+        }
+
+        ul {
+            .li-social {
+                float: right;
+                margin-left: 10px;
+                margin-bottom: 10px;
+
+                a {
+                    display: inline-block;
+                    width: 40px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    color: #fff;
+                    font-size: 16px;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+
+                    .name-social {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .block-subscribe-footer {
+        padding: 25px 0;
+
+        .title-middle-footer {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 150%;
+            text-transform: uppercase;
+            font-weight: 700;
+            white-space: nowrap;
+            padding-left: 70px;
+        }
+
+        .form.subscribe {
+            display: table-cell;
+            width: 100%;
+            vertical-align: top;
+
+            .newsletter-content {
+                display: table;
+                width: 100%;
+            }
+
+            .input-box {
+                display: table-cell;
+                vertical-align: top;
+                width: 100%;
+
+                #newsletter-footer {
+                    height: 40px;
+                    border: none;
+                    color: #444;
+                    font-size: 116.67%;
+                }
+            }
+
+            .action-button {
+                display: table-cell;
+                vertical-align: top;
+
+                button {
+                    height: 40px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .contact-col {
+        .footer-block {
+            background-color: #eceef4;
+            padding: 40px 30px;
+        }
+    }
+}
+

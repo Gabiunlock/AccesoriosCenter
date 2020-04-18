@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>SM Mega Menu</title>
+    </head>
+    <body>
+        <referenceContainer name="page.top">
+            <block class="Sm\MegaMenu\Block\MegaMenu\View" name="megamenu.topnav" as="megamenu_topnav" before=""
+                   after="" template="Sm_MegaMenu::megamenu.phtml"/>
+        </referenceContainer>
+        <referenceBlock name="catalog.topnav" remove="true"/>
+    </body>
+</page>
