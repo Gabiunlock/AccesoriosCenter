@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ebizmarts_MailChimp Magento JS component
+ *
+ * @category    Ebizmarts
+ * @package     Ebizmarts_MailChimp
+ * @author      Ebizmarts Team <info@ebizmarts.com>
+ * @copyright   Ebizmarts (http://ebizmarts.com)
+ * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mailchimp" translate="label" sortOrder="450">
+            <label>Mailchimp</label>
+        </tab>
+        <section id="mailchimp" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Mailchimp</label>
+            <tab>mailchimp</tab>
+            <resource>Ebizmarts_MailChimp::config_mailchimp</resource>
+            <group id="hint" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\Fieldset\Hint</frontend_model>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Mailchimp General Configuration</label>
+                <field id="active" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[By enabling this extension, you agree to <a href="https://mailchimp.com/legal/additional-terms/" target="_blank">Mailchimp's additional terms</a>.]]></comment>
+                </field>
+                <field id="oauth_wizard" translate="label" sortOrder="12" showInDefault="1" showInStore="1" showInWebsite="1">
+                    <attribute type="button_label">Get API credentials</attribute>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\OauthWizard</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="apikey" translate="label" type="obscure" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="monkeystore" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mailchimp Store</label>
+                    <source_model>Ebizmarts\MailChimp\Model\Config\Source\MonkeyStore</source_model>
+                    <backend_model>Ebizmarts\MailChimp\Model\Config\Backend\MonkeyStore</backend_model>
+                    <comment>You must create a MailChimp Store for this API key to connect to this account</comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="monkeylist" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mailchimp List</label>
+                    <source_model>Ebizmarts\MailChimp\Model\Config\Source\MonkeyList</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="account_details" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Account Details</label>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\Account</frontend_model>
+                    <source_model>Ebizmarts\MailChimp\Model\Config\Source\Details</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="magentoemail" translate="label" type="select" sortOrder="45" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Magento always manage emails</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="webhook_active" translate="label" type="select" sortOrder="50" showInDefault="1">
+                    <label>Enable Two Way Sync</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[If this is set to "No", the synchronization will be from Magento's newsletter to Mailchimp only]]></comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="webhook_create" translate="button_label" type="button" sortOrder="55" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Create Webhook</button_label>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\CreateWebhook</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                        <field id="*/*/webhook_active">1</field>
+                    </depends>
+                </field>
+                <field id="webhook_delete" translate="label" type="select" sortOrder="60" showInDefault="1">
+                    <label>Webhooks Delete action</label>
+                    <source_model>Ebizmarts\MailChimp\Model\Config\Source\WebhookDelete</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="log" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Log</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="map_fields" translate="label comment tooltip" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Customer Fields Mapping</label>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\Form\Field\CustomerMap</frontend_model>
+                    <backend_model>Ebizmarts\MailChimp\Model\Config\Backend\VarsMap</backend_model>
+                    <comment>
+                        <![CDATA[Add the magento to mailchimp mapping]]>
+                    </comment>
+                    <tooltip>Map the magento customer field to mailchimp merge_fields</tooltip>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="resync_subscribers" translate="button_label" type="button" sortOrder="85" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Resync Subscribers</button_label>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\ResyncSubscriber</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="interest" translate="label" type="multiselect" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Available Groups</label>
+                    <source_model>Ebizmarts\MailChimp\Model\Config\Source\Interest</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <comment><![CDATA[If you <a href="https://kb.mailchimp.com/lists/groups/create-a-new-list-group" target="_blank">set up groups in Mailchimp</a>, include them in your checkout page so customers can choose the type of email marketing they want to receive.]]></comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="interest_in_success" translate="label" type="select" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show groups after checkout?</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Don't use in magento 2.1 see at <a href="https://github.com/magento/magento2/issues/4999" target="_blank">here</a>]]></comment>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="interest_success_html_before" translate="label" type="textarea" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Group Description</label>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                        <field id="*/*/interest_in_success">1</field>
+                    </depends>
+                </field>
+                <field id="interest_success_html_after" translate="label" type="textarea" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Success message</label>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                        <field id="*/*/interest_in_success">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="ecommerce" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ecommerce Configuration</label>
+                <field id="active" translate="label" type="select" sortOrder="112" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="customer_optin" translate="label" type="select" sortOrder="114" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Subscribe all customers to the newsletter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="firstdate" translate="label" type="date" showInDefault="1" sortOrder="116" showInWebsite="1" showInStore="1">
+                    <label>First Date</label>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\Date</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="send_promo" translate="label" type="select" sortOrder="118" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send Promo Rules and Promo Codes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="including_taxes" translate="label" type="select" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Prices including taxes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[You must configure Price Display Settings in Sales/Tax to "including taxes"]]></comment>
+
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="reset_errors" translate="button_label" type="button" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Reset Errors</button_label>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\ResetErrors</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="delete_store" translate="button_label" type="button" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <button_label>Delete Store</button_label>
+                    <comment>Proceed with caution, this delete the mailchimp store for all the connected magento stores</comment>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\DeleteStore</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="abandonedcart" translate="label" type="text" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Abandoned Cart Configuration</label>
+                <field id="active" translate="label" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="firstdate" translate="label" type="date" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Date</label>
+                    <frontend_model>Ebizmarts\MailChimp\Block\Adminhtml\System\Config\Date</frontend_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="page" translate="label" type="select" sortOrder="40" showInDefault="1" showInStore="0" showInWebsite="0">
+                    <label>Redirect Page</label>
+                    <source_model>Ebizmarts\MailChimp\Model\Config\Source\Cmspage</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="save_email_in_quote" translate="label comment" sortOrder="50" type="select" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Save Email to the Quote before place Order</label>
+                    <comment>Select No to prevent saving customer Email to the quote before Order was placed</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
