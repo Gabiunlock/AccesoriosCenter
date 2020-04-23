@@ -11,6 +11,7 @@
         "sort-packages": true
     },
     "require": {
+        "ebizmarts/mailchimp-lib": "^3.0",
         "magento/product-community-edition": "2.3.4"
     },
     "require-dev": {
