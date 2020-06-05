@@ -805,6 +805,28 @@ and (max-device-width: 550px){
     }
 }
 
+@media only screen
+and (min-device-width: 551px)
+and (max-device-width: 720px){
+    .fotorama__stage__frame {
+        text-align: center;
+        .fotorama__img {
+            height: auto;
+            left: 30%;
+            max-height: 100%;
+            max-width: 100%;
+            position: absolute;
+            top: 50%;
+            transition-duration: @fotorama-fullscreen-zoom-time;
+            transition-property: width, height, top, left;
+            vertical-align: middle;
+            width: auto;
+        }
+    }
+}
+
+
+
 .magnify-opaque {
     opacity: .5;
 }
