@@ -1,0 +1,93 @@
+Path,Path
+Add,Add
+"Optimize Images","Optimize Images"
+"Scan Images","Scan Images"
+"Image Optimizer optimize images.","Image Optimizer optimize images."
+"Image Optimizer scan images.","Image Optimizer scan images."
+"Image Optimizer","Image Optimizer"
+"Manage Images","Manage Images"
+"The module has been disabled.","The module has been disabled."
+"The wrong image is specified.","The wrong image is specified."
+"You deleted the image.","You deleted the image."
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Something went wrong while requeue for %1.","Something went wrong while requeue for %1."
+"A total of %1 record(s) have been updated.","A total of %1 record(s) have been updated."
+"The file %1 is not writable","The file %1 is not writable"
+"Something went wrong while restore for %1.","Something went wrong while restore for %1."
+"Something went wrong while updating status for %1.","Something went wrong while updating status for %1."
+Error,Error
+Success,Success
+error_long,error_long
+"Image(s) have been optimized successfully.","Image(s) have been optimized successfully."
+"Already optimized, please requeue to optimize again","Already optimized, please requeue to optimize again"
+"The image(s) had already been optimized previously","The image(s) had already been optimized previously"
+Skipped,Skipped
+"The image(s) are skipped.","The image(s) are skipped."
+"The image has been successfully updated.","The image has been successfully updated."
+"Backup functionality is currently disabled. Please enable for backups","Backup functionality is currently disabled. Please enable for backups"
+"The image has been successfully restored","The image has been successfully restored"
+"Sorry, no images are found after scan.","Sorry, no images are found after scan."
+"Successful data scanning","Successful data scanning"
+"Something went wrong while scan image. Please review the error log.","Something went wrong while scan image. Please review the error log."
+"Skipped because it is a transparent image.","Skipped because it is a transparent image."
+"Uploaded file must be below 5MB.","Uploaded file must be below 5MB."
+"file %1 does not exist","file %1 does not exist"
+"The image cannot be compressed more. Please reduce the image quality to continue optimizing.","The image cannot be compressed more. Please reduce the image quality to continue optimizing."
+"Image %1 has not been backed up.","Image %1 has not been backed up."
+"We can't save the cron expression. %1","We can't save the cron expression. %1"
+Custom,Custom
+Lossless,Lossless
+Pending,Pending
+Optimize,Optimize
+Restore,Restore
+Requeue,Requeue
+Delete,Delete
+"Are you sure you want to delete a record?","Are you sure you want to delete a record?"
+Skip,Skip
+"Too many images will take a long time to optimize. Are you sure you want to optimize all images?","Too many images will take a long time to optimize. Are you sure you want to optimize all images?"
+"Optimize Image","Optimize Image"
+"You need to scan all images before starting optimization process.","You need to scan all images before starting optimization process."
+Stop,Stop
+"Are you sure you want to stop optimizing images?","Are you sure you want to stop optimizing images?"
+Close,Close
+"Image optimization completed","Image optimization completed"
+"Processing (%1/%2)","Processing (%1/%2)"
+PENDING,PENDING
+ERROR,ERROR
+SUCCESS,SUCCESS
+SKIPPED,SKIPPED
+"Too many images will take a long time to optimize. Are you sure you want to optimize the selected image(s)? (%1 record(s))","Too many images will take a long time to optimize. Are you sure you want to optimize the selected image(s)? (%1 record(s))"
+General,General
+Enable,Enable
+"Select Yes to enable this module. Support image types: JPG, PNG, GIF, TIF, BMP","Select Yes to enable this module. Support image types: JPG, PNG, GIF, TIF, BMP"
+"Image Backup","Image Backup"
+"Backup original image in var/backup_image directory","Backup original image in var/backup_image directory"
+"Optimize Options","Optimize Options"
+"Image Quality","Image Quality"
+"Quality Percent","Quality Percent"
+"Skip Transparent Images","Skip Transparent Images"
+"Force File Permission","Force File Permission"
+"If Yes, you can assign access rights to the optimized image paths. For example: read a file, write a file.","If Yes, you can assign access rights to the optimized image paths. For example: read a file, write a file."
+"Select Permission","Select Permission"
+"Enter the number representing certain permission. Refer the list <a href=""http://linuxcommand.org/lc3_lts0090.php"" target=""blank""> here</a><br>Example: 0775. Default: 0664.","Enter the number representing certain permission. Refer the list <a href=""http://linuxcommand.org/lc3_lts0090.php"" target=""blank""> here</a><br>Example: 0775. Default: 0664."
+"Scan Directory","Scan Directory"
+"Included Directories","Included Directories"
+"If empty, extension will scan all magento directory, default directory is pub/media/","If empty, extension will scan all magento directory, default directory is pub/media/"
+"Excluded Directories","Excluded Directories"
+"Cron Job","Cron Job"
+"Enable Image Scan","Enable Image Scan"
+"Scan Schedule","Scan Schedule"
+"Enable Image Optimization","Enable Image Optimization"
+"Optimization Schedule","Optimization Schedule"
+"Limit Number of Images","Limit Number of Images"
+"The number of images will be optimized during a process of running cronjob or command line. Too many images will take a long time to optimize.","The number of images will be optimized during a process of running cronjob or command line. Too many images will take a long time to optimize."
+"Are you sure you want to restore the selected image(s)?","Are you sure you want to restore the selected image(s)?"
+"Are you sure you want to requeue the selected image(s)?","Are you sure you want to requeue the selected image(s)?"
+"Are you sure you want to delete the selected image(s)?","Are you sure you want to delete the selected image(s)?"
+"Are you sure you want to skip the selected image(s)?","Are you sure you want to skip the selected image(s)?"
+ID,ID
+Status,Status
+"Original Size","Original Size"
+"Optimized Size","Optimized Size"
+"Compression Level (%)","Compression Level (%)"
+"Error Message","Error Message"

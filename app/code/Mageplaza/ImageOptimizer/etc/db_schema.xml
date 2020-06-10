@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_ImageOptimizer
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mageplaza_image_optimizer" resource="default" engine="innodb" comment="Mageplaza Image Optimizer Table">
+        <column xsi:type="int" name="image_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Image ID"/>
+        <column xsi:type="varchar" name="path" nullable="true" length="255" comment="Image Path"/>
+        <column xsi:type="varchar" name="status" nullable="true" length="255" comment="Status"/>
+        <column xsi:type="int" name="origin_size" nullable="true" comment="Original Size"/>
+        <column xsi:type="int" name="optimize_size" nullable="true" comment="Original Size"/>
+        <column xsi:type="int" name="percent" nullable="true" comment="Percent"/>
+        <column xsi:type="varchar" name="message" nullable="true" length="255" comment="Message"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="image_id"/>
+        </constraint>
+        <index referenceId="MAGEPLAZA_IMAGE_OPTIMIZER_STATUS" indexType="fulltext">
+            <column name="status"/>
+        </index>
+    </table>
+</schema>

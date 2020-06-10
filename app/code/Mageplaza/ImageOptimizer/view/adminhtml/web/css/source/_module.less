@@ -1,0 +1,145 @@
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_ImageOptimizer
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+.mpcss .progress {
+  background-image: -webkit-linear-gradient(top,#ebebeb 0%,#f5f5f5 100%);
+  background-image: -o-linear-gradient(top,#ebebeb 0%,#f5f5f5 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#ebebeb),to(#f5f5f5));
+  background-image: linear-gradient(to bottom,#ebebeb 0%,#f5f5f5 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb',endColorstr='#fff5f5f5',GradientType=0);
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.mpcss .progress-bar {
+  background-image: -webkit-linear-gradient(top,#337ab7 0%,#286090 100%);
+  background-image: -o-linear-gradient(top,#337ab7 0%,#286090 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#337ab7),to(#286090));
+  background-image: linear-gradient(to bottom,#337ab7 0%,#286090 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7',endColorstr='#ff286090',GradientType=0);
+  float: left;
+  width: 0;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #337ab7;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.15);
+  -webkit-transition: width .6s ease;
+  -o-transition: width .6s ease;
+  transition: width .6s ease;
+}
+
+.mpcss .progress-bar-success {
+  background-image: -webkit-linear-gradient(top,#5cb85c 0%,#449d44 100%);
+  background-image: -o-linear-gradient(top,#5cb85c 0%,#449d44 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#5cb85c),to(#449d44));
+  background-image: linear-gradient(to bottom,#5cb85c 0%,#449d44 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c',endColorstr='#ff449d44',GradientType=0)
+}
+
+.mpcss .progress-bar-info {
+  background-image: -webkit-linear-gradient(top,#5bc0de 0%,#31b0d5 100%);
+  background-image: -o-linear-gradient(top,#5bc0de 0%,#31b0d5 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#5bc0de),to(#31b0d5));
+  background-image: linear-gradient(to bottom,#5bc0de 0%,#31b0d5 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de',endColorstr='#ff31b0d5',GradientType=0)
+}
+
+.mpcss .progress-bar-warning {
+  background-image: -webkit-linear-gradient(top,#f0ad4e 0%,#ec971f 100%);
+  background-image: -o-linear-gradient(top,#f0ad4e 0%,#ec971f 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#f0ad4e),to(#ec971f));
+  background-image: linear-gradient(to bottom,#f0ad4e 0%,#ec971f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ad4e',endColorstr='#ffec971f',GradientType=0)
+}
+
+.mpcss .progress-bar-danger {
+  background-image: -webkit-linear-gradient(top,#d9534f 0%,#c9302c 100%);
+  background-image: -o-linear-gradient(top,#d9534f 0%,#c9302c 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#d9534f),to(#c9302c));
+  background-image: linear-gradient(to bottom,#d9534f 0%,#c9302c 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f',endColorstr='#ffc9302c',GradientType=0)
+}
+
+.mp-grid-severity {
+  display: block;
+  font-weight: bold;
+  line-height: 17px;
+  padding: 0 3px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mp-grid-severity-pending {
+  background: #fffbbb none repeat scroll 0 0;
+  border-color: #f0b257;
+  color: #f0ad4e;
+}
+
+.mp-grid-severity-success {
+  background: #d0e5a9 none repeat scroll 0 0;
+  border-color: #5b8116;
+  color: #185b00;
+}
+
+.mp-grid-severity-error {
+  background: #f9d4d4 none repeat scroll 0 0;
+  border-color: #e22626;
+  color: #e22626;
+}
+
+.mp-grid-severity-skip {
+  background: #48C4E5 none repeat scroll 0 0;
+  border-color: #3484B7;
+  color: #337ab7;
+}
+
+#mpimageoptimizer-modal-content {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.mpimageoptimizer-modal-content-processing {
+  font-weight: 600;
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.mpimageoptimizer-modal-popup button.action-close {
+  display: none;
+}
+
+.mpimageoptimizer-modal-popup button.action-close-optimize {
+  display: none;
+}
+
