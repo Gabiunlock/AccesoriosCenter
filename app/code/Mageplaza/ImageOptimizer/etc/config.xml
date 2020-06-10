@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_ImageOptimizer
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <mpimageoptimizer>
+            <general>
+                <enabled>1</enabled>
+                <backup_image>1</backup_image>
+            </general>
+            <optimize_options>
+                <image_quality>custom</image_quality>
+                <quality_percent>92</quality_percent>
+                <skip_transparent_img>0</skip_transparent_img>
+                <force_permission>0</force_permission>
+                <select_permission>0664</select_permission>
+            </optimize_options>
+            <image_directory>
+                <include_directories>{"_1565771377953_953":{"path":"pub\/media\/"}}</include_directories>
+                <exclude_directories>{"_1565837542237_237":{"path":"pub\/media\/catalog\/product\/cache\/"}}</exclude_directories>
+            </image_directory>
+            <cron_job>
+                <enabled_scan>0</enabled_scan>
+                <scan_schedule>0 * * * *</scan_schedule>
+                <enabled_optimize>0</enabled_optimize>
+                <optimize_schedule>10 * * * *</optimize_schedule>
+                <limit_number>100</limit_number>
+            </cron_job>
+        </mpimageoptimizer>
+    </default>
+</config>

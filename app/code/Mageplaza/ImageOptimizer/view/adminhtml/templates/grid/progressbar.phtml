@@ -1,0 +1,81 @@
+<?php
+/**
+ * Mageplaza
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Mageplaza.com license that is
+ * available through the world-wide-web at this URL:
+ * https://www.mageplaza.com/LICENSE.txt
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this extension to newer
+ * version in the future.
+ *
+ * @category    Mageplaza
+ * @package     Mageplaza_ImageOptimizer
+ * @copyright   Copyright (c) Mageplaza (https://www.mageplaza.com/)
+ * @license     https://www.mageplaza.com/LICENSE.txt
+ */
+
+/** @var Mageplaza\ImageOptimizer\Block\Adminhtml\ProgressBar $block */
+$collection = $block->getImagePendingCollection();
+?>
+<div class="mpcss">
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" data-toggle="tooltip"
+             title="<?= /* @noEscape */
+                $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::SUCCESS) ?>"
+             style="width:<?= /* @noEscape */
+                $block->getWidthByStatus(Mageplaza\ImageOptimizer\Model\Config\Source\Status::SUCCESS) ?>">
+            <?= /* @noEscape */
+                $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::SUCCESS) ?>
+        </div>
+        <div class="progress-bar progress-bar-warning" role="progressbar" data-toggle="tooltip"
+             title="<?= /* @noEscape */
+                $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::PENDING) ?>"
+             style="width:<?= /* @noEscape */
+                $block->getWidthByStatus(Mageplaza\ImageOptimizer\Model\Config\Source\Status::PENDING) ?>">
+            <?= /* @noEscape */
+            $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::PENDING) ?>
+        </div>
+        <div class="progress-bar progress-bar-info" role="progressbar" data-toggle="tooltip"
+             title="<?= /* @noEscape */
+                $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::SKIPPED) ?>"
+             style="width:<?= /* @noEscape */
+                $block->getWidthByStatus(Mageplaza\ImageOptimizer\Model\Config\Source\Status::SKIPPED) ?>">
+            <?= /* @noEscape */
+            $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::SKIPPED) ?>
+        </div>
+        <div class="progress-bar progress-bar-danger" role="progressbar" data-toggle="tooltip"
+             title="<?= /* @noEscape */
+                $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::ERROR) ?>"
+             style="width:<?= /* @noEscape */
+                $block->getWidthByStatus(Mageplaza\ImageOptimizer\Model\Config\Source\Status::ERROR) ?>">
+            <?= /* @noEscape */
+            $block->getBarContent(Mageplaza\ImageOptimizer\Model\Config\Source\Status::ERROR) ?>
+        </div>
+    </div>
+</div>
+<div class="mpcss" id="mpimageoptimizer-modal" style="display: none;">
+    <div class="progress">
+        <div class="progress-bar progress-bar-success" id="progress-bar-optimize" role="progressbar">
+            <span id="mpimageoptimizer-modal-percent"></span>
+        </div>
+    </div>
+    <div class="mpimageoptimizer-modal-content-processing"></div>
+    <div id="mpimageoptimizer-modal-content"></div>
+</div>
+<div id="mpimageoptimizer-button-js"></div>
+<script type="text/x-magento-init">
+    {
+        "#mpimageoptimizer-button-js": {
+            "Mageplaza_ImageOptimizer/js/grid/button/optimize":{
+                "isEnabled": "<?= /* @noEscape */ $block->isEnabled() ?>",
+                "url": "<?= /* @noEscape */ $block->getOptimizeUrl() ?>",
+                "collection": <?= /* @noEscape */ Mageplaza\ImageOptimizer\Helper\Data::jsonEncode($collection) ?>
+            }
+        }
+    }
+</script>
