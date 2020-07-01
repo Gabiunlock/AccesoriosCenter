@@ -14,7 +14,8 @@
         "ebizmarts/mailchimp-lib": "^3.0",
         "magento/product-community-edition": "2.3.4",
         "mageplaza/module-core": "^1.4",
-        "mercadopago/magento2-plugin": "2.*"
+        "mercadopago/magento2-plugin": "2.*",
+        "spipu/html2pdf": "^5.2"
     },
     "require-dev": {
         "allure-framework/allure-phpunit": "~1.2.0",
