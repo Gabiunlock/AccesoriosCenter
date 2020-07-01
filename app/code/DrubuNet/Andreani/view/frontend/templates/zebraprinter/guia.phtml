@@ -1,0 +1,421 @@
+<?php
+/**
+ * @description template que carga los datos de la guía de andreani para generar el phtml.
+ *
+ * @var $this DrubuNet\Andreani\Block\Generarhtml
+ */
+?>
+
+<?php
+$orderId            = $block->getRequest()->getParam('order_id');
+$blockData          = $block->getAndreaniDataGuia($orderId);
+
+foreach($blockData AS $key => $guiaData):
+
+    $guiaDataObj        = json_decode(unserialize($guiaData));
+    $andreaniDatosGuia  = $guiaDataObj->datosguia->GenerarEnviosDeEntregaYRetiroConDatosDeImpresionResult;
+    $lastRequest        = $guiaDataObj->lastrequest;
+    $titleShipment      = '';
+
+    /** PROIDS-45 - Se implementa este fix porque el Web Service de Andreani devuelve Estandar si se elije Sucursal. */
+    $shippingMethod = $block->getShippingMethod($guiaDataObj->lastrequest->increment_id);
+
+    switch ($shippingMethod)
+    {
+        case 'andreaniurgente_urgente'  :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'DOMICILIO URGENTE';
+            $titleShipment2     = 'ANDREANI URGENTE';
+            $condEntrega        = 'B';
+            break;
+        case 'andreaniestandar_estandar' :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'DOMICILIO ESTANDAR';
+            $titleShipment2     = 'ANDREANI ESTANDAR';
+            $condEntrega        = 'B';
+            break;
+        default :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'ENTREGA EN SUCURSAL';
+            $titleShipment2     = 'SUCURSAL ANDREANI';
+            $condEntrega        = 'E';
+            break;
+    }
+
+    $codigoBarras       = $block->getCodigoBarras($andreaniDatosGuia->NumeroAndreani);
+    ?>
+    <?php $logoCliente = ''; ?>
+    <?php if($block->getlogoEmpresaPath()!=''): ?>
+    <?php $logoCliente =  $block->getlogoEmpresaPath() ?>
+    <?php else:?>
+    <?php $logoCliente = $block->getViewFileUrl('DrubuNet_Andreani::images/logo_blanco.png') ?>
+<?php endif; ?>
+    <?php if($andreaniDatosGuia->CodigoDeResultado): ?>
+
+    <style type="text/css">
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .pagina,
+        page {
+            width: 90mm;
+            height: 75mm;
+            color: #000;
+            font-family: Helvetica, sans-serif;
+            font-size: 3mm;
+            line-height: 4mm;
+            margin:0;
+            border:0;
+        }
+
+        .contenido{
+            border:0.3mm solid #000;
+            width:90mm;
+            height: 75mm;
+            margin-left: 2mm;
+            margin-top: 3mm;
+        }
+
+        .header h2 {
+            font-size: 4mm;
+            line-height: 4mm;
+            display:inline;
+            color: #000;
+            margin:0;
+            font-style:italic;
+            font-weight: 200;
+            height: 12mm
+            line-height: 1;
+        }
+
+        .header{
+            height: 12mm;
+            background: #cccccc;
+        }
+
+        .header .negro,
+        .header .separador,
+        .header .gris{
+            height: 12mm;
+            display: block;
+            width: 100%;
+        }
+
+        .header .negro{
+            background: #000000;
+            width: 40mm;
+            height: 12mm;
+        }
+
+        .header .separador{
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 12mm 12mm 0 0;
+            border-color: #000000 transparent transparent transparent;
+        }
+        .header .gris{
+            background: #cccccc;
+            width: 35mm;
+            height: 12mm;
+            text-align: right;
+        }
+
+        .header .gris h2{
+            margin-right: 3mm;
+            margin-top: 2mm;
+            line-height: 1;
+        }
+
+        .header table{
+            padding: 0;
+            margin: 0;
+            width: 90mm;
+            height: 12mm;
+        }
+
+        .header td, .header tr{
+            padding: 0;
+            margin: 0;
+            vertical-align: top
+        }
+
+        .info-personal{
+            width:90mm;
+            height: 12mm;
+            padding: 1mm 2mm;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .info-personal .nombre {
+            font-size: 4mm;
+            line-height: 1;
+            display:inline;
+            color: #000;
+            margin:0 0 1mm 0;
+            padding: 0;
+            font-weight: bold;
+            width:100%;
+            text-transform: uppercase;
+        }
+
+        .info-personal .direccion {
+            font-size: 3mm;
+            line-height: 1;
+            display:inline;
+            color: #000;
+            margin:0 0 1mm 0;
+            padding: 0;
+            font-weight: bold;
+            width:100%;
+            text-transform: uppercase;
+        }
+
+        .info-personal .cp{
+            font-size: 2.5mm;
+            line-height: 1;
+            text-transform: uppercase;
+            font-weight: normal
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .datos-paq{
+            border-bottom:0.2mm dashed #000;
+            width:90mm;
+            height: auto;
+            padding: 0 2mm 1mm;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .datos-paq table{
+            padding: 0;
+            margin: 0;
+            width: 90mm;
+        }
+
+        .datos-paq td{
+            width: 45mm;
+        }
+
+        .datos-paq td, .datos-paq tr{
+            padding: 0;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+
+        .datos-paq .observacion p{
+            font-size: 2mm;
+            line-height: 1;
+            display:inline;
+            color: #000;
+            margin:0;
+            padding: 0;
+            width:100%;
+        }
+
+
+        .datos-paq .observacion .id-ref {
+            font-size: 3mm;
+            line-height: 1;
+            display:inline;
+            color: #000;
+            margin:0;
+            padding: 0;
+            font-weight: bold;
+            width:100%;
+            text-transform: uppercase;
+        }
+
+        .datos-paq .observaciones {
+            font-size: 2mm;
+            line-height: 1;
+            display:inline;
+            color: #000;
+            margin:0;
+            padding: 0;
+            width:100%;
+        }
+
+        .datos-paq .observaciones span{
+            display: inline;
+            width: 100%;
+            font-weight: bold;
+        }
+        .datos-paq .observacion table{
+            padding: 0;
+            margin: 0;
+            width: 45mm;
+        }
+
+        .datos-paq .observacion td{
+            width: 50%;
+        }
+
+        .datos-distri,
+        .datos-contrato{
+            border-bottom:0.2mm dashed #000;
+            width:90mm;
+            height: 8mm;
+            padding: 1mm 2mm;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .datos-distri table,
+        .datos-contrato table{
+            padding: 0;
+            margin: 0;
+            width: 90mm;
+        }
+
+        .datos-distri td,
+        .datos-contrato td{
+            width: 50%;
+        }
+
+        .datos-distri p,
+        .datos-contrato p{
+            font-size: 2.5mm;
+            line-height: 1;
+            display:inline;
+            color: #000;
+            margin:0;
+            padding: 0;
+            width:100%;
+        }
+
+        .datos-distri p{
+            font-weight: bold;
+        }
+
+        .cod-barras{
+            padding: 1mm;
+            width:90mm;
+            text-align: center;
+        }
+
+        .cod-barras img{
+            margin: 0 auto;
+        }
+
+    </style>
+    <page class="pagina">
+        <div class="contenido">
+            <div class="header">
+                <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <div class="negro">
+                                <!--<img src="<?= $block->getViewFileUrl('DrubuNet_Andreani::images/logo_blanco.png') ?>" style="width:35mm;margin-top: 2mm; margin-left: 2mm;" />-->
+                                <img src="<?= $logoCliente ?>" style="width:35mm;margin-top: 2mm; margin-left: 2mm;" />
+                            </div>
+                        </td>
+                        <td><div class="separador"></div></td>
+                        <td><div class="gris">
+                                <h2><?= $titleShipment ?></h2>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="info-personal">
+                <p class="nombre">
+                    <?= " {$lastRequest->nombre} {$lastRequest->apellido}"?>
+                </p>
+                <p class="direccion">
+                    Calle:<?= " {$lastRequest->calle} {$lastRequest->numero}"?> - Piso:<?= " {$lastRequest->piso}"?> - Depto:<?= " {$lastRequest->departamento}"?>
+                </p>
+                <p class="cp">
+                    Prov.:<?= " {$lastRequest->provincia}"?> - Loc.:<?= " {$lastRequest->localidad}"?> - CP:<?= " {$lastRequest->codigopostal}"?>
+                </p>
+            </div>
+            <div class="datos-paq">
+                <table class="observacion">
+                    <tr>
+                        <td>
+                            <p class="id-ref">
+                                ID: <?= isset($lastRequest->increment_id) ? $lastRequest->increment_id : '' ?>
+                            </p>
+                        </td>
+                        <td>
+                            <table class="info-paq">
+                                <tr>
+                                    <td>
+                                        <p>Peso:<?=  " {$lastRequest->peso}"?></p>
+                                    </td>
+                                    <td>
+                                        <p>Alto:</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Ancho: </p>
+                                    </td>
+                                    <td>
+                                        <p>Largo:</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <p class="observaciones">
+                    <span>Observaciones:
+                        <span>
+                            Condición de Entrega <?= " '{$condEntrega}'"?>
+                        </span>
+                    </span>
+                </p>
+            </div>
+            <div class="datos-contrato">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Nombre:</p>
+                            <p>CL: <?= " {$cliente}"?></p>
+                        </td>
+                        <td>
+                            <p>Contrato:<?= " {$contrato}"?></p>
+                            <p>Correo Andreani<?= " {$andreaniDatosGuia->NumeroDePermisionaria}" ?></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="datos-distri">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Suc. Dist.:<?= " {$andreaniDatosGuia->SucursalDeDistribucion}"?></p>
+                        </td>
+                        <td>
+                            <p>Suc. Rend.:<?= " {$andreaniDatosGuia->SucursalDeRendicion}"?></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="cod-barras">
+                <img src="<?= $codigoBarras ?>" width="300" height="40" alt="<?= $andreaniDatosGuia->NumeroAndreani ?>"/><br>
+                <?= "{$andreaniDatosGuia->NumeroAndreani}" ?>
+            </div>
+        </div>
+    </page>
+
+<?php else: ?>
+    <div>
+        Código error <?=  "{$andreaniDatosGuia->CodigoDeResultado} . {$andreaniDatosGuia->DescripcionDeResultado}" ?>
+    </div>
+<?php endif; ?>
+
+<?php endforeach;?>

@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="checkout.root">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="checkout" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="steps" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="shipping-step" xsi:type="array">
+                                            <item name="children" xsi:type="array">
+                                                <item name="shippingAddress" xsi:type="array">
+                                                    <item name="children" xsi:type="array">
+                                                        <item name="shippingAdditional" xsi:type="array">
+                                                            <!-- Campos custom en el formulario de shipping address del checkout -->
+                                                            <item name="shipping-address-fieldset" xsi:type="array">
+                                                                <item name="component" xsi:type="string">uiComponent</item>
+                                                                <item name="config" xsi:type="array">
+                                                                    <item name="deps" xsi:type="array">
+                                                                        <item name="0" xsi:type="string">checkoutProvider</item>
+                                                                    </item>
+                                                                </item>
+                                                                <item name="displayArea" xsi:type="string">additional-fieldsets</item>
+                                                                <item name="children" xsi:type="array">
+                                                                    <item name="celular" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                            <item name="tooltip" xsi:type="array">
+                                                                                <item name="description" xsi:type="string" translate="true">Ingrese sólo numeros.</item>
+                                                                            </item>
+                                                                        </item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        <item name="dataScope" xsi:type="string">shippingAddress.celular</item>
+                                                                        <item name="label" xsi:type="string">Celular</item>
+                                                                        <item name="sortOrder" xsi:type="string">200</item>
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="validate-number" xsi:type="boolean">true</item>
+                                                                            <item name="min_text_length" xsi:type="number">7</item>
+                                                                            <item name="max_text_length" xsi:type="number">20</item>
+                                                                            <item name="validate-digits" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="altura" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                        </item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        <item name="dataScope" xsi:type="string">shippingAddress.altura</item>
+                                                                        <item name="label" xsi:type="string">Altura</item>
+                                                                        <item name="sortOrder" xsi:type="string">70</item>
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="validate-number" xsi:type="boolean">true</item>
+                                                                            <item name="required-entry" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="piso" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                        </item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        <item name="dataScope" xsi:type="string">shippingAddress.piso</item>
+                                                                        <item name="label" xsi:type="string">Piso</item>
+                                                                        <item name="sortOrder" xsi:type="string">71</item>
+                                                                        <!--                                                    <item name="validation" xsi:type="array">
+                                                                                                                               <item name="validate-number" xsi:type="boolean">true</item>
+                                                                                                                               <item name="max_text_length" xsi:type="number">2</item>
+                                                                                                                               <item name="validate-digits" xsi:type="boolean">true</item>
+                                                                                                                           </item> -->
+                                                                    </item>
+                                                                    <item name="departamento" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                        </item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        <item name="dataScope" xsi:type="string">shippingAddress.departamento</item>
+                                                                        <item name="label" xsi:type="string">Departamento</item>
+                                                                        <item name="sortOrder" xsi:type="string">72</item>
+                                                                    </item>
+                                                                    <item name="dni" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                            <item name="tooltip" xsi:type="array">
+                                                                                <item name="description" xsi:type="string" translate="true">Ingrese sólo numeros.</item>
+                                                                            </item>
+                                                                        </item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        <item name="dataScope" xsi:type="string">shippingAddress.dni</item>
+                                                                        <item name="label" xsi:type="string">DNI</item>
+                                                                        <item name="sortOrder" xsi:type="string">52</item>
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="validate-number" xsi:type="boolean">true</item>
+                                                                            <item name="required-entry" xsi:type="string">true</item>
+                                                                            <item name="min_text_length" xsi:type="number">6</item>
+                                                                            <item name="max_text_length" xsi:type="number">8</item>
+                                                                            <item name="validate-digits" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="observaciones" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/textarea</item>
+                                                                            <item name="cols" xsi:type="string">15</item>
+                                                                            <item name="rows" xsi:type="string">3</item>
+                                                                        </item>
+                                                                        <item name="provider" xsi:type="string">checkoutProvider</item>
+                                                                        <item name="dataScope" xsi:type="string">shippingAddress.observaciones</item>
+                                                                        <item name="label" xsi:type="string">Observaciones</item>
+                                                                        <item name="sortOrder" xsi:type="string">201</item>
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="max_text_length" xsi:type="number">300</item>
+                                                                        </item>
+                                                                    </item>
+                                                                    <item name="telephone" xsi:type="array">
+                                                                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/abstract</item>
+                                                                        <item name="config" xsi:type="array">
+                                                                            <item name="customScope" xsi:type="string">shippingAddress</item>
+                                                                            <item name="template" xsi:type="string">ui/form/field</item>
+                                                                            <item name="elementTmpl" xsi:type="string">ui/form/element/input</item>
+                                                                            <item name="description" xsi:type="string" translate="true">Ingrese sólo numeros.</item>
+                                                                            <item name="tooltip" xsi:type="array">
+                                                                                <item name="description" xsi:type="string" translate="true">Ingrese sólo numeros.</item>
+                                                                            </item>
+                                                                        </item>
+                                                                        <item name="validation" xsi:type="array">
+                                                                            <item name="validate-number" xsi:type="boolean">true</item>
+                                                                            <item name="required-entry" xsi:type="string">true</item>
+                                                                            <item name="min_text_length" xsi:type="number">7</item>
+                                                                            <item name="max_text_length" xsi:type="number">20</item>
+                                                                            <item name="validate-digits" xsi:type="boolean">true</item>
+                                                                        </item>
+                                                                    </item>
+                                                                </item>
+                                                            </item>
+                                                            <item name="component" xsi:type="string">uiComponent</item>
+                                                            <item name="displayArea" xsi:type="string">shippingAdditional</item>
+                                                            <item name="children" xsi:type="array">
+                                                                <item name="drubunet_andreani_form" xsi:type="array">
+                                                                    <item name="component" xsi:type="string">DrubuNet_Andreani/js/view/checkout/shipping/dropdown</item>
+                                                                </item>
+                                                            </item>
+                                                        </item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

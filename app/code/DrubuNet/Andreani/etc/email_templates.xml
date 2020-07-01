@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="shipping_andreani_configuracion_andreani_emails_transaccionales" label="Emails Transaccionales Andreani" file="andreani_emails_transaccionales.html" type="html" module="DrubuNet_Andreani" area="adminhtml"/>
+    <template id="sales_email_shipment_template" label="New Shipment" file="shipment_new.html" type="html" module="DrubuNet_Andreani" area="frontend"/>
+    <template id="sales_email_shipment_guest_template" label="New Shipment for Guest" file="shipment_new_guest.html" type="html" module="DrubuNet_Andreani" area="frontend"/>
+</config>
+

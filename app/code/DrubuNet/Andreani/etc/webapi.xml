@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+
+    <!-- Managing Sucursal List on Checkout page -->
+    <route url="/V1/module/get-sucursales-list/:region/:location" method="GET">
+        <service class="DrubuNet\Andreani\Api\SucursalManagementInterface" method="fetchSucursales"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/module/get-provincias-list" method="GET">
+        <service class="DrubuNet\Andreani\Api\SucursalManagementInterface" method="fetchProvincias"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/module/get-localidades-list/:region" method="GET">
+        <service class="DrubuNet\Andreani\Api\SucursalManagementInterface" method="fetchLocalidades"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <!--<route url="/V1/module/get-cotizacion-sucursal/:region/:location/:sucursal" method="GET">
+        <service class="DrubuNet\Andreani\Api\SucursalManagementInterface" method="getCotizacionSucursal"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>-->
+    <route url="/V1/module/get-cotizacion-sucursal" method="POST">
+        <service class="DrubuNet\Andreani\Api\SucursalManagementInterface" method="getCotizacionSucursal"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

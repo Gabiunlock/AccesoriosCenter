@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Quote\Api\Data\AddressInterface">
+        <attribute code="andreanisucursal_provincia" type="string"/>
+        <attribute code="andreanisucursal_sucursal" type="string"/>
+        <attribute code="andreanisucursal_localidad" type="string"/>
+    </extension_attributes>
+    <extension_attributes for="Magento\Checkout\Api\Data\ShippingInformationInterface">
+        <attribute code="dni" type="string"/>
+        <attribute code="altura" type="string"/>
+        <attribute code="piso" type="string"/>
+        <attribute code="departamento" type="string"/>
+        <attribute code="celular" type="string"/>
+        <attribute code="observaciones" type="string"/>
+    </extension_attributes>
+    <extension_attributes for="Magento\Quote\Api\Data\AddressInterface">
+        <attribute code="altura" type="string"/>
+        <attribute code="piso" type="string"/>
+        <attribute code="departamento" type="string"/>
+        <attribute code="celular" type="string"/>
+        <attribute code="observaciones" type="string"/>
+        <attribute code="dni" type="string"/>
+    </extension_attributes>
+</config>

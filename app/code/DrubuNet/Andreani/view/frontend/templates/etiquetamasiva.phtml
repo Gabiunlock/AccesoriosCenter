@@ -1,0 +1,365 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Pablo Garcia
+ * Email: pablolgarcia@gmail.com
+ * Date: 15/09/18
+ * Time: 11:07
+ *
+ * @description template que carga los datos de andreani para generar la etiqueta.
+ * @var $this DrubuNet\Andreani\Block\Generarhtml
+ * @var $block DrubuNet\Andreani\Block\Generarhtml
+ */
+
+$ordersIds          = explode(',',$block->getOrderId()); //$block->getRequest()->getParam('selected');
+$blockData          = $block->getAndreaniDataGuiaMasiva($ordersIds);
+$storeInfo          = $block->getStoreInformation();
+
+foreach($blockData AS $key => $guiaData):
+
+    $guiaDataObj        = json_decode(unserialize($guiaData));
+    $andreaniDatosGuia  = $guiaDataObj->datosguia->GenerarEnviosDeEntregaYRetiroConDatosDeImpresionResult;
+    $lastRequest        = $guiaDataObj->lastrequest;
+    $titleShipment      = '';
+
+    switch ($andreaniDatosGuia->Categoria)
+    {
+        case 'Urgente'  :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'DOMICILIO URGENTE';
+            $titleShipment2     = 'ANDREANI URGENTE';
+            break;
+        case 'Estandar' :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'DOMICILIO ESTANDAR';
+            $titleShipment2     = 'ANDREANI ESTANDAR';
+            break;
+        default         :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'ENTREGA EN SUCURSAL';
+            $titleShipment2     = 'SUCURSAL ANDREANI';
+            break;
+    }
+
+    $codigoBarras       = $block->getCodigoBarras($andreaniDatosGuia->NumeroAndreani);
+    ?>
+    <?php $logoCliente = ''; ?>
+    <?php if($block->getlogoEmpresaPath()!=''): ?>
+    <?php $logoCliente =  $block->getlogoEmpresaPath() ?>
+<?php endif; ?>
+    <?php if($andreaniDatosGuia->CodigoDeResultado): ?>
+    <page>
+        <div class="label-wrapper" style="width: 100mm; height: 150mm; overflow: hidden;">
+            <table class="label-header" style="width:90mm; overflow: hidden">
+                <tr>
+                    <td class="logo" style="width: 25mm; padding-right: 10mm;">
+                        <div class="logo"><img src="<?= $block->getViewFileUrl('DrubuNet_Andreani::images/logo_negro.png') ?>"/></div>
+                        <div class="divisor" style="position: absolute; right: 0;"></div>
+                    </td>
+                    <td class="shipping-type" style="line-height: 2.7mm;margin-bottom: 0;padding-bottom: 0; width: 47mm;">
+                        <span style="display:block;">Envío</span><br >
+                        <?= $titleShipment ?>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="shipping-address" style="width: 95mm; ">
+                <div class="name"><?= strtoupper("{$lastRequest->nombre} {$lastRequest->apellido}") ?></div>
+                <div class="street"><?= strtoupper("{$lastRequest->calle} {$lastRequest->numero} {$lastRequest->piso} {$lastRequest->departamento}") ?></div>
+                <div class="city"><?= "{$lastRequest->localidad} - {$lastRequest->codigopostal} / {$lastRequest->provincia}"?></div>
+            </div>
+            <div class="notes" style="width: 95mm;">
+                <strong>Observaciones:</strong> <?= "{$lastRequest->detalledeproductosaentregar}"?>
+            </div>
+
+            <table class="shipping-information" >
+                <tr>
+                    <td class="shipping-left">
+                        <strong>ID:</strong> <?= isset($lastRequest->increment_id) ? $lastRequest->increment_id : '' ?><br>
+                        Peso: <br>
+                        Ancho: <br>
+                        Largo: <br >
+                        Alto:
+                    </td>
+                    <td class="shipping-right">
+                        REF: <br>
+                        Nº de Bulto:<br>
+                        <span class="bulk-umber">
+                            1-1
+                        </span>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="sender-label">Remitente:</div>
+            <table class="sender-information">
+                <tr>
+                    <td class="sender-left">
+                        <strong><?= "{$storeInfo->getName()}"?></strong><br>
+                        <?= " {$storeInfo->getData('street_line1')} {$storeInfo->getData('street_line2')}"?><br>
+                        <?= " {$storeInfo->getCity()} - {$storeInfo->getPostcode()} / {$storeInfo->getRegionId()}"?>
+                    </td>
+                    <td class="sender-right">
+                        Correo Andreani RNPPSP Nº 586<br>
+                        CL: <?= " {$cliente}"?> / Cont: <?= " {$contrato}"?><br>
+                        SUC. REN: <?= "{$andreaniDatosGuia->SucursalDeRendicion} ({$lastRequest->provincia})"?>
+                    </td>
+                </tr>
+            </table>
+
+            <table class="office"">
+            <tr>
+                <?php
+                $sucursal = $andreaniDatosGuia->SucursalDeDistribucion;
+                $sucursalData = explode(" - ", $sucursal);
+                $sucNum = $sucursalData[0];
+                $sucNombre = $sucursalData[1];
+                ?>
+                <td class="office-number" style="width: 35mm;"><?= $sucNum ?></td>
+                <td class="office-name" style="width: 65mm;">
+                    <span>Sucursal de Distribución</span>
+                    <?= "{$sucNombre} "?><br>
+                    <?= "({$lastRequest->provincia})"?>
+                </td>
+            </tr>
+            </table>
+
+            <div class="barcode" style="width: 99mm">
+                <img src="<?= $codigoBarras ?>" style="width: 99mm" alt="<?= $andreaniDatosGuia->NumeroAndreani ?>"/><br />
+                <?= "{$andreaniDatosGuia->NumeroAndreani}" ?>
+            </div>
+
+            <div class="client-logo" style="width: 99mm">
+
+            </div>
+        </div>
+    </page>
+    <style type="text/css">
+        .label-wrapper {
+            border: 0.4mm solid #000;
+            width: 99mm;
+            color: #000;
+            font-family: Helvetica, sans-serif;
+            font-size: 3mm;
+            line-height: 4mm;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .label-wrapper .label-header {
+            position: relative;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        .label-wrapper .label-header tr td {
+            height: 3mm;
+            overflow: hidden;
+        }
+
+        .label-wrapper .label-header tr {
+            border-bottom: 1px solid #000;
+        }
+
+        .label-wrapper .label-header:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+        .label-wrapper .label-header .logo {
+            width: 35mm;
+            padding: 0;
+            text-align: center;
+        }
+
+        .label-wrapper .label-header .logo img {
+            max-width: 35mm;
+        }
+
+        .label-wrapper .label-header .divisor {
+            border-right: 8mm solid #000;
+            border-top: 11.9mm solid #FFF;
+            height: 0;
+            position: absolute;
+            left: 34.3mm;
+            top: 0mm;
+            width: 0;
+            z-index: 99;
+        }
+
+        .label-wrapper .label-header .shipping-type {
+            background: #000;
+            text-align: right;
+            width: 57mm;
+            color: #FFF;
+            font-size: 4.5mm;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-style: italic;
+            padding: 1.6mm 2mm;
+        }
+
+        .label-wrapper .label-header .shipping-type span {
+            display: block;
+            font-size: 2.5mm;
+        }
+
+        .shipping-address {
+            padding: 1mm 2mm 0 2mm;
+        }
+
+        .shipping-address .name {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 2.8mm;
+        }
+
+        .shipping-address .street {
+            font-size: 4mm;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .shipping-address .city {
+            font-size: 2mm;
+            padding: 0.5mm 0 0;
+        }
+
+        .notes {
+            padding: 0 2mm;
+            font-size: 2.5mm;
+        }
+
+        .shipping-information {
+            padding: 0;
+            border-bottom: 1mm dashed #000;
+            margin-bottom: 0.2mm;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .shipping-information .shipping-left,
+        .shipping-information .shipping-right {
+            width: 46mm;
+            padding: 3mm 2mm 2mm 2mm;
+            padding-bottom: 1mm;
+            font-size: 2.5mm;
+            line-height: 2.5mm;
+            margin: 0;
+        }
+
+        .shipping-information .shipping-right .bulk-umber {
+            font-size: 10mm;
+            line-height: 10.4mm;
+            padding: 0;
+            font-weight: 100;
+            text-align: left;
+        }
+
+        .sender-label {
+            text-transform: uppercase;
+            padding: 2mm 2mm 0 2mm;
+            margin-bottom: 0;
+            font-size: 2mm;
+            line-height: 2mm;
+            margin-top: 1mm;
+            border-top: 0.6mm dashed #000;
+        }
+
+        .sender-information {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            padding: 0 0 0 0;
+        }
+
+        .sender-information .sender-left,
+        .sender-information .sender-right {
+            width: 50%;
+            padding: 0 2mm 0.5mm;
+            line-height: 2.8mm;
+            padding-bottom: 0;
+            font-size: 2.3mm;
+        }
+
+        .sender-information .sender-left ul,
+        .sender-information .sender-right ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sender-information .sender-left ul li,
+        .sender-information .sender-right ul li {
+            line-height: 2.8mm;
+            padding-bottom: 0;
+            font-size: 2.3mm;
+        }
+
+        .sender-information .sender-left ul li.name {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 2.5mm;
+        }
+
+        .sender-information .sender-right ul li.office-name {
+            font-size: 2.5mm
+        }
+
+        .office {
+            padding: 0;
+            border-top: 0.6mm dashed #000;
+        }
+
+        .office .office-number {
+            font-size: 18mm;
+            width: 37mm;
+            line-height: 15mm;
+            font-weight: bold;
+            text-align: center;
+            vertical-align: middle;;
+        }
+
+        .office .office-name {
+            width: 63mm;
+            font-size: 4.8mm;
+            text-transform: uppercase;
+            font-weight: bold;
+            line-height: 4.1mm;
+            padding-top: 3mm;
+        }
+
+        .office .office-name span {
+            font-size: 3.7mm;
+            display: block;
+            text-transform: none;
+        }
+
+        .barcode {
+            text-align: center;
+            border-bottom: 0.6mm dashed #000;
+            padding: 2mm;
+            min-height: 20mm;
+        }
+
+        .client-logo {
+            text-align: center;
+            padding: 2mm;
+            min-height: 20mm;
+        }
+    </style>
+<?php else: ?>
+    <div>
+        Código error <?=  "{$andreaniDatosGuia->CodigoDeResultado} . {$andreaniDatosGuia->DescripcionDeResultado}" ?>
+    </div>
+<?php endif; ?>
+
+<?php endforeach;?>

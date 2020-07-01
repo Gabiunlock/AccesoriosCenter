@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="sales_order_view"/>
+    <body>
+        <referenceBlock name="order.comments">
+            <action method='setTemplate'>
+                <argument name='template' xsi:type='string'>DrubuNet_Andreani::order/order_comments.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

@@ -1,0 +1,51 @@
+<?php
+/**
+ *
+ * @description Shipping calculator to product view page
+ *
+ */
+?>
+
+<?php
+/**
+ *
+ * Add AJAX Shipping calculation JS
+ *
+ */
+?>
+<script type="text/x-magento-init">
+    {
+        "#product-shippingcalc-button": {
+            "DrubuNet_Andreani/js/shippingcalc": {
+                "idPostalCodeContainer" : "#zip-code",
+                "idProductContainer"       : "#product_id",
+                "idRateContainer"       : "#shipping-calc"
+            }
+        }
+    }
+
+</script>
+
+<?php $helper = $this->helper('DrubuNet\Andreani\Helper\Data'); ?>
+
+<?php if($helper->isActiveCalculadorPdp() && ($helper->isActiveAndreaniEstandar() || $helper->isActiveAndreaniUrgente())):?>
+<div class="box-shippingcalc">
+    <div class="fieldset">
+        <div class="field zip-code">
+            <label class="label" for="zip-code"><span><?php echo __('Zip Code') ?></span></label>
+
+            <div class="control">
+                <input type="number" name="zip-code" id="zip-code" title="<?php echo __('Zip Code') ?>" class="input-text zip-code"/>
+                <input type="hidden" name="product_id" id="product_id" value="<?php echo $this->getProductId() ?>"/>
+            </div>
+        </div>
+
+        <div class="actions">
+            <p id="shipping-calc" class="shipping-rate"></p>
+            <button type="button" title="<?php echo __('Costo de Envio Andreani') ?>" class="action primary shippingcalc" id="product-shippingcalc-button">
+                <span><?php echo __('Costo de Envio Andreani') ?></span>
+            </button>
+        </div>
+    </div>
+</div>
+<?php endif;?>

@@ -1,0 +1,24 @@
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<div class="billing-address-details" data-bind="if: true && isAddressDetailsVisible() && currentBillingAddress()">
+    <!-- ko text: currentBillingAddress().prefix --><!-- /ko --> <!-- ko text: currentBillingAddress().firstname --><!-- /ko -->
+    <!-- ko text: currentBillingAddress().lastname --><!-- /ko --> <!-- ko text: currentBillingAddress().suffix --><!-- /ko --><br/>
+    <!-- ko text: currentBillingAddress().street --><!-- /ko -->
+    <span class="altura" data-bind="text:getAltura()"></span>
+    <span class="piso" data-bind="text:getPiso()"></span>
+    <span class="departamento" data-bind="text:getDepartamento()"></span>
+    <br/>
+    <!-- ko text: currentBillingAddress().city --><!-- /ko -->, <!-- ko text: currentBillingAddress().region --><!-- /ko --> <!-- ko text: currentBillingAddress().postcode --><!-- /ko --><br/>
+    <!-- ko text: getCountryName(currentBillingAddress().countryId) --><!-- /ko --><br/>
+    <!-- ko text: currentBillingAddress().telephone --><!-- /ko --><br/>
+    <button type="button"
+            class="action action-edit-address" style="display: none"
+            data-bind="visible: !isAddressSameAsShipping(), click: editAddress">
+        <span data-bind="i18n: 'Edit'"></span>
+    </button>
+</div>
+

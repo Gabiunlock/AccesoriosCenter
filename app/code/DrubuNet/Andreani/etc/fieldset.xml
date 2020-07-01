@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @TODO No funcionan los fieldsets, aparentemente por un bug de magento. Estuve debugueando y no llegue a la solucion
+ *
+ * https://github.com/magento/magento2/issues/1632
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:DataObject/etc/fieldset.xsd">
+    <scope id="global">
+        <fieldset id="sales_convert_quote_address">
+            <field name="dni">
+                <aspect name="to_order_address" />
+                <aspect name="to_customer_address" />
+            </field>
+            <field name="altura">
+                <aspect name="to_order_address" />
+                <aspect name="to_customer_address" />
+            </field>
+            <field name="piso">
+                <aspect name="to_order_address" />
+                <aspect name="to_customer_address" />
+            </field>
+            <field name="departamento">
+                <aspect name="to_order_address" />
+                <aspect name="to_customer_address" />
+            </field>
+            <field name="celular">
+                <aspect name="to_order_address" />
+                <aspect name="to_customer_address" />
+            </field>
+            <field name="observaciones">
+                <aspect name="to_order_address" />
+                <aspect name="to_customer_address" />
+            </field>
+        </fieldset>
+        <fieldset id="customer_address">
+            <field name="dni">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="altura">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="piso">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="departamento">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="celular">
+                <aspect name="to_quote_address" />
+            </field>
+            <field name="observaciones">
+                <aspect name="to_quote_address" />
+            </field>
+        </fieldset>
+        <fieldset id="sales_convert_order_address">
+            <field name="dni">
+                <aspect name="to_customer"/>
+                <aspect name="to_customer_address"/>
+            </field>
+            <field name="altura">
+                <aspect name="to_customer_address"/>
+            </field>
+            <field name="piso">
+                <aspect name="to_customer_address"/>
+            </field>
+            <field name="departamento">
+                <aspect name="to_customer_address"/>
+            </field>
+            <field name="celular">
+                <aspect name="to_customer_address"/>
+            </field>
+            <field name="observaciones">
+                <aspect name="to_customer_address"/>
+            </field>
+        </fieldset>
+    </scope>
+</config>

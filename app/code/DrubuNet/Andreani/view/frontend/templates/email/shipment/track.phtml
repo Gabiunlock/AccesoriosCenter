@@ -1,0 +1,40 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+use DrubuNet\Andreani\Model\Carrier\AndreaniEstandar;
+use DrubuNet\Andreani\Model\Carrier\AndreaniUrgente;
+use DrubuNet\Andreani\Model\Carrier\AndreaniSucursal;
+?>
+<?php $_shipment = $block->getShipment() ?>
+<?php $_order = $block->getOrder() ?>
+<?php if ($_shipment && $_order && $_shipment->getAllTracks()): ?>
+<br />
+<table class="shipment-track">
+    <thead>
+        <tr>
+            <th><?= /* @escapeNotVerified */  __('Shipped By') ?></th>
+            <th><?= /* @escapeNotVerified */  __('Tracking Number') ?></th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($_shipment->getAllTracks() as $_item): ?>
+        <tr>
+            <td><?= $block->escapeHtml($_item->getTitle()) ?>:</td>
+
+            <?php if($_item->getCarrierCode() == AndreaniEstandar::CARRIER_CODE
+            || $_item->getCarrierCode() == AndreaniSucursal::CARRIER_CODE
+            || $_item->getCarrierCode() == AndreaniUrgente::CARRIER_CODE):?>
+                <td><a href="http://seguimiento.andreani.com/envio/<?= $block->escapeHtml($_item->getNumber()) ?>"><?= $block->escapeHtml($_item->getNumber()) ?></a></td>
+            <?php else: ?>
+                <td><?= $block->escapeHtml($_item->getNumber()) ?></td>
+            <?php endif; ?>
+
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+<?php endif; ?>

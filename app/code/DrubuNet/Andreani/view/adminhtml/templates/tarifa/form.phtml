@@ -1,0 +1,68 @@
+<?php
+/**
+* Copyright © 2015 Magento. All rights reserved.
+* See COPYING.txt for license details.
+*/
+
+use Magento\Framework\App\TemplateTypesInterface;
+
+// @codingStandardsIgnoreFile
+
+/* @var $block \DrubuNet\Andreani\Block\Adminhtml\Tarifa\Container */
+?>
+<form action="<?php /* @escapeNotVerified */ echo $block->getSaveUrl() ?>" method="post" id="drubunet_andreani_tarifa_form">
+    <?php echo $block->getBlockHtml('formkey')?>
+    <div class="no-display">
+        <input type="hidden" id="change_flag_element" name="_change_type_flag" value="" />
+    </div>
+    <?php /* @escapeNotVerified */ echo $block->getForm() ?>
+</form>
+<script>
+    require([
+        'jquery',
+        'mage/mage',
+        'prototype'
+    ], function($)
+    {
+    //<![CDATA[
+        $('#drubunet_andreani_tarifa_form').mage('form').mage('validation');
+
+        templateControl =
+        {
+            unconvertedText: '',
+            typeChange: false,
+            id: 'text',
+
+            events: {
+                'click [data-role=template-save]' : 'save'
+            },
+            init: function () {
+                this.bindEvents();
+            },
+            bindEvents: function()
+            {
+                var events = this.events,
+                    eventName,
+                    selector,
+                    callback,
+                    key;
+                for( key in events )
+                {
+                    callback    = this[events[key]];
+                    key         = key.split(' ');
+                    eventName   = key[0];
+                    selector    = key.slice(1).join(' ');
+
+                    $(selector).on(eventName, $.proxy(callback, this) );
+                }
+            },
+            save: function()
+            {
+                $('#drubunet_andreani_tarifa_form').triggerHandler('save');
+                return false;
+            }
+        };
+        templateControl.init();
+    //]]>
+    });
+</script>

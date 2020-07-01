@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="content">
+        <block class="DrubuNet\Andreani\Block\Generarhtmlmasivo" name="generarhtmlmasivo" template="DrubuNet_Andreani::guiamasiva.phtml" />
+    </referenceContainer>
+    <body>
+        <referenceBlock name="header.container" remove="true" />
+        <referenceBlock name="footer" remove="true" />
+        <referenceBlock name="store.menu" remove="true" />
+    </body>
+</page>

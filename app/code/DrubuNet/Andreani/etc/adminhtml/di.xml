@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Backend\Block\Widget\Context">
+        <plugin name="add_custom_button_sales_view" type="DrubuNet\Andreani\Plugin\Widget\Context" sortOrder="1"/>
+    </type>
+    <!--<preference for="Magento\Shipping\Block\Adminhtml\View\Form" type="DrubuNet\Andreani\Plugin\Adminhtml\View\Form" />
+    <preference for="Magento\Shipping\Controller\Adminhtml\Shipment\MassPrintShippingLabel" type="DrubuNet\Andreani\Plugin\Shipment\MassPrintShippingLabelPlugin" />-->
+</config>

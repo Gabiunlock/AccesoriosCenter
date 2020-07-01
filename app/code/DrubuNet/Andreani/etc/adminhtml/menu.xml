@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="DrubuNet_Andreani::menuPrincipal" title="Andreani" module="Magento_Config" sortOrder="70" resource="Magento_Config::brand"/>
+        <add id="DrubuNet_Andreani::tarifa_admin" title="Administracion de tarifas por tabla" module="DrubuNet_Andreani" sortOrder="100" parent="DrubuNet_Andreani::menuPrincipal" action="andreani/tarifa/admin" resource="DrubuNet_Andreani::tarifa_admin"/>
+        <add id="DrubuNet_Andreani::guias" title="Generaración masiva de guías" module="DrubuNet_Andreani" sortOrder="100" parent="DrubuNet_Andreani::menuPrincipal" action="andreani/guias/admin" resource="DrubuNet_Andreani::guias"/>
+    </menu>
+</config>

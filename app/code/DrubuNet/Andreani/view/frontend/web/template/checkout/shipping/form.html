@@ -1,0 +1,30 @@
+<div id="andreanisucursal-sucursales-list-wrapper" data-bind="visible: selectedMethod() == 'andreanisucursal_sucursal'">
+    <p data-bind="visible: !showProvinciaSelection(), i18n: 'Please provide postcode to see nearest sucursal'"></p>
+    <div data-bind="visible: showProvinciaSelection()">
+        <select id="andreanisucursal-provincia" data-bind="options: provincias(),
+                                            value: selectedProvincia,
+                                            optionsValue: 'name',
+                                            optionsCaption: 'Seleccione una provincia',
+                                            event:{ change: provinciaChange},
+                                            optionsText: function(item){return item.name;}">
+        </select>
+    </div>
+    <div data-bind="visible: showLocalidadSelection()">
+        <select id="andreanisucursal-localidad" data-bind="options: localidades(),
+                                            value: selectedLocalidad,
+                                            optionsValue: 'name',
+                                            optionsCaption: 'Seleccione una localidad',
+                                            event:{ change: localidadChange},
+                                            optionsText: function(item){return item.name;}">
+        </select>
+    </div>
+    <div data-bind="visible: showSucursalSelection()">
+        <select id="andreanisucursal-sucursal" data-bind="options: sucursales(),
+                                            value: selectedSucursal,
+                                            optionsValue: 'name',
+                                            optionsCaption: 'Seleccione una sucursal',
+                                            event:{ change: sucursalChange},
+                                            optionsText: function(item){return item.name;}">
+        </select>
+    </div>
+</div>

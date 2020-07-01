@@ -1,0 +1,472 @@
+<?php
+/**
+ * @description template que carga los datos de la guía de andreani para generar el phtml.
+ *
+ * @var $this DrubuNet\Andreani\Block\Generarhtml
+ */
+?>
+
+<?php
+$orderId            = $block->getRequest()->getParam('order_id');
+$blockData          = $block->getAndreaniDataGuia($orderId);
+
+foreach($blockData AS $key => $guiaData):
+
+    $guiaDataObj        = json_decode(unserialize($guiaData));
+    $andreaniDatosGuia  = $guiaDataObj->datosguia->GenerarEnviosDeEntregaYRetiroConDatosDeImpresionResult;
+    $lastRequest        = $guiaDataObj->lastrequest;
+    $titleShipment      = '';
+
+    /** PROIDS-45 - Se implementa este fix porque el Web Service de Andreani devuelve Estandar si se elije Sucursal. */
+    $shippingMethod = $block->getShippingMethod($guiaDataObj->lastrequest->increment_id);
+
+    switch ($shippingMethod)
+    {
+        case 'andreaniurgente_urgente'  :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'DOMICILIO URGENTE';
+            $titleShipment2     = 'ANDREANI URGENTE';
+            $condEntrega        = 'B';
+            break;
+        case 'andreaniestandar_estandar' :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'DOMICILIO ESTANDAR';
+            $titleShipment2     = 'ANDREANI ESTANDAR';
+            $condEntrega        = 'B';
+            break;
+        default :
+            $clientCredentials  = $block->getClientCredentials($andreaniDatosGuia->Categoria);
+            $contrato           = $clientCredentials['contrato'];
+            $cliente            = $clientCredentials['cliente'];
+            $titleShipment      = 'ENTREGA EN SUCURSAL';
+            $titleShipment2     = 'SUCURSAL ANDREANI';
+            $condEntrega        = 'E';
+            break;
+    }
+
+    $codigoBarras       = $block->getCodigoBarras($andreaniDatosGuia->NumeroAndreani);
+    ?>
+    <?php $logoCliente = ''; ?>
+    <?php if($block->getlogoEmpresaPath()!=''): ?>
+    <?php $logoCliente =  $block->getlogoEmpresaPath() ?>
+<?php endif; ?>
+    <?php if($andreaniDatosGuia->CodigoDeResultado): ?>
+
+    <style type="text/css">
+
+        page {
+            width: 210mm;
+            height: 297mm;
+            color: #000;
+            font-family: Helvetica, sans-serif;
+            font-size: 3mm;
+            line-height: 4mm;
+            padding:150mm;
+        }
+        p {
+            font-size: 3mm;
+            line-height: 4mm;
+        }
+        h2 {
+            font-size: 5mm;
+            line-height: 5mm;
+            display:inline;
+            color: #000;
+            margin:0;
+            font-style:italic;
+            font-weight: 200;
+        }
+        h5 {
+            font-size: 4mm;
+            line-height: 4mm;
+            display:inline;
+            color: #000;
+            margin:0;
+            padding:0;
+            margin-bottom:1mm;
+            font-weight: bold;
+        }
+
+        h6 {
+            font-size: 4mm;
+            line-height: 5mm;
+            color: #fff;
+            margin:0;
+            padding:0;
+            font-weight: bold;
+        }
+
+        table.encabezado td {
+            padding: 2mm 5mm;
+            margin:0;
+            position:relative;
+        }
+        .main-1 {
+            padding: 3mm;
+            width: 203.4mm;
+            border:0.1mm solid #ccc;
+        }
+        table.info td {
+            padding: 1mm 3mm;
+            margin:0;
+            font-size: 3mm;
+            line-height: 4mm;
+            border:0.1mm solid #ccc;
+        }
+
+        table.info td table.info td {
+            border:0;
+        }
+
+        table.no-entregado td, table.no-entregado th {
+            padding: 1mm 2mm;
+            margin:0;
+            font-size: 2mm;
+            line-height: 3mm;
+            border:0.1mm solid #ccc;
+        }
+        .codigo-barras {
+            padding:3mm 0;
+        }
+        .codigo-barras img{
+            display:block;
+            margin-bottom:1mm;
+
+        }
+        .nada {
+            height:10mm;
+        }
+        .diagonal {
+            border-right: 12.4mm solid #ccc;
+            border-top: 12.4mm solid #000;
+            height: 0;
+            position: absolute;
+            left: 64.8mm;
+            top: -2mm;
+            width: 0;
+            z-index:99;
+        }
+        .logo-cliente {
+            background: #fff;
+            padding: 2.2mm;
+            position: absolute;
+            z-index:999999999;
+            display:block;
+            margin-bottom:-20mm;
+            left:65.2mm;
+        }
+        .logo-cliente img {
+            /* width: 25px;*/
+            padding: 0 20px 0 20px;
+        }
+        .diagonal-logo-1 {
+            border-right: 12.4mm solid #fff;
+            border-top: 12.4mm solid #000;
+            height: 0;
+            width: 0;
+            position: absolute;
+            left: 52.6mm;
+            z-index:999999999;
+        }
+        .diagonal-logo-2 {
+            border-right: 12.4mm solid #000;
+            border-top: 12.4mm solid #fff;
+            height: 0;
+            width: 0;
+            position: absolute;
+            right: 0;
+            z-index:999999999;
+        }
+    </style>
+    <page>
+        <div style="border-top:0.1mm solid #ccc;">
+            <table border="0" cellspacing="0" cellpadding="0" class="encabezado">
+                <tr>
+                    <td align="left" valign="middle" bgcolor="#000000" style="width:85mm;">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN8AAAA2CAYAAABHskxmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjU4RTdDMzk2RDI5MTFFNUJFN0NCNTAzQTU1OUJCMkEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjU4RTdDM0E2RDI5MTFFNUJFN0NCNTAzQTU1OUJCMkEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGNThFN0MzNzZEMjkxMUU1QkU3Q0I1MDNBNTU5QkIyQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGNThFN0MzODZEMjkxMUU1QkU3Q0I1MDNBNTU5QkIyQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvoxtiQAAA8lSURBVHja7B0LdBXV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" style="width:35mm;" />
+                        <?php if($logoCliente != ''): ?>
+                            <div class="diagonal-logo-1"></div>
+                            <div class="logo-cliente" style="background: #fff!important;padding: 0">
+                                <img src="<?= $block->getlogoEmpresaPath()?>" width="62" height="46"/>
+                            </div>
+                            <div class="diagonal-logo-2"></div>
+                        <?php endif; ?>
+                    </td>
+
+                    <td align="right" valign="middle" bgcolor="#CCCCCC"  style="width:85mm;">
+                        <div class="diagonal"></div>
+                        <h2><?= $titleShipment ?></h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="main-1">
+            <h5>ADHERIR AL ENVÍO</h5>
+            <div style="border:0.1mm solid #ccc; width:202.6mm;">
+                <table border="0" cellspacing="0" cellpadding="0" class="info">
+                    <tr>
+                        <td align="left" valign="top" style="width:50mm;">
+                            ID: <?= isset($lastRequest->increment_id) ? $lastRequest->increment_id : '' ?>
+                            <br />Destinatario:<?= " {$lastRequest->nombre} {$lastRequest->apellido}"?>
+                            <br />Calle:<?= " {$lastRequest->calle} {$lastRequest->numero}"?>
+                            <br />Piso:<?= " {$lastRequest->piso}"?>
+                            <br />Depto:<?= " {$lastRequest->departamento}"?>
+                            <br />CP:<?= " {$lastRequest->codigopostal}"?>
+                            <br />Teléfono: <?= " {$lastRequest->telefonofijo}"?>
+
+                        </td>
+                        <td align="left" valign="top" style="width:50mm;">
+
+                            Provincia:<?= " {$lastRequest->provincia}"?>
+                            <br />Localidad:<?= " {$lastRequest->localidad}"?>
+                            <br />Suc. Distribución:<?= " {$andreaniDatosGuia->SucursalDeDistribucion}"?>
+                            <br />Suc Rendición:<?= " {$andreaniDatosGuia->SucursalDeRendicion}"?>
+                            <br />F.V.
+                            <br />F.R.
+                        </td>
+                        <td rowspan="2" align="left" valign="top" style="width:66mm;">
+                            Cliente:<?= " {$cliente}"?>
+                            <br />Razón Social:
+                            <br />Servicio:<?= " {$contrato}"?><br />
+                            <div class="codigo-barras">
+                                <img src="<?= $codigoBarras ?>" width="120" height="48" alt="<?= $andreaniDatosGuia->NumeroAndreani ?>"/><br />
+                                <?= "{$andreaniDatosGuia->NumeroAndreani}" ?>
+                            </div>
+                            Correo Andreani<?= " {$andreaniDatosGuia->NumeroDePermisionaria}" ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="left" valign="top" class="nada">
+                            Observaciones:  <?= " {$lastRequest->detalledeproductosaentregar}"?>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <p><b>Información para la sucursal:</b> La entrega se debe realizar a mayores de 18 años que se encuentren en el domicilio del destinatario. La persona que reciba el envìo deberá exhibir el documento que acredite su identidad.</p>
+        </div>
+        <table border="0" cellspacing="0" cellpadding="0" class="encabezado">
+            <tr>
+                <td align="left" valign="middle" bgcolor="#000000" style="width:85mm;">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN8AAAA2CAYAAABHskxmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjU4RTdDMzk2RDI5MTFFNUJFN0NCNTAzQTU1OUJCMkEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjU4RTdDM0E2RDI5MTFFNUJFN0NCNTAzQTU1OUJCMkEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGNThFN0MzNzZEMjkxMUU1QkU3Q0I1MDNBNTU5QkIyQSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGNThFN0MzODZEMjkxMUU1QkU3Q0I1MDNBNTU5QkIyQSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvoxtiQAAA8lSURBVHja7B0LdBXV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" style=" width:35mm;" />
+                </td>
+                <td align="right" valign="middle" bgcolor="#CCCCCC"  style="width:85mm;">
+                    <div class="diagonal"></div>
+                    <h2><?= $titleShipment ?></h2>
+                </td>
+            </tr>
+        </table>
+        <div class="main-1" style="border-bottom:0;">
+            <h5>CONSTANCIA DE ENTREGA</h5>
+            <p><b>Información para la sucursal:</b> La entrega se debe realizar a mayores de 18 años que se encuentren en el domicilio del destinatario. La persona que reciba el envìo deberá exhibir el documento que acredite su identidad.</p>
+            <div style="border:0.1mm solid #ccc; width:202.6mm;">
+                <table border="0" cellspacing="0" cellpadding="0" class="info">
+                    <tr>
+                        <td align="left" valign="top" style="width:50mm;">
+                            ID: <?= isset($lastRequest->increment_id) ? $lastRequest->increment_id : '' ?>
+                            <br />Destinatario:<?= " {$lastRequest->nombre} {$lastRequest->apellido}"?>
+                            <br />Calle:<?= " {$lastRequest->calle} {$lastRequest->numero}"?>
+                            <br />Piso: <?= " {$lastRequest->piso}"?>
+                            <br />Depto: <?= " {$lastRequest->departamento}"?>
+                            <br /">CP:<?= " {$lastRequest->codigopostal}"?>
+                            <br />Localidad:<?= " {$lastRequest->localidad}"?>
+                            <br />Provincia:<?= " {$lastRequest->provincia}"?>
+                            <br />Teléfono: <?= " {$lastRequest->telefonofijo}"?>
+                        </td>
+                        <td align="left" valign="top" style="width:50mm;">
+                            DNI:<?= " {$lastRequest->numerodedocumento}"?>
+                            <br />Peso:<?=  " {$lastRequest->peso}"?>
+                            <br />Altura:
+                            <br />Largo:
+                            <br />Ancho:
+                            <br />Suc. Distribución:<?= " {$andreaniDatosGuia->SucursalDeDistribucion}"?>
+                            <br />Suc. Rendición:<?= " {$andreaniDatosGuia->SucursalDeRendicion}"?>
+                        </td>
+                        <td align="left" valign="top" style="width:66mm;">
+                            Cliente:<?= " {$cliente}"?>
+                            <br />Razón Social:
+                            <br />Servicio:<?= " {$contrato}"?>
+                            <br />
+                            <div class="codigo-barras">
+                                <img src="<?= $codigoBarras ?>" width="120" height="48" alt="<?= $andreaniDatosGuia->NumeroAndreani ?>" /><br />
+                                <?= "{$andreaniDatosGuia->NumeroAndreani}" ?>
+                            </div>
+                            Correo Andreani<?= " {$andreaniDatosGuia->NumeroDePermisionaria}" ?>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="border:0.1mm solid #999; width:203.2mm; background:#999;">
+                <h6>&nbsp;&nbsp;ENVÍO ENTREGADO</h6>
+            </div>
+            <div style="border:0.1mm solid #ccc; width:203.2mm;">
+                <table border="0" cellspacing="0" cellpadding="0" class="info">
+                    <tr>
+                        <td style="width: 29.2mm" class="nada">Firma</td>
+                        <td style="width: 28mm" class="nada">Aclaración</td>
+                        <td style="width: 28mm" class="nada">DNI</td>
+                        <td style="width: 28mm" class="nada">Fecha</td>
+                        <td style="width: 28mm" class="nada">Hora</td>
+                    </tr>
+                </table>
+            </div>
+            <div style="border:0.1mm solid #999; width:203.2mm; background:#999;">
+                <h6>&nbsp;&nbsp;MOTIVO DE NO ENTREGADO</h6>
+            </div>
+            <div style="border:0.1mm solid #ccc; width:203.1mm;">
+                <table border="0" cellspacing="0" cellpadding="0" class="no-entregado">
+                    <tr>
+                        <th rowspan="2" style="width: 11.5mm">Cod.</th>
+                        <th rowspan="2" style="width: 11.5mm">Motivos</th>
+                        <th colspan="2" style="width: 11.5mm">Visitas</th>
+                        <th rowspan="2" style="width: 11.5mm">Cod.</th>
+                        <th rowspan="2" style="width: 11.5mm">Motivos</th>
+                        <th colspan="2" style="width: 11.5mm">Visitas</th>
+                        <th colspan="4" style="width: 11.5mm">Sucursal</th>
+                        <th colspan="2" style="width: 11.5mm">Fecha</th>
+                    </tr>
+                    <tr>
+                        <td>1°</td>
+                        <td>2°</td>
+                        <td>1°</td>
+                        <td>2°</td>
+                        <td rowspan="2" colspan="4"> </td>
+                        <td rowspan="2" colspan="2"> </td>
+                    </tr>
+                    <tr>
+                        <td class="codigo">01</td>
+                        <td class="align-left">No Responde llamado</td>
+                        <td></td>
+                        <td></td>
+                        <td class="codigo">22</td>
+                        <td class="align-left">Dirección incompleta</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="codigo">10</td>
+                        <td class="align-left">Falleció</td>
+                        <td></td>
+                        <td></td>
+                        <td class="codigo">26</td>
+                        <td class="align-left">Dirección incorrecta</td>
+                        <td></td>
+                        <td></td>
+                        <td>Visita</td>
+                        <td>Fecha</td>
+                        <td>Hora</td>
+                        <td>Firma Distribuidor</td>
+                        <td>Lado Der.</td>
+                        <td>Lado Izq.</td>
+                    </tr>
+                    <tr>
+                        <td class="codigo">11</td>
+                        <td class="align-left">Desconocido</td>
+                        <td></td>
+                        <td></td>
+                        <td class="codigo">23</td>
+                        <td class="align-left">Vacaciones</td>
+                        <td></td>
+                        <td></td>
+                        <td rowspan="2">1°</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="codigo">14</td>
+                        <td class="align-left">Rehusado</td>
+                        <td></td>
+                        <td></td>
+                        <td class="codigo">25</td>
+                        <td class="align-left">No trabaja en la empresa</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="codigo">17</td>
+                        <td class="align-left">Se mudó</td>
+                        <td></td>
+                        <td></td>
+                        <td class="codigo">71</td>
+                        <td class="align-left">Zona inaccesible</td>
+                        <td></td>
+                        <td></td>
+                        <td rowspan="2">2°</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr>
+                        <td class="codigo">20</td>
+                        <td class="align-left">Cerrado definitivo</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <p>Correo Andreani<?=  " {$andreaniDatosGuia->NumeroDePermisionaria}" ?></p>
+        </div>
+
+        <div class="main-1" style="border-top: 0.1mm dashed #aaa;">
+            <h5><?= $titleShipment2?></h5>
+            <div style="border:0.1mm solid #999; width:203.2mm; background:#999; margin-top:2mm;">
+                <h6>COMPROBANTE DE IMPOSICIÓN</h6>
+            </div>
+            <div style="border:0.1mm solid #ccc; width:202.6mm;">
+                <table border="0" cellspacing="0" cellpadding="0" class="info">
+                    <tr>
+                        <td align="left" valign="top" style="width:124mm; padding:0;">
+                            <table border="0" cellspacing="0" cellpadding="0" class="info">
+                                <tr>
+                                    <td>ID: <?= isset($lastRequest->increment_id) ? $lastRequest->increment_id : '' ?></td>
+                                    <td>Cliente:<?= " {$cliente}"?></td>
+                                </tr>
+                                <tr>
+                                    <td>Destinatario:<?= " {$lastRequest->nombre} {$lastRequest->apellido}"?></td>
+                                    <td>Razón Social:</td>
+                                </tr>
+                                <tr>
+                                    <td>Teléfono:<?= " {$lastRequest->telefonofijo}" ?></td>
+                                    <td>Servicio:<?= " {$contrato}" ?></td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td align="left" valign="top" style="width:66.3mm;">
+                            <div class="codigo-barras" style="padding-top:1mm;">
+                                <img src="<?= $codigoBarras ?>" width="120" height="48" alt="<?= $andreaniDatosGuia->NumeroAndreani ?>" /><br>
+                                <?= $andreaniDatosGuia->NumeroAndreani ?>
+                            </div>
+                            Correo Andreani<?=" {$andreaniDatosGuia->NumeroDePermisionaria}" ?>
+                        </td>
+                    </tr>
+                </table>
+                <table border="0" cellspacing="0" cellpadding="0" class="info">
+                    <tr>
+                        <td style="width: 55.3mm" class="nada">Sello de Sucursal</td>
+                        <td style="width: 55.3mm" class="nada">Fecha</td>
+                        <td style="width: 55.3mm" class="nada">Firma de operador Andreani</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </page>
+
+<?php else: ?>
+    <div>
+        Código error <?=  "{$andreaniDatosGuia->CodigoDeResultado} . {$andreaniDatosGuia->DescripcionDeResultado}" ?>
+    </div>
+<?php endif; ?>
+
+<?php endforeach;?>
