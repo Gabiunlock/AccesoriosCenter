@@ -149,12 +149,12 @@
 .post-view .post-gallery .gallery-image-hld {
     border: 1px solid #ccc;
     display: block;
-    float: left
+    float: left;
     margin: 0 14px 14px 0;
 }
 
 .post-view .post-gallery .gallery-image {
-    display: block
+    display: block;
     margin: 0;
     padding: 0;
 }

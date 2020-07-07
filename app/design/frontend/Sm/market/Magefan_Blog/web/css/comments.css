@@ -260,7 +260,7 @@
     .c-replyform .left-hld,
     .c-replyform .right-hld {
         float: none;
-        padding: 0 0 5px 0
+        padding: 0 0 5px 0;
         width: 100%;
     }
 }
