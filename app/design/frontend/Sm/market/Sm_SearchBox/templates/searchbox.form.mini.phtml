@@ -125,6 +125,14 @@ $more_text = $this->_getConfig('more_text', 'More++');
     require([
         'jquery'
     ], function ($) {
+        /*onclick method for searchbox*/
+        $('.search-wrapper').click(function () {
+            $('.sm-searchbox').css('display', 'block');
+        })
+        $('.page-main, .header-top, .content').click(function () {
+            $('.sm-searchbox').css('display', '');
+        })
+
         var searchbox = $('#<?php echo $tag_id;?>');
         var firt_load = <?php echo $limit_popular;?>;
 
@@ -157,6 +165,5 @@ $more_text = $this->_getConfig('more_text', 'More++');
                 });
             });
         }
-
     });
 </script>
