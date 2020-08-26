@@ -13,6 +13,7 @@
     "require": {
         "ebizmarts/mailchimp-lib": "^3.0",
         "magento/product-community-edition": "2.3.4",
+        "mageplaza/magento-2-social-login": "^2.8",
         "mageplaza/module-core": "^1.4",
         "mercadopago/magento2-plugin": "2.*",
         "spipu/html2pdf": "^5.2"
